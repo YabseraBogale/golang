@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func prime(number int) {
+func Prime(number int) {
 
 	
 	for i:=2;i<number;i++ {
@@ -17,12 +17,5 @@ func prime(number int) {
 			fmt.Println("Prime Number:",i)
 		}
 	}
-}
-
-
-func main() {
-
-	prime(1000)
-
-
+	
 }
