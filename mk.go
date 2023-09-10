@@ -1,9 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+
+)
 
 func main(){
 
-	fmt.Println("mk")
+	var name string="YabseraBogale"
+	var num=12
+
+	fmt.Println(reflect.ValueOf(name).Kind())
+	fmt.Printf("%T\n",num)
 
 }
