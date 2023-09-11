@@ -23,4 +23,5 @@ func main(){
         default: fmt.Println("Are you a student ?")
 
     }
+
 }
