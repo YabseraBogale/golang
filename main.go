@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/YabseraBogale/database"
+)
 
 func main(){
+	db:=Database{number:5,name:["Yabsera","Bogale"],}
+	fmt.Println(db)
 
-	fmt.Println("Hello World")
-	displayTime()
 }
