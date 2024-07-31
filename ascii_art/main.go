@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"image"
+	"image/png"
 	"os"
 )
 
@@ -11,7 +10,15 @@ func main() {
 	if err != nil {
 
 	}
-	defer file.Close()
-	_, filestring, err := image.Decode(file)
-	fmt.Println(filestring)
+
+	fileimage, err := png.Decode(file)
+
+	for x := 0; x < fileimage.Bounds().Max.X; x++ {
+		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
+			color := fileimage.At(x, y)
+			print(color.RGBA())
+		}
+		println()
+	}
+
 }
