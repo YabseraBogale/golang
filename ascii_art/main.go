@@ -26,6 +26,8 @@ func main() {
 	for x := 0; x < fileimage.Bounds().Max.X; x++ {
 		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
 			oldpx := fileimage.At(x, y)
+			r,b,g,_:=color.Gray16Model.Convert(oldpx).RGBA()
+			print(r,g,b)
 			newimage.Set(x, y, color.Gray16Model.Convert(oldpx))
 		}
 	}
