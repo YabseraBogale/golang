@@ -1,8 +1,17 @@
 package main
 
 import (
+	"image"
+	"image/color"
 	"image/png"
+	"log"
 	"os"
+)
+
+const (
+	r float32 = 0.299
+	g float32 = 0.587
+	b float32 = 0.114
 )
 
 func main() {
@@ -12,15 +21,19 @@ func main() {
 	}
 
 	fileimage, err := png.Decode(file)
-
+	b := fileimage.Bounds()
+	newimage := image.NewRGBA(b)
 	for x := 0; x < fileimage.Bounds().Max.X; x++ {
 		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
-			color := fileimage.At(x, y)
-			R, B, G, _ := color.RGBA()
-			average := 0.299*R + 0.587*G + 0.114*B
-			print(average, " ")
+			oldpx := fileimage.At(x, y)
+			newimage.Set(x, y, color.Gray16Model.Convert(oldpx))
 		}
-		println()
 	}
+	outFile, err := os.Create("changed.jpg")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer outFile.Close()
+	png.Encode(outFile, newimage)
 
 }
