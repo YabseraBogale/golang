@@ -1,8 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"image/png"
+	"math/rand"
 	"os"
+	"strconv"
 )
 
 const (
@@ -32,13 +35,9 @@ func main() {
 			} else if uint8(average) < 127 || uint8(average) > 32 {
 				ascii[x][y] = string(uint8(average))
 			} else if uint8(average) >= 127 || uint8(average) <= 32 {
-				if uint8(average) >= 127 {
-					ascii[x][y] = string(uint8(average) - 90)
-				} else {
-
-				}
+				ascii[x][y] = strconv.Itoa(rand.Intn(127-32) + 32)
 			}
 		}
 	}
-
+	fmt.Println(ascii)
 }
