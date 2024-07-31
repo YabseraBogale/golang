@@ -1,10 +1,7 @@
 package main
 
 import (
-	"image"
-	"image/color"
 	"image/png"
-	"log"
 	"os"
 )
 
@@ -21,21 +18,20 @@ func main() {
 	}
 
 	fileimage, err := png.Decode(file)
-	b := fileimage.Bounds()
-	newimage := image.NewRGBA(b)
+	countWhite := 0
+	countBlack := 0
 	for x := 0; x < fileimage.Bounds().Max.X; x++ {
 		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
-			oldpx := fileimage.At(x, y)
-			r,b,g,_:=color.Gray16Model.Convert(oldpx).RGBA()
-			print(r,g,b)
-			newimage.Set(x, y, color.Gray16Model.Convert(oldpx))
+			oldcolor := fileimage.At(x, y)
+			R, B, G, _ := oldcolor.RGBA()
+			average := r*float32(R) + g*float32(G) + b*float32(B)
+			if uint8(average) == 0 {
+				countWhite += 1
+			} else if uint8(average) == 255 {
+				countBlack += 1
+			}
 		}
 	}
-	outFile, err := os.Create("changed.jpg")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer outFile.Close()
-	png.Encode(outFile, newimage)
+	println("there is", countBlack, "black pixel and", countWhite, "white pixel in the image")
 
 }
