@@ -18,23 +18,27 @@ func main() {
 	}
 
 	fileimage, err := png.Decode(file)
-	countWhite := 0
-	countBlack := 0
-	other := 0
+	ascii := make([][]string, fileimage.Bounds().Max.Y)
 	for x := 0; x < fileimage.Bounds().Max.X; x++ {
+		ascii[x] = make([]string, fileimage.Bounds().Max.X)
 		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
 			oldcolor := fileimage.At(x, y)
 			R, B, G, _ := oldcolor.RGBA()
 			average := r*float32(R) + g*float32(G) + b*float32(B)
 			if uint8(average) == 0 {
-				countWhite += 1
+				ascii[x][y] = string('Ω')
 			} else if uint8(average) == 255 {
-				countBlack += 1
-			} else {
-				other += 1
+				ascii[x][y] = string('ω')
+			} else if uint8(average) < 127 || uint8(average) > 32 {
+				ascii[x][y] = string(uint8(average))
+			} else if uint8(average) >= 127 || uint8(average) <= 32 {
+				if uint8(average) >= 127 {
+					ascii[x][y] = string(uint8(average) - 90)
+				} else {
+
+				}
 			}
 		}
 	}
-	println("there is", countBlack, "black pixel and", countWhite, "white pixel in the image and other pixel is", other)
 
 }
