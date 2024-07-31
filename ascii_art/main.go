@@ -20,6 +20,7 @@ func main() {
 	fileimage, err := png.Decode(file)
 	countWhite := 0
 	countBlack := 0
+	other := 0
 	for x := 0; x < fileimage.Bounds().Max.X; x++ {
 		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
 			oldcolor := fileimage.At(x, y)
@@ -29,9 +30,11 @@ func main() {
 				countWhite += 1
 			} else if uint8(average) == 255 {
 				countBlack += 1
+			} else {
+				other += 1
 			}
 		}
 	}
-	println("there is", countBlack, "black pixel and", countWhite, "white pixel in the image")
+	println("there is", countBlack, "black pixel and", countWhite, "white pixel in the image and other pixel is", other)
 
 }
