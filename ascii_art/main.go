@@ -3,9 +3,7 @@ package main
 import (
 	"fmt"
 	"image/png"
-	"math/rand"
 	"os"
-	"strconv"
 )
 
 const (
@@ -19,25 +17,28 @@ func main() {
 	if err != nil {
 
 	}
-
+	defer file.Close()
 	fileimage, err := png.Decode(file)
-	ascii := make([][]string, fileimage.Bounds().Max.Y)
+	ascii := make([][]byte, fileimage.Bounds().Max.X)
 	for x := 0; x < fileimage.Bounds().Max.X; x++ {
-		ascii[x] = make([]string, fileimage.Bounds().Max.X)
+		ascii[x] = make([]byte, fileimage.Bounds().Max.Y)
 		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
 			oldcolor := fileimage.At(x, y)
 			R, B, G, _ := oldcolor.RGBA()
 			average := r*float32(R) + g*float32(G) + b*float32(B)
 			if uint8(average) == 0 {
-				ascii[x][y] = string('Ω')
+				ascii[x][y] = byte('O')
 			} else if uint8(average) == 255 {
-				ascii[x][y] = string('ω')
-			} else if uint8(average) < 127 || uint8(average) > 32 {
-				ascii[x][y] = string(uint8(average))
-			} else if uint8(average) >= 127 || uint8(average) <= 32 {
-				ascii[x][y] = strconv.Itoa(rand.Intn(127-32) + 32)
+				ascii[x][y] = byte('X')
+			} else if uint8(average) < 150 && uint8(average) != 0 && uint8(average) != 255 {
+				ascii[x][y] = byte('W')
+			} else if uint8(average) > 150 && uint8(average) != 0 && uint8(average) != 255 {
+				ascii[x][y] = byte('Y')
 			}
+
 		}
 	}
+
 	fmt.Println(ascii)
+
 }
