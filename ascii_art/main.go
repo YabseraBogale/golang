@@ -1,8 +1,8 @@
 package main
 
 import (
-	"bufio"
 	"image/png"
+	"log"
 	"os"
 )
 
@@ -45,9 +45,13 @@ func main() {
 		}
 	}
 
-	var buff bufio.Writer
+	fs, err := os.Create(("image.txt"))
+	if err != nil {
+		log.Println(err)
+	}
+	defer fs.Close()
 	for _, i := range ascii {
-		buff.WriteString(string(i))
+		fs.Write(i)
 	}
 
 }
