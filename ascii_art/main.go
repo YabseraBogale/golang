@@ -4,6 +4,7 @@ import (
 	"image/png"
 	"log"
 	"os"
+	"strings"
 )
 
 const (
@@ -19,39 +20,42 @@ func main() {
 	}
 	defer file.Close()
 	fileimage, err := png.Decode(file)
-	ascii := make([][]byte, fileimage.Bounds().Max.Y)
+	ascii := make([]string, fileimage.Bounds().Max.Y)
 	for x := 0; x < fileimage.Bounds().Max.Y; x++ {
-		ascii[x] = make([]byte, fileimage.Bounds().Max.X)
+		ascii[x] = ""
 		for y := 0; y < fileimage.Bounds().Max.X; y++ {
 			oldcolor := fileimage.At(x, y)
 			R, B, G, _ := oldcolor.RGBA()
 			average := r*float32(R) + g*float32(G) + b*float32(B)
 			if uint8(average) == 0 {
-				ascii[x][y] = byte('0')
+				ascii[x] += "0"
 			} else if uint8(average) == 255 {
-				ascii[x][y] = byte('1')
+				ascii[x] += "1"
 			} else if uint8(average) < 50 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x][y] = byte('#')
+				ascii[x] += "#"
 			} else if uint8(average) >= 50 && uint8(average) < 87 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x][y] = byte('(')
+				ascii[x] += "("
 			} else if uint8(average) >= 87 && uint8(average) < 162 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x][y] = byte(')')
+				ascii[x] += "+"
 			} else if uint8(average) >= 162 && uint8(average) < 209 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x][y] = byte('_')
+				ascii[x] += "%"
 			} else if uint8(average) >= 209 && uint8(average) < 255 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x][y] = byte('$')
+				ascii[x] += "$"
 			}
 
 		}
 	}
+	for j, i := range ascii {
+		ascii[j] = string(strings.Count(i, "0")) + "0" + string(strings.Count(i, "1")) + "1" + string(strings.Count(i, "#")) + "#" + string(strings.Count(i, "(")) + "(" + string(strings.Count(i, "+")) + "+" + string(strings.Count(i, "%")) + string(strings.Count(i, "$")) + "$"
 
+	}
 	fs, err := os.Create("image.txt")
 	if err != nil {
 		log.Println(err)
 	}
 	defer fs.Close()
 	for _, i := range ascii {
-		fs.Write(i)
+		fs.WriteString(i)
 	}
 
 }
