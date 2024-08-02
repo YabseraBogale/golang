@@ -47,10 +47,12 @@ func main() {
 	for j, i := range ascii {
 		ascii[j] = transforme(i)
 	}
-
 	for _, i := range ascii {
-		println(i)
+		for _, j := range i {
+			print(string(j))
+		}
 	}
+
 	// fs, err := os.Create("image.txt")
 	// if err != nil {
 	// 	log.Println(err)
