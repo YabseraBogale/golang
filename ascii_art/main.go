@@ -1,8 +1,8 @@
 package main
 
 import (
+	"fmt"
 	"image/png"
-	"log"
 	"os"
 	"strings"
 )
@@ -49,13 +49,13 @@ func main() {
 		ascii[j] = string(strings.Count(i, "0")) + "0" + string(strings.Count(i, "1")) + "1" + string(strings.Count(i, "#")) + "#" + string(strings.Count(i, "(")) + "(" + string(strings.Count(i, "+")) + "+" + string(strings.Count(i, "%")) + string(strings.Count(i, "$")) + "$"
 
 	}
-	fs, err := os.Create("image.txt")
-	if err != nil {
-		log.Println(err)
-	}
-	defer fs.Close()
-	for _, i := range ascii {
-		fs.WriteString(i)
-	}
-
+	// fs, err := os.Create("image.txt")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// defer fs.Close()
+	// for _, i := range ascii {
+	// 	fs.WriteString(i)
+	// }
+	fmt.Println(ascii)
 }
