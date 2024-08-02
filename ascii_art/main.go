@@ -47,11 +47,9 @@ func main() {
 	for j, i := range ascii {
 		ascii[j] = transforme(i)
 	}
+
 	for _, i := range ascii {
-		for _, j := range i {
-			print(j)
-		}
-		println()
+		println(i)
 	}
 	// fs, err := os.Create("image.txt")
 	// if err != nil {
@@ -84,6 +82,11 @@ func transforme(oldstr string) string {
 	}
 	for i := 0; i < strings.Count(oldstr, "$")/resize; i++ {
 		newstr += "$"
+	}
+	if len(newstr) < 108 {
+		for i := len(newstr); i < 108; i++ {
+			newstr += "$"
+		}
 	}
 	return newstr
 }
