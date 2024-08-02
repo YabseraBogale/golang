@@ -45,7 +45,7 @@ func main() {
 		}
 	}
 
-	fs, err := os.Create(("image.txt"))
+	fs, err := os.Create("image.txt")
 	if err != nil {
 		log.Println(err)
 	}
