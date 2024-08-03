@@ -1,94 +1,52 @@
 package main
 
 import (
-	"image/png"
+	"fmt"
+	"image"
+	"image/color"
+	_ "image/png"
 	"os"
-	"strings"
 )
 
-const (
-	r float32 = 0.299
-	g float32 = 0.587
-	b float32 = 0.114
-)
-
-func main() {
-	file, err := os.Open("./wall.png")
+func loadImage(filePath string) (image.Image, error) {
+	f, err := os.Open(filePath)
 	if err != nil {
-
+		return nil, err
 	}
-	defer file.Close()
-	fileimage, err := png.Decode(file)
-	ascii := make([]string, fileimage.Bounds().Max.X)
-	for x := 0; x < fileimage.Bounds().Max.X; x++ {
-		ascii[x] = ""
-		for y := 0; y < fileimage.Bounds().Max.Y; y++ {
-			oldcolor := fileimage.At(x, y)
-			R, B, G, _ := oldcolor.RGBA()
-			average := r*float32(R) + g*float32(G) + b*float32(B)
-			if uint8(average) == 0 {
-				ascii[x] += "#"
-			} else if uint8(average) == 255 {
-				ascii[x] += "[]"
-			} else if uint8(average) < 50 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x] += "-"
-			} else if uint8(average) >= 50 && uint8(average) < 87 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x] += "("
-			} else if uint8(average) >= 87 && uint8(average) < 162 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x] += "+"
-			} else if uint8(average) >= 162 && uint8(average) < 209 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x] += "%"
-			} else if uint8(average) >= 209 && uint8(average) < 255 && uint8(average) != 0 && uint8(average) != 255 {
-				ascii[x] += "$"
-			}
-
-		}
-	}
-	for j, i := range ascii {
-		ascii[j] = transforme(i)
-	}
-	for _, i := range ascii {
-		for _, j := range i {
-			print(string(j))
-		}
-	}
-
-	// fs, err := os.Create("image.txt")
-	// if err != nil {
-	// 	log.Println(err)
-	// }
-	// defer fs.Close()
-	// for _, i := range ascii {
-
-	// }
-
+	defer f.Close()
+	image, _, err := image.Decode(f)
+	return image, err
 }
 
-func transforme(oldstr string) string {
-	var newstr string
-	resize := 2
-	for i := 0; i < strings.Count(oldstr, "-")/resize; i++ {
-		newstr += "-"
-	}
-	for i := 0; i < strings.Count(oldstr, "[]")/resize; i++ {
-		newstr += "[]"
-	}
-	for i := 0; i < strings.Count(oldstr, "#")/resize; i++ {
-		newstr += "#"
-	}
-	for i := 0; i < strings.Count(oldstr, "+")/resize; i++ {
-		newstr += "+"
-	}
-	for i := 0; i < strings.Count(oldstr, "%")/resize; i++ {
-		newstr += "%"
-	}
-	for i := 0; i < strings.Count(oldstr, "$")/resize; i++ {
-		newstr += "$"
-	}
-	if len(newstr) < 108 {
-		for i := len(newstr); i < 108; i++ {
-			newstr += "$"
+func grayscale(c color.Color) int {
+	r, g, b, _ := c.RGBA()
+	return int(0.299*float64(r) + 0.587*float64(g) + 0.114*float64(b))
+}
+
+func avgPixel(img image.Image, x, y, w, h int) int {
+	cnt, sum, max := 0, 0, img.Bounds().Max
+	for i := x; i < x+w && i < max.X; i++ {
+		for j := y; j < y+h && j < max.Y; j++ {
+			sum += grayscale(img.At(i, j))
+			cnt++
 		}
 	}
-	return newstr
+	return sum / cnt
+}
+
+func main() {
+	img, err := loadImage("wall.png")
+	if err != nil {
+		panic(err)
+	}
+	ramp := "@#+=. "
+	max := img.Bounds().Max
+	scaleX, scaleY := 30, 10
+	for y := 0; y < max.Y; y += scaleX {
+		for x := 0; x < max.X; x += scaleY {
+			c := avgPixel(img, x, y, scaleX, scaleY)
+			fmt.Print(string(ramp[len(ramp)*c/65536]))
+		}
+		fmt.Println()
+	}
 }
