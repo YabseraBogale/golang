@@ -11,12 +11,9 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	count := 0
+
 	for _, i := range file {
 		fmt.Println(i)
-		count += 1
-		if count == 10 {
-			break
-		}
+
 	}
 }
