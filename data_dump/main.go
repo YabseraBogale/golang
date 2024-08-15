@@ -13,7 +13,7 @@ func main() {
 	}
 
 	for _, i := range file {
-		fmt.Println(i)
+		fmt.Print(string(i))
 
 	}
 }
