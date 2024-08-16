@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("image.png")
+	file, err := os.Open("image.jpg")
 	if err != nil {
 		log.Println(err)
 	}
