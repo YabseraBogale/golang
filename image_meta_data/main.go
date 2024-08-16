@@ -19,5 +19,5 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(img)
+	fmt.Println(img.GPS.Latitude())
 }
