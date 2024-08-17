@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -19,5 +18,5 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(img.GPS.Latitude())
+	println(img.ApplicationNotes)
 }
