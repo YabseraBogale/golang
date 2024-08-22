@@ -20,4 +20,5 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(img.String())
+
 }
