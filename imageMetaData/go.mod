@@ -1,9 +1,10 @@
-module github.com/YabseraBogale/golang/image_meta_data
+module github.com/Yabsera/golang/imageMetaData
 
 go 1.23.0
 
+require github.com/evanoberholster/imagemeta v0.3.1
+
 require (
-	github.com/evanoberholster/imagemeta v0.3.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/philhofer/fwd v1.1.2 // indirect
