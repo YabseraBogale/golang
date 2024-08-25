@@ -1,5 +1,14 @@
 package main
 
-func main() {
+import (
+	"fmt"
+	"os"
+)
 
+func main() {
+	file, err := os.ReadDir(".")
+	if err != nil {
+
+	}
+	fmt.Println(file)
 }
