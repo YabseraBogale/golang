@@ -1,14 +1,20 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"bytes"
+	"log"
+	"os/exec"
 )
 
 func main() {
-	file, err := os.ReadDir(".")
+	cmd := exec.Command("locate", "~/*.txt")
+	err := cmd.Run()
 	if err != nil {
-
+		println(1)
+		log.Println(err)
 	}
-	fmt.Println(file)
+	var out bytes.Buffer
+	out = &cmd.Stdout
+
+	println(out)
 }
