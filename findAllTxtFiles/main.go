@@ -9,11 +9,11 @@ func main() {
 	cmd := exec.Command("ls")
 	err := cmd.Run()
 	if err != nil {
-		fmt.Println("here 1", err)
+		fmt.Println(err)
 	}
 	out, err := cmd.Output()
 	if err != nil {
-		fmt.Println("here 2", err)
+		fmt.Println(err)
 	}
 	fmt.Println(out)
 }
