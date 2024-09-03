@@ -18,18 +18,19 @@ func main() {
 	if err != nil {
 
 	}
-	for _, i := range list {
-		if !i.IsDir() && strings.Contains(i.Name(), ".txt") {
-			fmt.Println(i.Info())
-		} else if i.IsDir() {
-			fmt.Println(i.Name())
-		}
-	}
+	ListDir(home)
 }
 
 func ListDir(Name string) {
 	list, err := os.ReadDir(Name)
 	if err != nil {
 
+	}
+	for _, i := range list {
+		if !i.IsDir() && strings.Contains(i.Name(), ".txt") {
+			fmt.Println(i.Info())
+		} else if i.IsDir() {
+			ListDir(i.Name())
+		}
 	}
 }
