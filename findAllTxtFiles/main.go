@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -15,5 +17,12 @@ func main() {
 
 	if err != nil {
 
+	}
+	for _, i := range list {
+		if !i.IsDir() && strings.Contains(i.Name(), ".txt") {
+			fmt.Println(i.Info())
+		} else if i.IsDir() {
+			fmt.Println(i.Name())
+		}
 	}
 }
