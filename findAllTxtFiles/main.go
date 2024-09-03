@@ -26,3 +26,10 @@ func main() {
 		}
 	}
 }
+
+func ListDir(Name string) {
+	list, err := os.ReadDir(Name)
+	if err != nil {
+
+	}
+}
