@@ -12,12 +12,6 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
-	list, err := os.ReadDir(home)
-
-	if err != nil {
-
-	}
 	ListDir(home)
 }
 
