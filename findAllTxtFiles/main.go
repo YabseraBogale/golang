@@ -23,12 +23,12 @@ func ListDir(Name string, size float32) {
 	}
 	for _, i := range list {
 		if !i.IsDir() && strings.Contains(i.Name(), ".txt") {
-			info, err := os.ReadFile(Name + i.Name())
+			info, err := os.OpenFile(Name+i.Name(), os.O_RDWR, 666)
 			if err != nil {
 
 			}
-			fmt.Println(info)
-			count += 1
+			defer info.Close()
+			fmt.Println(info.Name(), count)
 		} else if i.IsDir() == true {
 			ListDir(Name+"/"+i.Name(), count)
 		}
