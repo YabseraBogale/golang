@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -12,11 +11,11 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	ListDir(home, 0)
+	ListDir(home)
 }
 
-func ListDir(Name string, size float32) {
-	count := size
+func ListDir(Name string) {
+
 	list, err := os.ReadDir(Name)
 	if err != nil {
 		log.Println(err)
@@ -32,13 +31,9 @@ func ListDir(Name string, size float32) {
 
 			}
 			defer fs.Close()
-			info, err := fs.Stat()
-			if err != nil {
-
-			}
-			fmt.Println(Name+"/"+i.Name(), info.Name(), info.Size())
+			// Compress or copy ?
 		} else if i.IsDir() == true {
-			ListDir(Name+"/"+i.Name(), count)
+			ListDir(Name + "/" + i.Name())
 		}
 	}
 }
