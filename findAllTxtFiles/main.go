@@ -1,8 +1,6 @@
 package main
 
 import (
-	"compress/gzip"
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -14,42 +12,40 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	file, err := os.Create("data.tar")
+	dis, err := os.Getwd()
 	if err != nil {
-
+		log.Fatalln(err)
 	}
-
-	ListDir(home, file)
+	dis_folder := dis + "/data"
+	ListDir(home, dis_folder)
 }
 
-func ListDir(Name string, file *os.File) {
+func ListDir(Name string, dis_folder string) {
 
 	list, err := os.ReadDir(Name)
 	if err != nil {
 		log.Println(err)
 	}
 	for _, i := range list {
-		if !i.IsDir() && strings.Contains(i.Name(), ".txt") && i.Type().IsRegular() {
+		if !i.IsDir() && strings.Contains(i.Name(), ".txt") {
 			err := os.Chdir(Name)
 			if err != nil {
-
+				log.Fatalln(err)
 			}
 			fs, err := os.Open(i.Name())
 			if err != nil {
-
+				log.Fatalln(err)
 			}
 			defer fs.Close()
-			// Compress or copy ?
-			data, err := io.ReadAll(fs)
+			// copy ?
+			dis, err := os.Open(dis_folder)
 			if err != nil {
-
+				log.Fatalln(err)
 			}
-			fmt.Println(os.Getwd())
-			w := gzip.NewWriter(file)
-			w.Write(data)
-			w.Flush()
+			io.Copy(dis, fs)
+
 		} else if i.IsDir() == true {
-			ListDir(Name+"/"+i.Name(), file)
+			ListDir(Name+"/"+i.Name(), dis_folder)
 		}
 	}
 }
