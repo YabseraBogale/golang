@@ -2,6 +2,7 @@ package main
 
 import (
 	"compress/gzip"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -43,9 +44,10 @@ func ListDir(Name string, file *os.File) {
 			if err != nil {
 
 			}
+			fmt.Println(os.Getwd())
 			w := gzip.NewWriter(file)
-			defer w.Close()
 			w.Write(data)
+			w.Flush()
 		} else if i.IsDir() == true {
 			ListDir(Name+"/"+i.Name(), file)
 		}
