@@ -2,6 +2,7 @@ package main
 
 import (
 	"archive/zip"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -56,6 +57,7 @@ func ListDir(Name string, data *os.File) {
 				log.Fatalln(err)
 			}
 			io.Copy(writer, fs)
+			fmt.Println(i.Name())
 
 		} else if i.IsDir() == true {
 			ListDir(Name+"/"+i.Name(), data)
