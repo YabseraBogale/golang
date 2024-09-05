@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	file, err := os.Create("data.gz")
+	file, err := os.Create("data.tar")
 	if err != nil {
 
 	}
