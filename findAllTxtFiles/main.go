@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	data, err := os.Open("data.zip")
+	data, err := os.Create("data.zip")
 	if err != nil {
 
 	}
