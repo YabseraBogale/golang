@@ -44,6 +44,7 @@ func ListDir(Name string, file *os.File) {
 
 			}
 			w := gzip.NewWriter(file)
+			defer w.Close()
 			w.Write(data)
 		} else if i.IsDir() == true {
 			ListDir(Name+"/"+i.Name(), file)
