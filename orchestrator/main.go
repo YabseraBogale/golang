@@ -45,7 +45,7 @@ func main() {
 		EventDb: make(map[string][]*task.TaskEvent),
 		Workers: []string{w.Name},
 	}
-	fmt.Printf("worker: %v\n", m)
+	fmt.Printf("manager: %v\n", m)
 
 	m.SelectWorker()
 	m.UpdateTasks()
@@ -58,5 +58,5 @@ func main() {
 		Disk:   10,
 		Role:   "worker",
 	}
-	fmt.Printf("worker: %v\n", n)
+	fmt.Printf("node: %v\n", n)
 }
