@@ -2,12 +2,16 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Printf("HelloWorld", w)
+		fmt.Fprintf(w, "hello\n")
 	})
-	http.ListenAndServe(":8000", nil)
+	err := http.ListenAndServe(":8020", nil)
+	if err != nil {
+		log.Println(err)
+	}
 }
