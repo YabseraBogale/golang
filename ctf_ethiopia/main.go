@@ -24,8 +24,8 @@ func main() {
 
 	http.HandleFunc("/signup", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
-			//username := r.FormValue("username")
-			//email:=r.FormValue("email")
+			username := r.FormValue("username")
+			email := r.FormValue("email")
 			password := r.FormValue("password")
 			re_password := r.FormValue("re_password")
 			if re_password != password {
