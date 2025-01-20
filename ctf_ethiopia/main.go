@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"text/template"
+
+	"github.com/YabseraBogale/golang/ctf_ethiopia/ctf_ethiopia_user"
 )
 
 func main() {
@@ -32,7 +34,13 @@ func main() {
 				t, _ := template.ParseFiles("public/signup.html")
 				t.Execute(w, struct{ NotMatched bool }{NotMatched: true})
 			} else {
-				http.Redirect(w, r, "/", http.StatusSeeOther)
+				err := ctf_ethiopia_user.InsertUser(username, email, password)
+				if err != nil {
+					log.Println(err)
+				} else {
+					http.Redirect(w, r, "/", http.StatusSeeOther)
+				}
+
 			}
 		} else if r.Method == http.MethodGet {
 			t, _ := template.ParseFiles("public/signup.html")
