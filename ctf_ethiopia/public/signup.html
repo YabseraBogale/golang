@@ -27,6 +27,11 @@
                                 <input type="email" name="email" id="" required>
                             </td>
                         </tr>
+                        {{ if .NotMatched }}
+                            <td>
+                                <h3>Password doesn't match</h3>
+                            </td>
+                        {{end}}
                         <tr>
                             <td>
                                 password
