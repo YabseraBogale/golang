@@ -29,7 +29,7 @@
                         </tr>
                         {{ if .NotMatched }}
                             <td>
-                                <h3>Password doesn't match</h3>
+                                <h5>Password doesn't match</h5>
                             </td>
                         {{end}}
                         <tr>
@@ -37,7 +37,7 @@
                                 password
                             </td>
                             <td>
-                                <input type="password" name="password" id="" required>
+                                <input type="password" name="password" min="10" id=""  placeholder="min of 10 character" required>
                             </td>
                         </tr>
                         <tr>
@@ -45,7 +45,7 @@
                                 re-password 
                             </td>
                             <td>
-                                <input type="password" name="re_password" id="" required>
+                                <input type="password" name="re_password" min="10" id=""  placeholder="min of 10 character" required>
                             </td>
                         </tr> 
                     </table>                 
