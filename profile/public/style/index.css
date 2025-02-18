@@ -1,0 +1,68 @@
+*{
+    background-color: hsl(210deg 40% 16%);
+    color: hsl(210deg 10% 90%);
+    font-family: 'Courier New', Courier, monospace;
+}
+.main{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid hsl(210deg 10% 90%);
+    border-radius: 2px;
+    padding: 15px;
+}
+
+h1{
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+    border: 2px solid hsl(210deg 10% 90%);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: x-large;
+}
+
+a{
+    text-decoration: none;
+    color: hsl(210deg 10% 90%);
+}
+
+a:hover{
+    text-decoration: none;
+    color: hsl(210deg 40% 16%);
+    background-color: hsl(210deg 10% 90%);
+    border: 2px solid hsl(210deg 10% 90%);
+    border-radius: 3px;
+}
+
+
+.skill{
+    display: flex;
+    flex-direction: row;
+}
+li{
+    list-style: none;
+    
+}
+
+strong{
+    border: 3px solid hsl(210deg 10% 90%);
+    border-radius: 5px;
+    background-color: hsl(210deg 10% 90%);
+    color: hsl(210deg 40% 16%);
+}
+.contact{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+}
+@media only screen and (max-width: 800px) {
+    .contact{
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+    }
+}
