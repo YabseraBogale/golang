@@ -1,22 +1,3 @@
-Contents
-SOFTWARE ENGINERING............................................................................................................................... 1
-Web Programming ...................................................................................................................................... 23
-Fundamental of Database Systems............................................................................................................. 58
-Advance Database Systems ........................................................................................................................ 82
-Computer Programming ........................................................................................................................... 108
-OBJECT ORIENTED PROGRAMMING ......................................................................................................... 136
-Design and Analysis of Algorithms ............................................................................................................ 154
-Data Structure and Algorithms ................................................................................................................. 174
-Data Communication and Computer Networking .................................................................................... 204
-Computer Security .................................................................................................................................... 224
-Network and System Administration ........................................................................................................ 240
-Introduction to Artificial Intelligence ........................................................................................................ 263
-Operating System...................................................................................................................................... 275
-Computer organization and architecture ................................................................................................. 295
-Automata and Complexity Theory ............................................................................................................ 310
-Compiler Design ........................................................................................................................................ 324
-AMAN NIGUSSU
-1|PageSOFTWARE ENGINERING
 1. Which phase of the software development life cycle is responsible for gathering and
 analyzing user requirements?
 a. Analysis
@@ -38,7 +19,6 @@ responsibility (Single Responsibility Principle) among other principles like Ope
 Substitution, Interface Segregation, and Dependency Inversion.
 3.Which of the following is an agile development methodology?
 a. Waterfall model
-2|Pageb. Scrum
 c. V-model
 d. Spiral model
 Answer: b. Scrum
@@ -60,7 +40,7 @@ b. Black-box testing
 c. Integration testing
 d. System testing
 Answer: b. Black-box testing
-3|PageExplanation: Black-box testing is a software testing technique where the software is tested
+Explanation: Black-box testing is a software testing technique where the software is tested
 without knowledge of its internal structure. Testers focus on the inputs, outputs, and functionality
 of the system to uncover defects.
 6.Which diagramming technique is used to visualize the behavior of a software system over
@@ -82,7 +62,7 @@ Answer: b. Agile methodology
 Explanation: Agile methodology promotes adaptive planning, evolutionary development, and
 continuous improvement throughout the software development process.
 8.Which technique is used to represent the flow of activities and decisions in a software system?
-4|Pagea. Use case modeling
+a. Use case modeling
 b. Activity diagrams
 c. State machine diagrams
 d. Component diagrams
@@ -104,7 +84,7 @@ a. Unit testing
 b. Integration testing
 c. System testing
 d. Regression testing
-5|PageAnswer: b. Integration testing
+Answer: b. Integration testing
 Explanation: Integration testing focuses on testing the interaction between different components
 or modules of a software system to ensure they work together correctly.
 11.Which design principle suggests that software entities should depend on abstractions, not on
@@ -124,7 +104,7 @@ b. Agile methodology
 c. Prototype model
 d. Spiral model
 Answer: a. Waterfall model
-6|PageExplanation: The waterfall model follows a linear, sequential flow in which each phase of the
+Explanation: The waterfall model follows a linear, sequential flow in which each phase of the
 software development process, such as requirements gathering, design, development, testing, and
 maintenance, is completed before moving to the next phase.
 13.Which technique is used to estimate the size and complexity of a software project?
@@ -146,7 +126,7 @@ Explanation: Jira is a widely used tool for issue tracking and project managemen
 and manage software issues, bugs, and tasks, enabling collaboration and progress monitoring.
 15.Which design principle suggests that software entities should be open for extension but closed
 for modification?
-7|Pagea. DRY (Don't Repeat Yourself) principle
+a. DRY (Don't Repeat Yourself) principle
 b. SOLID principle
 c. KISS (Keep It Simple, Stupid) principle
 d. YAGNI (You Ain't Gonna Need It) principle
@@ -169,7 +149,7 @@ a. Waterfall model
 b. Agile methodology
 c. V-model
 d. Spiral model
-8|PageAnswer: b. Agile methodology
+Answer: b. Agile methodology
 Explanation: Agile methodology emphasizes regular and frequent communication between
 developers and stakeholders, promoting collaboration and the ability to adapt to changing
 requirements.
@@ -189,7 +169,7 @@ b. Integration testing
 c. Regression testing
 d. System testing
 Answer: c. Regression testing
-9|PageExplanation: Regression testing focuses on retesting modified or affected parts of the software to
+Explanation: Regression testing focuses on retesting modified or affected parts of the software to
 ensure that changes do not introduce new defects or have unintended consequences on existing
 functionality.
 20.Which tool is used to package an application and its dependencies into a container for easy
@@ -213,7 +193,7 @@ Explanation: The analysis phase of the SDLC is dedicated to gathering and unders
 requirements, which involves studying the existing system, identifying user needs, and defining
 the scope of the software project.
 22.What is the primary goal of software design?
-10 | P a g ea. To create a visually appealing user interface
+a. To create a visually appealing user interface
 b. To optimize the performance of the software system
 c. To translate user requirements into a detailed plan
 d. To develop and test individual software components
@@ -235,7 +215,7 @@ a. To improve the readability of the code
 b. To ensure efficient memory management
 c. To facilitate code reuse and maintenance
 d. To minimize the number of software defects
-11 | P a g eAnswer: c. To facilitate code reuse and maintenance
+Answer: c. To facilitate code reuse and maintenance
 Explanation: Modularization in software design involves breaking down the software system into
 smaller, manageable modules. This facilitates code reuse, improves maintainability, and enables
 easier collaboration among developers.
@@ -258,7 +238,7 @@ Answer: c. Object-oriented programming
 Explanation: Object-oriented programming (OOP) is a programming paradigm based on the
 concept of objects, which encapsulate data and behavior. OOP focuses on modular design, code
 reuse, and modeling real-world entities.
-12 | P a g e27.What is the purpose of version control systems in software development?
+27.What is the purpose of version control systems in software development?
 a. To manage project schedules and milestones
 b. To facilitate collaboration among team members
 c. To track and control changes to source code and files
@@ -279,7 +259,7 @@ development life cycle is completed before moving to the next phase. It is a tra
 driven approach.
 29.What is the primary purpose of software documentation?
 a. To serve as a record of code authorship
-13 | P a g eb. To provide instructions for end-users
+b. To provide instructions for end-users
 c. To assist in software maintenance and understanding
 d. To ensure compliance with coding standards
 Answer: c. To assist in software maintenance and understanding
@@ -302,7 +282,7 @@ a. Encapsulation
 b. Inheritance
 c. Polymorphism
 d. Single Responsibility Principle
-14 | P a g eAnswer: d. Single Responsibility Principle
+Answer: d. Single Responsibility Principle
 Explanation: The Single Responsibility Principle (SRP) states that a software component should
 have only one reason to change. It advocates for designing components that have a single, well-
 defined responsibility.
@@ -326,7 +306,7 @@ Answer: c. Functional testing
 Explanation: Functional testing focuses on evaluating the behavior of a software system under
 normal operating conditions. It ensures that the system functions as intended and meets the
 specified requirements.
-15 | P a g e34.Which programming paradigm promotes the use of data and avoids side effects?
+34.Which programming paradigm promotes the use of data and avoids side effects?
 a. Functional programming
 b. Procedural programming
 c. Object-oriented programming
@@ -347,7 +327,7 @@ new environments or technologies. It ensures that the system remains compatible 
 in evolving contexts.
 36.What is the purpose of usability testing in software development?
 a. To evaluate the performance of the software system under stress conditions
-16 | P a g eb. To assess the user-friendliness and ease of use of the software system
+b. To assess the user-friendliness and ease of use of the software system
 c. To verify the compliance of the software system with specified requirements
 d. To identify and fix defects or issues in the software system
 Answer: b. To assess the user-friendliness and ease of use of the software system
@@ -369,7 +349,7 @@ a. To add new features to the software system
 b. To optimize the performance of the software system
 c. To improve the readability and maintainability of the code
 d. To fix defects or issues in the software system
-17 | P a g eAnswer: c. To improve the readability and maintainability of the code
+Answer: c. To improve the readability and maintainability of the code
 Explanation: The primary purpose of code refactoring is to improve the readability and
 maintainability of the code without changing its external behavior. It involves restructuring the
 code to make it more efficient and understandable.
@@ -393,7 +373,7 @@ Answer: c. System testing
 Explanation: System testing involves running the entire software system in an environment that
 closely resembles the production environment. It verifies that all components work together as
 expected and meet the system requirements.
-18 | P a g e41.What is a use case in use case modeling?
+41.What is a use case in use case modeling?
 a. A description of a specific user interface design
 b. A step-by-step procedure for software installation
 c. A sequence of activities performed by a user or system
@@ -414,7 +394,7 @@ a. To represent the reuse of common steps between use cases
 b. To represent optional steps within a use case
 c. To represent the extension of a use case with additional steps
 d. To represent the relationship between actors and use cases
-19 | P a g eAnswer: a. To represent the reuse of common steps between use cases
+Answer: a. To represent the reuse of common steps between use cases
 Explanation: An include relationship in use case modeling is used to represent the reuse of
 common steps or functionality between use cases. It allows for the modularization and
 reusability of use case steps.
@@ -434,7 +414,7 @@ b. Use case diagram
 c. Activity diagram
 d. Sequence diagram
 Answer: b. Use case diagram
-20 | P a g eExplanation: A use case diagram is commonly used to visualize the relationships between actors
+Explanation: A use case diagram is commonly used to visualize the relationships between actors
 and use cases in use case modeling. It provides an overview of the actors and their interactions
 with the system.
 46.What is the purpose of an abstract use case?
@@ -455,7 +435,7 @@ Answer: a. To represent an error or exceptional situation in the use case
 Explanation: An exception flow in a use case represents an error or exceptional situation that can
 occur during the execution of the use case. It describes how the system handles such situations.
 48.What is the primary goal of use case modeling?
-21 | P a g ea. To define the software architecture of the system
+a. To define the software architecture of the system
 b. To identify and document user requirements
 c. To design the user interface of the system
 d. To implement the functionality of the system
@@ -477,7 +457,7 @@ b. To represent the internal structure of a use case
 c. To visualize the relationships between actors and use cases
 d. To represent the flow of activities within a use case
 Answer: c. To visualize the relationships between actors and use cases
-22 | P a g eExplanation: A use case diagram is used to visualize the relationships between actors and use
+Explanation: A use case diagram is used to visualize the relationships between actors and use
 cases in use case modeling. It provides a high-level view of the system's functionality and the
 interactions with external entities
 Web Programming
@@ -497,7 +477,7 @@ d. To handle server-side processing and database interactions
 Answer: c. To control the visual appearance of web pages
 Explanation: CSS (Cascading Style Sheets) is used to control the visual appearance of web
 pages, including elements such as colors, fonts, spacing, and layout.
-23 | P a g e53.Which programming language is primarily used for client-side scripting in web development?
+53.Which programming language is primarily used for client-side scripting in web development?
 a. HTML
 b. CSS
 c. JavaScript
@@ -517,7 +497,7 @@ the web. It enables communication between web servers and web clients (browsers)
 55.What is the purpose of a web server in web development?
 a. To store and manage website files
 b. To handle client-side scripting
-24 | P a g ec. To control the visual appearance of web pages
+c. To control the visual appearance of web pages
 d. To ensure secure data transmission over the web
 Answer: a. To store and manage website files
 Explanation: A web server is responsible for storing and managing website files. It responds to
@@ -537,7 +517,7 @@ b. To control the visual appearance of web pages
 c. To handle client-side scripting
 d. To ensure secure data transmission over the web
 Answer: a. To store and retrieve user preferences and session information
-25 | P a g eExplanation: Cookies are used in web development to store and retrieve user preferences and
+Explanation: Cookies are used in web development to store and retrieve user preferences and
 session information. They allow websites to remember user-specific data between different
 browsing sessions.
 58.Which programming language is used for server-side scripting in web development?
@@ -558,7 +538,7 @@ Answer: c. To provide a foundation and structure for developing web applications
 Explanation: A framework in web development provides a foundation and structure for
 developing web applications. It offers predefined libraries, tools, and conventions to simplify and
 accelerate development.
-26 | P a g e60.Which programming language is often used for building scalable and high-performance web
+60.Which programming language is often used for building scalable and high-performance web
 applications?
 a. HTML
 b. CSS
@@ -578,7 +558,7 @@ asynchronous communication between the client and server. It allows for updating
 page without requiring a full page reload.
 62.Which format is commonly used for data interchange between a web server and a web
 application?
-27 | P a g ea. HTML
+a. HTML
 b. CSS
 c. JSON
 d. XML
@@ -600,7 +580,7 @@ frequently accessed data or resources?
 a. Compression
 b. Minification
 c. Caching
-28 | P a g ed. Encryption
+d. Encryption
 Answer: c. Caching
 Explanation: Caching is a technique used to improve the performance of web applications by
 storing and retrieving frequently accessed data or resources. It reduces the need to fetch data
@@ -620,7 +600,7 @@ b. To handle client-side scripting
 c. To ensure secure data transmission over the web
 d. To provide a standardized interface for accessing and manipulating web resources
 Answer: d. To provide a standardized interface for accessing and manipulating web resources
-29 | P a g eExplanation: A RESTful API (Representational State Transfer) is used in web development to
+Explanation: A RESTful API (Representational State Transfer) is used in web development to
 provide a standardized interface for accessing and manipulating web resources. It allows clients
 to perform CRUD (Create, Read, Update, Delete) operations on resources using HTTP methods.
 67.What is the purpose of responsive web design?
@@ -642,7 +622,7 @@ Answer: d. To track changes to source code and collaborate on web development pr
 Explanation: Version control systems (VCS) are used in web development to track changes to
 source code and collaborate on web development projects. They allow multiple developers to
 work on the same codebase, manage changes, and resolve conflicts.
-30 | P a g e69.Which web development concept refers to the practice of optimizing a website to rank higher
+69.Which web development concept refers to the practice of optimizing a website to rank higher
 in search engine results?
 a. Accessibility
 b. Usability
@@ -662,9 +642,10 @@ Answer: d. Web application security testing
 Explanation: Web application security testing is used to identify and protect web applications
 against common security vulnerabilities, such as cross-site scripting (XSS) and SQL injection. It
 involves various testing techniques to identify and fix potential security flaws.
+
 71.Which server-side scripting language is commonly used for web development?
 a. HTML
-31 | P a g eb. CSS
+b. CSS
 c. JavaScript
 d. PHP
 Answer: d. PHP
@@ -685,7 +666,7 @@ a. To control the visual appearance of web pages
 b. To handle client-side interactivity
 c. To generate dynamic content and interact with databases
 d. To ensure secure data transmission over the web
-32 | P a g eAnswer: c. To generate dynamic content and interact with databases
+Answer: c. To generate dynamic content and interact with databases
 Explanation: Server-side scripting languages are used to generate dynamic content, process form
 data, and interact with databases on the server side of web applications.
 74.Which of the following is a server-side scripting language for Microsoft's ASP.NET
@@ -705,7 +686,7 @@ d. PHP
 Answer: c. JavaScript
 Explanation: JavaScript is a client-side scripting language supported by all modern web
 browsers. It allows for interactivity and dynamic behavior on web pages.
-33 | P a g e76.What is the purpose of client-side scripting languages in web development?
+76.What is the purpose of client-side scripting languages in web development?
 a. To control the visual appearance of web pages
 b. To handle server-side processing and database interactions
 c. To generate dynamic content and interact with databases
@@ -726,7 +707,7 @@ elements.
 78.Which client-side scripting language is often used for validating form inputs on web pages?
 a. HTML
 b. CSS
-34 | P a g ec. JavaScript
+c. JavaScript
 d. PHP
 Answer: c. JavaScript
 Explanation: JavaScript is often used for validating form inputs on web pages. It allows for
@@ -748,7 +729,7 @@ a. jQuery
 b. React
 c. Angular
 d. Vue.js
-35 | P a g eAnswer: b. React
+Answer: b. React
 Explanation: React is a popular client-side JavaScript library for building responsive and
 interactive user interfaces. It follows a component-based approach and is widely used in web
 development.
@@ -768,7 +749,7 @@ b. Local storage
 c. Session storage
 d. IndexedDB
 Answer: b. Local storage
-36 | P a g eExplanation: Local storage is a client-side technique used to store data locally in a user's
+Explanation: Local storage is a client-side technique used to store data locally in a user's
 browser. It provides a larger storage capacity than cookies and can be accessed across multiple
 browser sessions.
 83.Which technique is used to optimize web page loading speed by combining and minifying
@@ -791,7 +772,7 @@ Answer: a. Event handling
 Explanation: Event handling is a client-side technique used to handle and process user
 interactions, such as mouse clicks or keyboard inputs. It allows for executing JavaScript code in
 response to specific events.
-37 | P a g e85.Which client-side technique is used to ensure that a web page displays correctly across
+85.Which client-side technique is used to ensure that a web page displays correctly across
 different devices and screen sizes?
 a. Event handling
 b. Form validation
@@ -813,7 +794,7 @@ browser and a server in JSON format. It enables asynchronous communication witho
 a full page reload.
 87.Which client-side technique is used to enhance the user interface by providing interactive
 tooltips, modals, and other components?
-38 | P a g ea. jQuery
+a. jQuery
 b. React
 c. Angular
 d. Vue.js
@@ -834,7 +815,7 @@ elements.
 89.Which client-side technique is used to optimize web page loading speed by preloading
 resources in advance?
 a. Compression
-39 | P a g eb. Minification
+b. Minification
 c. Caching
 d. Preloading
 Answer: d. Preloading
@@ -856,7 +837,7 @@ a. To control the visual appearance of web pages
 b. To handle server-side processing and database interactions
 c. To specify the structure and content of web pages
 d. To add interactivity and dynamic behavior to web pages
-40 | P a g eAnswer: c. To specify the structure and content of web pages
+Answer: c. To specify the structure and content of web pages
 Explanation: HTML (Hypertext Markup Language) is used to specify the structure and content
 of web pages. It defines the elements and tags that organize and display information on a
 website.
@@ -876,7 +857,7 @@ d. <a>
 Answer: c. <p>
 Explanation: The <p> element is used to create a paragraph in a web page. It represents a block
 of text or content.
-41 | P a g e94.Which HTML element is used to create an unordered list in a web page?
+94.Which HTML element is used to create an unordered list in a web page?
 a. <ul>
 b. <li>
 c. <ol>
@@ -896,7 +877,7 @@ to another page or location when clicked.
 a. color
 b. font-size
 c. margin
-42 | P a g ed. padding
+d. padding
 Answer: c. margin
 Explanation: The margin property in CSS is used to control the spacing between elements in a
 web page. It defines the space outside the border of an element.
@@ -914,7 +895,7 @@ b. font-size
 c. margin
 d. padding
 Answer: b. font-size
-43 | P a g eExplanation: The font-size property in CSS is used to change the size of text in a web page. It
+Explanation: The font-size property in CSS is used to change the size of text in a web page. It
 can be specified in pixels, percentages, or other units.
 99.Which CSS property is used to align content vertically within its container?
 a. text-align
@@ -934,7 +915,7 @@ Explanation: The border property in CSS is used to create a border around an ele
 page. It can specify the border width, style, and color.
 101.Which CSS property is used to control the space inside the border of an element in a web
 page?
-44 | P a g ea. color
+a. color
 b. font-size
 c. margin
 d. padding
@@ -956,7 +937,7 @@ a. To control the visual appearance of web pages
 b. To handle server-side processing and database interactions
 c. To specify the structure and content of web pages
 d. To add interactivity and dynamic behavior to web pages
-45 | P a g eAnswer: b. To handle server-side processing and database interactions
+Answer: b. To handle server-side processing and database interactions
 Explanation: Databases are used in web programming to handle server-side processing, store and
 retrieve data, and interact with web applications. They provide a structured way to manage and
 organize information.
@@ -975,7 +956,7 @@ b. CSS
 c. JavaScript
 d. PHP
 Answer: d. PHP
-46 | P a g eExplanation: PHP (Hypertext Preprocessor) is a commonly used programming language for
+Explanation: PHP (Hypertext Preprocessor) is a commonly used programming language for
 server-side scripting in web programming. It enables dynamic content generation and database
 interactions.
 106.Which HTML form element is used to create a text input field?
@@ -995,7 +976,7 @@ Answer: b. <input type="checkbox">
 Explanation: The <input type="checkbox"> element is used to create a checkbox in an HTML
 form. It allows users to select multiple options from a list.
 108.Which HTML form element is used to create a radio button?
-47 | P a g ea. <input type="text">
+a. <input type="text">
 b. <input type="checkbox">
 c. <input type="radio">
 d. <input type="submit">
@@ -1016,7 +997,7 @@ a. HTML
 b. CSS
 c. JavaScript
 d. PHP
-48 | P a g eAnswer: c. JavaScript
+Answer: c. JavaScript
 Explanation: JavaScript is commonly used as a client-side technique to validate form input
 before submitting it to the server. It allows you to perform validation checks on user input and
 provide feedback to the user.
@@ -1036,7 +1017,7 @@ b. FTP
 c. TCP/IP
 d. SMTP
 Answer: a. HTTP
-49 | P a g eExplanation: HTTP (Hypertext Transfer Protocol) is the standard protocol used for
+Explanation: HTTP (Hypertext Transfer Protocol) is the standard protocol used for
 communication between a web client (such as a browser) and server in web programming. It
 defines how data is formatted and transmitted between the client and server.
 113.Which method in HTTP is used to retrieve a resource from a server?
@@ -1057,7 +1038,7 @@ Answer: b. POST
 Explanation: The POST method in HTTP is used to send data to a server for processing. It is
 commonly used when submitting forms or uploading files to a server.
 115.Which HTTP status code indicates a successful request?
-50 | P a g ea. 200
+a. 200
 b. 300
 c. 400
 d. 500
@@ -1077,7 +1058,7 @@ a. The ability of the server to handle multiple clients simultaneously
 b. The ability of the client to handle multiple servers simultaneously
 c. The ability of the server to handle multiple requests from a single client
 d. The ability of the client to handle multiple requests to a single server
-51 | P a g eAnswer: a. The ability of the server to handle multiple clients simultaneously
+Answer: a. The ability of the server to handle multiple clients simultaneously
 Explanation: Concurrency in client-server systems refers to the ability of the server to handle
 multiple clients simultaneously. It involves managing and coordinating multiple client
 connections and requests efficiently.
@@ -1099,7 +1080,7 @@ a. Mutex locks
 b. Spinlocks
 c. Semaphores
 d. Message queues
-52 | P a g eAnswer: a. Mutex locks
+Answer: a. Mutex locks
 Explanation: Mutex locks are commonly used synchronization techniques to prevent race
 conditions in client-server systems. They allow mutually exclusive access to shared resources,
 ensuring that only one thread or process can access the resource at a time.
@@ -1119,7 +1100,7 @@ b. FTP
 c. TCP/IP
 d. WebSocket
 Answer: d. WebSocket
-53 | P a g eExplanation: WebSocket is a protocol commonly used for asynchronous communication between
+Explanation: WebSocket is a protocol commonly used for asynchronous communication between
 a client and server. It enables real-time, full-duplex communication, allowing both the client and
 server to send messages to each other asynchronously.
 122.What is long polling in client-server communication?
@@ -1142,7 +1123,7 @@ Answer: d. PHP
 Explanation: PHP (Hypertext Preprocessor) is a commonly used programming language for
 server-side scripting in web programming. It allows you to add dynamic functionality to web
 pages and interact with databases.
-54 | P a g e124.Which programming language is commonly used for client-side scripting in web
+124.Which programming language is commonly used for client-side scripting in web
 programming?
 a. HTML
 b. CSS
@@ -1162,7 +1143,7 @@ encryption to ensure secure communication between a client and server. It is com
 sensitive data transfer, such as online transactions.
 126.What is a load balancer in the context of client-server systems?
 a. A device that balances the load between multiple clients
-55 | P a g eb. A device that balances the load between multiple servers
+b. A device that balances the load between multiple servers
 c. A device that balances the load between the client and server
 d. A device that balances the load between different network protocols
 Answer: b. A device that balances the load between multiple servers
@@ -1183,7 +1164,7 @@ a. A programming language for server-side scripting
 b. A database management system
 c. A technique for asynchronous client-server communication
 d. A web server software
-56 | P a g eAnswer: c. A technique for asynchronous client-server communication
+Answer: c. A technique for asynchronous client-server communication
 Explanation: AJAX (Asynchronous JavaScript and XML) is a technique for asynchronous client-
 server communication in web programming. It allows web pages to update content dynamically
 without requiring a full page reload.
@@ -1203,7 +1184,7 @@ c. A technique to store frequently accessed server-side data in memory for faste
 d. A technique to store client and server data in a separate cache server
 Answer: c. A technique to store frequently accessed server-side data in memory for faster
 retrieval
-57 | P a g eExplanation: Server-side caching is a technique to store frequently accessed server-side data in
+Explanation: Server-side caching is a technique to store frequently accessed server-side data in
 memory for faster retrieval. It helps improve the performance of client-server systems by
 reducing the need for repeated processing or database queries
 Fundamental of Database Systems
@@ -1222,7 +1203,7 @@ b. A foreign key from another table
 c. A non-unique attribute in a table
 d. A combination of attributes in a table
 Answer: a. A unique identifier for a row in a table
-58 | P a g eExplanation: A primary key is a unique identifier for a row in a table. It uniquely identifies each
+Explanation: A primary key is a unique identifier for a row in a table. It uniquely identifies each
 record and ensures its uniqueness and integrity within the table.
 133.What is the purpose of foreign keys in a relational database?
 a. To establish relationships between tables
@@ -1243,7 +1224,7 @@ Answer: c. Third normal form (3NF)
 Explanation: Third normal form (3NF) ensures that all dependencies on the primary key are fully
 functional dependencies. It eliminates transitive dependencies and helps reduce data redundancy.
 135.What is a composite key in database design?
-59 | P a g ea. A primary key made up of multiple attributes
+a. A primary key made up of multiple attributes
 b. A foreign key that references multiple tables
 c. A unique identifier for a column in a table
 d. A key used for data encryption
@@ -1264,7 +1245,7 @@ values and their corresponding pointers to the actual data.
 a. A database table that stores user information
 b. A collection of tables in a database
 c. A file system used to store database files
-60 | P a g ed. A repository of metadata about the database structure
+d. A repository of metadata about the database structure
 Answer: d. A repository of metadata about the database structure
 Explanation: A data dictionary in database design is a repository of metadata that describes the
 structure, definitions, and relationships of the database. It contains information about tables,
@@ -1283,7 +1264,7 @@ b. To ensure data consistency and integrity across related tables
 c. To improve query performance
 d. To encrypt sensitive data
 Answer: b. To ensure data consistency and integrity across related tables
-61 | P a g eExplanation: Referential integrity in a database ensures that relationships between tables are
+Explanation: Referential integrity in a database ensures that relationships between tables are
 maintained, and data consistency and integrity are preserved. It enforces rules such as preventing
 the deletion of a record referenced by another record.
 140.What is denormalization in database design?
@@ -1304,7 +1285,7 @@ Answer: b. To store complex queries for reuse
 Explanation: A view in a database is a virtual table that is based on the result of a query. It
 allows you to store complex queries and reuse them as if they were regular tables.
 142.Which database model represents data as a collection of objects?
-62 | P a g ea. Hierarchical model
+a. Hierarchical model
 b. Relational model
 c. Object-oriented model
 d. Network model
@@ -1325,7 +1306,7 @@ maintenance, and reduce the likelihood of data anomalies.
 key, the whole primary key, and nothing but the primary key?
 a. First normal form (1NF)
 b. Second normal form (2NF)
-63 | P a g ec. Third normal form (3NF)
+c. Third normal form (3NF)
 d. Boyce-Codd normal form (BCNF)
 Answer: d. Boyce-Codd normal form (BCNF)
 Explanation: Boyce-Codd normal form (BCNF) is achieved when all non-key attributes are
@@ -1346,7 +1327,7 @@ b. To enforce data integrity constraints
 c. To improve data retrieval performance
 d. To ensure data consistency
 Answer: c. To improve data retrieval performance
-64 | P a g eExplanation: Database indexing is used to improve data retrieval performance by creating a
+Explanation: Database indexing is used to improve data retrieval performance by creating a
 separate data structure that allows for faster searching and sorting of data.
 146.Which database model represents data as a collection of tables with rows and columns?
 a. Hierarchical model
@@ -1366,7 +1347,7 @@ Answer: c. To define the structure and organization of a database
 Explanation: A database schema defines the structure and organization of a database. It includes
 definitions of tables, columns, data types, constraints, relationships, and more.
 148.What is the role of a database administrator (DBA) in database management?
-65 | P a g ea. To design and implement the database schema
+a. To design and implement the database schema
 b. To write complex SQL queries
 c. To manage and maintain the database system
 d. To develop database applications
@@ -1388,7 +1369,7 @@ one or more children.
 a. Defining relationships between tables
 b. Determining the database schema
 c. Analyzing the information requirements
-66 | P a g ed. Creating database queries
+d. Creating database queries
 Answer: c. Analyzing the information requirements
 Explanation: The first step in the database design process is to analyze the information
 requirements of the system. This involves understanding the data that needs to be stored, the
@@ -1408,7 +1389,7 @@ b. To decrease data integrity
 c. To eliminate data duplication
 d. To simplify data retrieval
 Answer: c. To eliminate data duplication
-67 | P a g eExplanation: The purpose of normalization in database design is to eliminate data duplication
+Explanation: The purpose of normalization in database design is to eliminate data duplication
 and reduce redundancy. It helps ensure data consistency, minimize storage space, and simplify
 data maintenance.
 153.Which of the following is a benefit of using database indexes?
@@ -1429,7 +1410,7 @@ Answer: b. To ensure data consistency and integrity
 Explanation: Referential integrity in database design ensures that relationships between tables
 are maintained, and data consistency and integrity are preserved. It enforces rules such as
 preventing the deletion of a record referenced by another record.
-68 | P a g e155.Which of the following is an example of a candidate key in database design?
+155.Which of the following is an example of a candidate key in database design?
 a. Social Security Number (SSN)
 b. Employee Name
 c. Employee ID
@@ -1449,7 +1430,7 @@ defines a link between the primary key of one table and a corresponding column i
 157.Which of the following database design principles promotes data independence?
 a. Entity-Relationship (ER) modeling
 b. Normalization
-69 | P a g ec. Database indexing
+c. Database indexing
 d. Data abstraction
 Answer: d. Data abstraction
 Explanation: Data abstraction is a database design principle that promotes data independence by
@@ -1470,7 +1451,7 @@ b. Employee Name → Employee ID
 c. Employee Salary → Employee Department
 d. Employee Department → Employee Salary
 Answer: a. Employee ID → Employee Name
-70 | P a g eExplanation: Functional dependency defines the relationship between attributes in a database. In
+Explanation: Functional dependency defines the relationship between attributes in a database. In
 this case, the Employee ID uniquely determines the Employee Name, indicating a functional
 dependency.
 160.What is the purpose of a data dictionary in database design?
@@ -1492,7 +1473,7 @@ Answer: a. Easy integration with external systems
 Explanation: One of the advantages of using an RDBMS is its ability to easily integrate with
 external systems. RDBMSs provide standard interfaces and support for SQL, making it simpler
 to interact with other applications and databases.
-71 | P a g e162.What is the purpose of a transaction in database management?
+162.What is the purpose of a transaction in database management?
 a. To secure the database from unauthorized access
 b. To optimize query performance
 c. To manage concurrent access to data
@@ -1511,7 +1492,7 @@ Explanation: A composite key is a key that consists of multiple attributes. In t
 Product SKU, which is composed of several attributes, can uniquely identify a product.
 164.What is the purpose of data validation in database design?
 a. To enforce referential integrity constraints
-72 | P a g eb. To improve query performance
+b. To improve query performance
 c. To eliminate data redundancy
 d. To ensure data integrity and quality
 Answer: d. To ensure data integrity and quality
@@ -1532,7 +1513,7 @@ primary key.
 a. To enforce data constraints
 b. To optimize query performance
 c. To define the structure and organization of a database
-73 | P a g ed. To represent real-world entities and their relationships
+d. To represent real-world entities and their relationships
 Answer: d. To represent real-world entities and their relationships
 Explanation: Data modeling in database design is the process of representing real-world entities,
 their attributes, and their relationships in a structured manner. It helps visualize and understand
@@ -1552,7 +1533,7 @@ b. To create database backups
 c. To insert, update, and delete data
 d. To manage concurrent access to data
 Answer: c. To insert, update, and delete data
-74 | P a g eExplanation: Data manipulation in database management involves performing operations to
+Explanation: Data manipulation in database management involves performing operations to
 insert, update, and delete data in the database. It allows for data modification and maintenance.
 169.What is the role of a database administrator (DBA) in database management?
 a. To design and implement the database schema
@@ -1574,7 +1555,7 @@ schema that effectively represents real-world entities, their attributes, and th
 aims to capture the essential characteristics of the domain being modeled.
 171.Which of the following is a consideration when designing a database system for a large e-
 commerce website?
-75 | P a g ea. High availability and scalability
+a. High availability and scalability
 b. Minimal data redundancy
 c. Fast data retrieval
 d. Secure user authentication
@@ -1595,7 +1576,7 @@ individuals cannot access or decipher the data.
 173.Which of the following techniques can be used to improve query performance in a database
 system?
 a. Indexing
-76 | P a g eb. Data replication
+b. Data replication
 c. Denormalization
 d. Partitioning
 Answer: a. Indexing
@@ -1617,7 +1598,7 @@ a. First Normal Form (1NF)
 b. Second Normal Form (2NF)
 c. Third Normal Form (3NF)
 d. Boyce-Codd Normal Form (BCNF)
-77 | P a g eAnswer: c. Third Normal Form (3NF)
+Answer: c. Third Normal Form (3NF)
 Explanation: The Third Normal Form (3NF) in database normalization aims to eliminate
 transitive dependencies by ensuring that non-key attributes depend only on the primary key and
 not on other non-key attributes.
@@ -1637,7 +1618,7 @@ b. Consistency
 c. Isolation
 d. Durability
 Answer: a. Atomicity
-78 | P a g eExplanation: Atomicity is a principle of database design that ensures the accurate recording of
+Explanation: Atomicity is a principle of database design that ensures the accurate recording of
 monetary transactions in a financial system. It guarantees that all the operations within a
 transaction are treated as a single unit, either fully completed or fully rolled back in case of
 failures.
@@ -1658,7 +1639,7 @@ b. Full-text search capabilities
 c. Content categorization and tagging
 d. Distributed database architecture
 Answer: c. Content categorization and tagging
-79 | P a g eExplanation: Content categorization and tagging are important features in a CMS database
+Explanation: Content categorization and tagging are important features in a CMS database
 system for managing relationships between content items. They enable the organization and
 retrieval of content based on categories and tags, facilitating content navigation and search.
 180.Which database design technique is used to represent a hierarchical structure of data
@@ -1681,7 +1662,7 @@ Answer: c. Enhanced data integrity
 Explanation: Database normalization improves data integrity by reducing data redundancy and
 ensuring that each data element is stored in only one place. This eliminates anomalies and
 inconsistencies in data and promotes data integrity.
-80 | P a g e182.Which database design concept allows the division of a large database into smaller,
+182.Which database design concept allows the division of a large database into smaller,
 manageable units?
 a. Data partitioning
 b. Database replication
@@ -1702,7 +1683,7 @@ Explanation: Entity-Relationship (ER) modeling is used to capture the relationsh
 entities in a graphical representation. It uses entities, attributes, and relationships to describe the
 structure of a database system.
 184.What is the purpose of a data dictionary in database design?
-81 | P a g ea. To store user credentials
+a. To store user credentials
 b. To manage database backups
 c. To define the structure and attributes of data elements
 d. To enforce referential integrity constraints
@@ -1723,7 +1704,7 @@ specific entity with its own set of attributes and behaviors.
 a. Combining multiple classes into a single entity
 b. Hiding the internal details of an object
 c. Establishing relationships between objects
-82 | P a g ed. Defining the inheritance hierarchy
+d. Defining the inheritance hierarchy
 Answer: b. Hiding the internal details of an object
 Explanation: Encapsulation in the object-oriented model refers to the practice of hiding the
 internal details of an object and providing access to only the necessary information and
@@ -1744,7 +1725,7 @@ b. Abstraction
 c. Encapsulation
 d. Inheritance
 Answer: a. Polymorphism
-83 | P a g eExplanation: Polymorphism in the object-oriented model allows different classes to share the
+Explanation: Polymorphism in the object-oriented model allows different classes to share the
 same method name but with different implementations. It enables objects of different classes to
 be treated as objects of a common superclass.
 189.The process of combining data and methods into a single entity is known as:
@@ -1765,7 +1746,7 @@ Answer: c. The interactions between objects
 Explanation: In the object-oriented model, association represents the interactions between
 objects. It defines the relationships between objects and allows them to communicate and
 exchange information.
-84 | P a g e191.Which concept in the object-oriented model ensures that objects of different classes can be
+191.Which concept in the object-oriented model ensures that objects of different classes can be
 treated as objects of the same superclass?
 a. Polymorphism
 b. Inheritance
@@ -1785,7 +1766,7 @@ Explanation: Abstraction in the object-oriented model is used to hide the intern
 object and provide a simplified interface for interacting with the object. It focuses on the
 essential features of an object and suppresses unnecessary complexity.
 193.The concept of polymorphism allows objects to:
-85 | P a g ea. Inherit attributes from multiple classes
+a. Inherit attributes from multiple classes
 b. Change their class dynamically at runtime
 c. Access private methods of other objects
 d. Be treated as objects of different classes
@@ -1807,7 +1788,7 @@ a. Rollback recovery
 b. Redo recovery
 c. Checkpoint recovery
 d. Restart recovery
-86 | P a g eAnswer: a. Rollback recovery
+Answer: a. Rollback recovery
 Explanation: Rollback recovery involves undoing the effects of incomplete or failed transactions
 to restore the database to a previous consistent state. It uses transaction logs to identify and
 reverse the changes made by these transactions.
@@ -1828,7 +1809,7 @@ b. Redo recovery
 c. Rollback recovery
 d. Restart recovery
 Answer: a. Checkpoint recovery
-87 | P a g eExplanation: Checkpoint recovery involves creating checkpoints at regular intervals to save the
+Explanation: Checkpoint recovery involves creating checkpoints at regular intervals to save the
 current state of the database and transaction logs. It helps to speed up the recovery process by
 reducing the amount of log records to be processed.
 198.Which recovery method involves restarting the system and recovering the database by
@@ -1851,7 +1832,7 @@ Answer: a. Backup recovery
 Explanation: Backup recovery involves restoring the database from a backup copy taken prior to
 the failure. It is typically used in situations where the database has experienced a catastrophic
 failure.
-88 | P a g e200.Which recovery method is used to recover the database after a media failure, such as a disk
+200.Which recovery method is used to recover the database after a media failure, such as a disk
 crash?
 a. Backup recovery
 b. Redo recovery
@@ -1871,7 +1852,7 @@ by committed transactions from a log file. However, it requires additional stora
 the log files.
 202.Which recovery method is focused on ensuring that all committed changes are durable and
 can survive system failures?
-89 | P a g ea. Redo recovery
+a. Redo recovery
 b. Restart recovery
 c. Rollback recovery
 d. Checkpoint recovery
@@ -5797,7 +5778,7 @@ the search process towards a goal or solution.
 a. They guarantee finding the optimal solution.
 b. They reduce the search space and speed up the search process.
 c. They eliminate the need for search algorithms.
-271 | P a g ed. They ensure a systematic exploration of the search space.
+d. They ensure a systematic exploration of the search space.
 Answer: b. They reduce the search space and speed up the search process.
 Explanation: Heuristics help in reducing the search space by guiding the search towards the most
 promising paths, thereby speeding up the search process.
@@ -5818,7 +5799,7 @@ d. Dominance heuristic
 Answer: a. Admissible heuristic
 Explanation: An admissible heuristic is one that never overestimates the actual cost to reach the
 goal. It provides a lower bound on the cost.
-272 | P a g e648.Which algorithm combines the use of heuristics and backward search to solve problems?
+648.Which algorithm combines the use of heuristics and backward search to solve problems?
 a. Depth-first search
 b. Breadth-first search
 c. A* search algorithm
@@ -5840,7 +5821,7 @@ a. Minimax algorithm
 b. Alpha-beta pruning
 c. Monte Carlo simulation
 d. Evaluation function
-273 | P a g eAnswer: d. Evaluation function
+Answer: d. Evaluation function
 Explanation: An evaluation function uses heuristics to assign a desirability score to a game state,
 helping the AI determine the best move to make.
 651.What is the purpose of using heuristics in game tree search algorithms?
@@ -5862,7 +5843,7 @@ Explanation: The material heuristic evaluates a game state based on the number a
 pieces or territories controlled by each player.
 653.Which heuristic evaluates a game state by considering the available moves and options for
 each player?
-274 | P a g ea. Material heuristic
+a. Material heuristic
 b. Mobility heuristic
 c. Distance heuristic
 d. Tactical heuristic
@@ -5903,7 +5884,7 @@ b. Scheduler
 c. File system
 d. Device drivers
 Answer: d. Device drivers
-276 | P a g eExplanation: Device drivers are responsible for managing input and output operations of
+Explanation: Device drivers are responsible for managing input and output operations of
 hardware devices, such as keyboards, mice, printers, and disks, in an operating system.
 658.What is the role of the file system in an operating system?
 a. To manage system resources and allocate them to processes
@@ -5947,7 +5928,7 @@ Answer: c. To act as an interface between the user and the operating system kern
 Explanation: The shell is a command-line interface that acts as an intermediary between the user
 and the operating system kernel, allowing users to interact with the system and execute
 commands.
-278 | P a g e663.What is the primary purpose of process synchronization in an operating system?
+663.What is the primary purpose of process synchronization in an operating system?
 a. To prevent deadlock situations
 b. To ensure fair allocation of system resources
 c. To enable parallel execution of multiple processes
@@ -5992,7 +5973,7 @@ Explanation: An operating system provides file management features that allow us
 files in directories or folders, providing a convenient way to access and manage files.
 668.What is the role of device drivers in an operating system's convenience factor?
 a. They allow users to customize the appearance of the graphical user interface.
-280 | P a g eb. They provide compatibility with a wide range of hardware devices.
+b. They provide compatibility with a wide range of hardware devices.
 c. They optimize system performance for resource-intensive applications.
 d. They enhance data security and encryption for sensitive files.
 Answer: b. They provide compatibility with a wide range of hardware devices.
@@ -6013,7 +5994,7 @@ b. The ability to support multiple programming languages
 c. The ability to handle increasing workloads and resources
 d. The ability to provide a user-friendly interface
 Answer: c. The ability to handle increasing workloads and resources
-281 | P a g eExplanation: Scalability refers to the operating system's capability to handle increasing
+Explanation: Scalability refers to the operating system's capability to handle increasing
 workloads and resources efficiently, allowing the system to accommodate growing demands.
 671.How does an operating system ensure convenience in terms of software installation and
 management?
@@ -6036,7 +6017,7 @@ failures and errors swiftly, minimizing downtime and ensuring system availabilit
 673.How does an operating system support the ability to evolve in terms of software
 compatibility?
 a. By providing a wide range of pre-installed software applications
-282 | P a g eb. By offering backward compatibility for legacy software
+b. By offering backward compatibility for legacy software
 c. By optimizing the execution speed of software applications
 d. By allowing users to customize system settings and preferences
 Answer: b. By offering backward compatibility for legacy software
@@ -6059,7 +6040,7 @@ d. Mutual inclusion, hold and wait, preemption, and circular wait.
 Answer: a. Mutual exclusion, hold and wait, no preemption, and circular wait.
 Explanation: Deadlock can occur when four conditions are simultaneously present: mutual
 exclusion (resources can be held by only one process at a time), hold and wait (a process holding
-283 | P a g ea resource is waiting for another resource), no preemption (resources cannot be forcibly taken
+a resource is waiting for another resource), no preemption (resources cannot be forcibly taken
 from processes), and circular wait (a circular chain of processes exists, each holding a resource
 requested by the next process in the chain).
 676.What is mutual exclusion in the context of deadlock?
@@ -6083,7 +6064,7 @@ another resource that is currently being held by another process. This condition
 deadlock if resources are not released in a proper order.
 678.What is preemption in the context of deadlock prevention?
 a. It is the condition where a process holds a resource while waiting for another resource.
-284 | P a g eb. It is the condition where a process waits indefinitely for a resource.
+b. It is the condition where a process waits indefinitely for a resource.
 c. It is the condition where multiple processes can access the same resource simultaneously.
 d. It is the condition where a resource can be forcibly taken from a process.
 Answer: d. It is the condition where a resource can be forcibly taken from a process.
@@ -6106,7 +6087,7 @@ a. Deadlock avoidance
 b. Deadlock detection and recovery
 c. Deadlock prevention
 d. Deadlock acceptance
-285 | P a g eAnswer: d. Deadlock acceptance
+Answer: d. Deadlock acceptance
 Explanation: Deadlock acceptance is not a method to handle deadlock. The common methods to
 handle deadlock are deadlock avoidance (preventing the occurrence of deadlock), deadlock
 detection and recovery (detecting deadlocked processes and recovering from the deadlock), and
@@ -6344,7 +6325,7 @@ b. Direct memory access (DMA)
 c. Interrupt-driven I/O
 d. I/O polling
 Answer: d. I/O polling
-296 | P a g eExplanation: I/O polling involves the CPU repeatedly checking the status of an I/O device until
+Explanation: I/O polling involves the CPU repeatedly checking the status of an I/O device until
 data transfer is complete.
 709.Which standard I/O interface is commonly used in UNIX-like operating systems?
 a. ASCII
@@ -7243,7 +7224,7 @@ b. Queue
 c. Hash Table
 d. Linked List
 Answer: c. Hash Table
-337 | P a g eExplanation: Hash tables are commonly used data structures in symbol tables during the
+Explanation: Hash tables are commonly used data structures in symbol tables during the
 compilation process. They provide efficient lookup and retrieval of symbols based on their
 names.
 814.Which phase of the compiler performs optimization techniques to improve the efficiency of
@@ -7266,7 +7247,7 @@ Explanation: Syntax analysis is not an optimization technique performed by a com
 phase of the compiler that focuses on analyzing the syntax of the source code.
 816.Which phase of the compiler generates the target code?
 a. Lexical Analysis
-338 | P a g eb. Syntax Analysis
+b. Syntax Analysis
 c. Semantic Analysis
 d. Code Generation
 Answer: d. Code Generation
@@ -7312,7 +7293,7 @@ a. Lexical Analysis
 b. Syntax Analysis
 c. Semantic Analysis
 d. Code Generation
-340 | P a g eAnswer: c. Semantic Analysis
+Answer: c. Semantic Analysis
 Explanation: The semantic analysis phase of the compiler is responsible for type checking,
 symbol table management, and other tasks related to the meaning and correctness of the
 program.
@@ -7378,4 +7359,3 @@ Answer: a. Assigning a floating-point value to an integer variable.
 Explanation: Type coercion or type conversion refers to the automatic or explicit conversion of
 one type to another, such as assigning a floating-point value to an integer variable, where the
 value is converted to the integer type based on the rules defined by the programming language.
-343 | P a g e344 | P a g e
