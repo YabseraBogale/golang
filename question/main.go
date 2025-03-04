@@ -1,8 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"regexp"
 	"strings"
@@ -15,15 +15,18 @@ type MCQ struct {
 	Explanation string            `json:"explanation"`
 }
 
-func extractMCQs(text string) []MCQ {
-	var mcqs []MCQ
+func main() {
+	file, err := os.ReadFile("mcqs.txt")
+	if err != nil {
+		log.Println(err)
+	}
 	pattern := regexp.MustCompile(`(?m)(?P<question>\d+\.\s.*?\?)\s*\n\s*(?P<choices>(?:[a-d]\..*?\n)+)\s*Answer:\s*(?P<answer>[a-d])\..*?\n\s*Explanation:\s*(?P<explanation>.*?)\n\n`)
 
+	text := string(file)
 	matches := pattern.FindAllStringSubmatch(text, -1)
 	if matches == nil {
-		return mcqs
+		fmt.Println("no match")
 	}
-
 	for _, match := range matches {
 		choicesText := strings.TrimSpace(match[2])
 		choicesLines := strings.Split(choicesText, "\n")
@@ -34,30 +37,12 @@ func extractMCQs(text string) []MCQ {
 			}
 		}
 
-		mcqs = append(mcqs, MCQ{
+		fmt.Println(MCQ{
 			Question:    strings.TrimSpace(match[1]),
 			Choices:     choices,
 			Answer:      strings.TrimSpace(match[3]),
 			Explanation: strings.TrimSpace(match[4]),
 		})
 	}
-	return mcqs
-}
 
-func main() {
-	fileContent, err := os.ReadFile("mcqs.txt")
-	if err != nil {
-		fmt.Println("Error reading file:", err)
-		return
-	}
-	fmt.Println(len(fileContent))
-	mcqs := extractMCQs(string(fileContent))
-	jsonData, err := json.MarshalIndent(mcqs, "", "  ")
-	if err != nil {
-		fmt.Println("Error encoding JSON:", err)
-		return
-	}
-
-	os.WriteFile("mcqs.json", jsonData, 0644)
-	fmt.Println("MCQs extracted and saved as mcqs.json")
 }
