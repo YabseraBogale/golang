@@ -8550,5 +8550,1434 @@
         },
         "answer": "a",
         "explanation": "Type coercion or type conversion refers to the automatic or explicit conversion of one type to another, such as assigning a floating-point value to an integer variable, where the value is converted to the integer type based on the rules defined by the programming language."
+      },{
+        "question": "What is the goal of Artificial Intelligence (AI)?",
+        "choices": {
+          "A": "To create machines that can think and act like humans.",
+          "B": "To develop intelligent robots.",
+          "C": "To mimic human emotions in machines.",
+          "D": "To automate all tasks in society."
+        },
+        "answer": "A",
+        "explanation": "The primary goal of AI is to create machines that can perform tasks that typically require human intelligence, which includes thinking and acting like humans."
+      },
+      {
+        "question": "Which logic is based on binary true or false values?",
+        "choices": {
+          "A": "Propositional logic",
+          "B": "First-order logic",
+          "C": "Predicate logic",
+          "D": "Fuzzy logic"
+        },
+        "answer": "A",
+        "explanation": "Propositional logic deals with simple propositions that are either true or false. First-order and predicate logic extend this, and fuzzy logic deals with degrees of truth."
+      },
+      {
+        "question": "Which type of machine learning algorithm does not require labeled training data?",
+        "choices": {
+          "A": "Supervised learning",
+          "B": "Unsupervised learning",
+          "C": "Reinforcement learning",
+          "D": "Deep learning"
+        },
+        "answer": "B",
+        "explanation": "Unsupervised learning algorithms find patterns in unlabeled data. Supervised learning requires labeled data, and reinforcement learning uses rewards and punishments."
+      },
+      {
+        "question": "What is the process of breaking down text into smaller units called?",
+        "choices": {
+          "A": "Tokenization",
+          "B": "Stemming",
+          "C": "Part-of-speech tagging",
+          "D": "Sentiment analysis"
+        },
+        "answer": "A",
+        "explanation": "Tokenization is the process of splitting text into smaller units, such as words or phrases, called tokens. Stemming reduces words to their root form, POS tagging labels words, and sentiment analysis determines emotional tone."
+      },
+      {
+        "question": "Which knowledge representation technique uses frames and slots?",
+        "choices": {
+          "A": "Propositional logic",
+          "B": "Predicate logic",
+          "C": "Semantic networks",
+          "D": "First-order logic"
+        },
+        "answer": "C",
+        "explanation": "Semantic networks, particularly those using frames, represent knowledge using nodes (frames) and relationships (slots) to describe objects and concepts."
+      },
+        {
+        "question": "What type of learning algorithm requires labeled training data?",
+        "choices": {
+          "A": "Supervised learning",
+          "B": "Unsupervised learning",
+          "C": "Reinforcement learning",
+          "D": "Semi-supervised learning"
+        },
+        "answer": "A",
+        "explanation": "Supervised learning algorithms learn from labeled data, where each input is paired with a correct output. Unsupervised learning uses unlabeled, Reinforcement learning uses rewards, and Semi-supervised uses a mix of both."
+      },
+      {
+        "question": "What are actuators in the context of robotics?",
+        "choices": {
+          "A": "Sensors that detect the environment",
+          "B": "Algorithms for path planning",
+          "C": "Devices that perform physical actions",
+          "D": "Software agents that make decisions"
+        },
+        "answer": "C",
+        "explanation": "Actuators are devices that convert signals into physical motion, allowing robots to interact with their environment. Sensors detect the environment, algorithms plan paths, and software agents make decisions."
+      },
+      {
+        "question": "Which logic allows reasoning with uncertain or incomplete information?",
+        "choices": {
+          "A": "Propositional logic",
+          "B": "Predicate logic",
+          "C": "Fuzzy logic",
+          "D": "Modal logic"
+        },
+        "answer": "C",
+        "explanation": "Fuzzy logic deals with degrees of truth and allows for reasoning with imprecise or vague information. Propositional and predicate logic are based on binary truth, and modal logic deals with possibility and necessity."
+      },
+      {
+        "question": "Which algorithm is commonly used for decision-making in machine learning?",
+        "choices": {
+          "A": "Decision Trees",
+          "B": "Support Vector Machines (SVM)",
+          "C": "K-Means Clustering",
+          "D": "Genetic Algorithms"
+        },
+        "answer": "A",
+        "explanation": "Decision Trees are widely used for decision-making due to their ability to create a clear, hierarchical set of rules. SVMs are for classification, K-Means for clustering, and Genetic Algorithms for optimization."
+      },
+      {
+        "question": "What type of learning does an unsupervised learning algorithm use?",
+        "choices": {
+          "A": "Labeled data",
+          "B": "Feedback from a teacher",
+          "C": "Rewards and punishments",
+          "D": "Unlabeled data"
+        },
+        "answer": "D",
+        "explanation": "Unsupervised learning algorithms work with unlabeled data, finding patterns and structures without explicit guidance. Labeled data is for supervised learning, feedback is for reinforcement learning."
+      },
+      {
+        "question": "What is the process of tokenization in NLP?",
+        "choices": {
+          "A": "Converting text into a numerical representation",
+          "B": "Breaking text into individual words or tokens",
+          "C": "Identifying the subject and object in a sentence",
+          "D": "Analyzing the syntactic structure of a sentence"
+        },
+        "answer": "B",
+        "explanation": "Tokenization is the process of splitting a text into smaller units, typically words or phrases, known as tokens."
+      },
+      {
+        "question": "What is language modeling in NLP?",
+        "choices": {
+          "A": "Analyzing the sentiment of a text",
+          "B": "Translating text from one language to another",
+          "C": "Predicting the probability of a sequence of words",
+          "D": "Classifying text into predefined categories"
+        },
+        "answer": "C",
+        "explanation": "Language modeling involves predicting the likelihood of a sequence of words, which is crucial for tasks like text generation and speech recognition."
+      },
+      {
+        "question": "What are intelligent agents in the context of AI?",
+        "choices": {
+          "A": "Robots capable of learning from their environment",
+          "B": "Algorithms that make decisions based on sensor data",
+          "C": "Software programs that interact with their environment",
+          "D": "Machines capable of understanding human emotions"
+        },
+        "answer": "C",
+        "explanation": "Intelligent agents are software programs that perceive their environment through sensors and act upon it through effectors to achieve goals."
+      },
+      {
+        "question": "What does bias in AI refer to?",
+        "choices": {
+          "A": "The tendency of AI systems to favor certain groups or individuals",
+          "B": "The speed at which AI algorithms process data",
+          "C": "The complexity of AI models",
+          "D": "The compatibility of AI hardware and software"
+        },
+        "answer": "A",
+        "explanation": "Bias in AI refers to the systematic and unfair discrimination that AI systems can exhibit, often due to biases present in the training data."
+      },
+      {
+        "question": "What is an example of an AI application in computer vision?",
+        "choices": {
+          "A": "Email filtering",
+          "B": "Voice recognition",
+          "C": "Face detection",
+          "D": "Text-to-speech conversion"
+        },
+        "answer": "C",
+        "explanation": "Face detection is a core application of computer vision, which involves using AI to identify and locate faces in images or videos."
+      },
+      {
+        "question": "Which of the following cannot be considered as factors to measure the rationality of agents?",
+        "choices": {
+          "A": "Performance measures",
+          "B": "Percept sequence",
+          "C": "Knowledge about the environment",
+          "D": "None"
+        },
+        "answer": "D",
+        "explanation": "All of the provided choices are factors that are used to measure the rationality of agents. Rationality is based on performance, perception, and knowledge."
+      },
+      {
+        "question": "Which of the following is incorrect about AI systems?",
+        "choices": {
+          "A": "They should have both knowledge representation and language processing mechanisms",
+          "B": "They should have reasoning capability",
+          "C": "They should have object manipulating capabilities",
+          "D": "No need of learning and visioning capabilities"
+        },
+        "answer": "D",
+        "explanation": "AI systems often benefit from learning and vision capabilities to adapt and understand their environment. Therefore, the statement that AI systems have no need of these capabilities is incorrect."
+      },
+      {
+        "question": "Which of the following is not correct about agents in AI system?",
+        "choices": {
+          "A": "They have effectors to react with the environments",
+          "B": "Actuators are different from effectors",
+          "C": "They have sensors for information gathering from the environments",
+          "D": "The always have functions to decide based on gathered information from the environments"
+        },
+        "answer": "B",
+        "explanation": "Actuators and effectors are generally used interchangeably in the context of AI agents. They both refer to the mechanisms by which an agent interacts with its environment physically. So, the statement that they are different is incorrect."
+      },
+      {
+        "question": "Which of the following cannot be an application of AI?",
+        "choices": {
+          "A": "An expert system that involves the interaction of multiple agents",
+          "B": "Controlling systems but not for planning and scheduling systems",
+          "C": "Natural language processing systems",
+          "D": "Speech synthesis systems"
+        },
+        "answer": "B",
+        "explanation": "AI is widely used in planning and scheduling systems. Therefore, the statement claiming AI is only for controlling systems and not planning or scheduling is incorrect."
+      },
+      {
+        "question": "Which of the following is not correct about being autonomous agent?",
+        "choices": {
+          "A": "It needs already built in knowledge base",
+          "B": "Has a capability of automated learning and adapting",
+          "C": "No need of following or using rules",
+          "D": "Can modify the rules by learning"
+        },
+        "answer": "C",
+        "explanation": "Autonomous agents often operate based on rules or guidelines, even if they can learn and adapt. The idea that they have no need for rules is incorrect. They may modify or create new rules, but they don't operate without them."
+      },{
+        "question": "Which of the following cannot be the criterion to classify agent environments?",
+        "choices": {
+          "A": "The observable portion of the environment",
+          "B": "The effects of the agent action",
+          "C": "The number of agents involved",
+          "D": "None"
+        },
+        "answer": "D",
+        "explanation": "All the options (observable portion, effects of actions, number of agents) are criteria used to classify agent environments. Therefore, 'None' is incorrect."
+      },
+      {
+        "question": "An agent type which has a goal to achieve and memory can be _________.",
+        "choices": {
+          "A": "simple reflex agent",
+          "B": "utility-based agent",
+          "C": "goal-based agent",
+          "D": "model based reflex agent"
+        },
+        "answer": "C",
+        "explanation": "A goal-based agent has a goal and uses memory to track progress towards it. Model-based reflex agents use memory to keep track of the world, but are not necessarily goal-based. Utility-based agents measure how happy they are, and simple reflex agents don't have memory or goals."
+      },
+      {
+        "question": "Which of the following is not factor to easily achieve the goal by a given agent?",
+        "choices": {
+          "A": "the type environment it operates",
+          "B": "the amount of memory it has",
+          "C": "the set of action possible by the agent",
+          "D": "none"
+        },
+        "answer": "D",
+        "explanation": "All the options (environment, memory, actions) are factors that affect an agent's ability to achieve its goal. Therefore, 'None' is incorrect."
+      },
+      {
+        "question": "Which of the following is incorrect about informed and uninformed search strategies?",
+        "choices": {
+          "A": "Both have information about the path cost to goal state being in the current state.",
+          "B": "Uninformed search uses only information obtained from problem formulation",
+          "C": "Informed search can use information about path cost being in the current state.",
+          "D": "Unformed search is called blind search as it does not have information about the goal state being in the current state."
+        },
+        "answer": "A",
+        "explanation": "Uninformed search strategies do not have information about the path cost to the goal state. Only informed search strategies use such information. Therefore, 'Both have information...' is incorrect."
+      },
+      {
+        "question": "Which of the following are used in typical chess programs such as Deep Blue?",
+        "choices": {
+          "A": "alpha-beta pruning",
+          "B": "evaluation functions",
+          "C": "forward chaining",
+          "D": "genetic algorithms"
+        },
+        "answer": "A, B",
+        "explanation": "Chess programs like Deep Blue use alpha-beta pruning to reduce the search space and evaluation functions to assess the quality of board positions. Forward chaining is used in rule-based systems, and genetic algorithms are used for optimization, not core chess algorithms."
+      },
+      {
+        "question": "Which of the following search algorithms are complete and optimal?",
+        "choices": {
+          "A": "breadth-first search",
+          "B": "depth-first search",
+          "C": "depth-limited search",
+          "D": "iterative deepening search"
+        },
+        "answer": "A, D",
+        "explanation": "Breadth-first search and iterative deepening search are complete and optimal in a search space with finite branching factor and unit cost. Depth-first search is neither complete nor optimal. Depth-limited search is complete only if the goal is within the depth limit and not optimal."
+      },
+      {
+        "question": "Which of the following is incorrect about best first search strategies?",
+        "choices": {
+          "A": "It always attempts to predict how close the end of the path is to the solution being in the current state.",
+          "B": "Paths that are judged to be closer to the solution are extended first.",
+          "C": "Efficient selection of the current best candidate for extension can be implemented using priority queue.",
+          "D": "It is uninformed search strategy"
+        },
+        "answer": "D",
+        "explanation": "Best-first search is an informed search strategy because it uses heuristic information to guide the search. Therefore, saying it is uninformed is incorrect."
+      },
+        {
+        "question": "Which of the following can’t be the limitation of propositional logic?",
+        "choices": {
+          "A": "The power of the language to express context clearly.",
+          "B": "Its limitation of expressive power",
+          "C": "It deals only finite sentences",
+          "D": "It considers declarative sentences only."
+        },
+        "answer": "A",
+        "explanation": "Propositional logic is limited in its ability to express context clearly. It is known for its limited expressive power. It deals only with finite sentences and declarative sentences. Therefore, A is the correct answer."
+      },
+      {
+        "question": "Which of the following is correct representation of the sentence “Not all birds can fly” in FOL language in unknown world?",
+        "choices": {
+          "A": "x (B(x) F(x)), where x is a bird.",
+          "B": "~(x (B(x) F(x))), where x is a bird.",
+          "C": "(B(x) F(x)), where x is a bird.",
+          "D": "~x (~ (B(x) F(x))), where x is a bird."
+        },
+        "answer": "B",
+        "explanation": "The sentence “Not all birds can fly” means it is not true that all birds can fly. The correct FOL representation is ~(x (B(x) -> F(x))), which can be rewritten as ~(x (B(x) F(x))). Therefore, B is correct."
+      },
+      {
+        "question": "The sentence “For all x and all y, if x is the parent of y then y is the child of x” can be represented in FOL as__________.",
+        "choices": {
+          "A": "x,y (Parent(x,y)Child(y,x))",
+          "B": "x,y (Parent(x,y)Child(y,x))",
+          "C": "x,y (Parent(x,y) Child(y,x))",
+          "D": "x,y (Parent(x,y) Child(y,x))"
+        },
+        "answer": "A",
+        "explanation": "The correct FOL representation is x,y (Parent(x,y) -> Child(y,x)). The '->' symbol represents implication (if...then). Therefore, A is the correct answer."
+      },{
+        "question": "Assume that p, x, y, and z are int variables with x = 1, y = 10, z = -3. Which of the following is true after the following statement is executed? p= (x++ * y--) + ++z;",
+        "choices": {
+          "a": "p = 22",
+          "b": "p = 17",
+          "c": "p = 8",
+          "d": "p = 16"
+        },
+        "answer": "c",
+        "explanation": "x++ uses the current value of x (1) and then increments it. y-- uses the current value of y (10) and then decrements it. ++z increments z to -2 and then uses the new value. So, p = (1 * 10) + (-2) = 10 - 2 = 8."
+      },
+      {
+        "question": "What will happen in the following C++ code snippet? int a = 100, b = 200; int *p = &a, *q = &b; p = q;",
+        "choices": {
+          "a": "p now points to b",
+          "b": "a is assigned to b",
+          "c": "b is assigned to a",
+          "d": "q now points to a"
+        },
+        "answer": "a",
+        "explanation": "p = q; makes p point to the same memory location as q, which is the address of b. Therefore, p now points to b."
+      },
+      {
+        "question": "Which of the following best describes the statement “C++ is a case sensitive programming language”?",
+        "choices": {
+          "a": "All variables in C++ are identifiers",
+          "b": "Every C++ statement should include the header file iostream.h",
+          "c": "ExitExam and exitExam are distinct in C++",
+          "d": "Every statement in C++ ends with semicolon"
+        },
+        "answer": "c",
+        "explanation": "Case sensitivity means that uppercase and lowercase letters are treated as different characters. ExitExam and exitExam are therefore distinct identifiers."
+      },
+      {
+        "question": "Which of the following is true about the statement a=b;",
+        "choices": {
+          "a": "The value of a and b are equal",
+          "b": "The value of b is assigned to variable a and the later change on variable b will affect the value of variable a",
+          "c": "The value of variable a is assigned to variable b and the value of variable b is assigned to variable a",
+          "d": "The value of b is assigned to variable a and the later change on variable b will not affect the value of variable a"
+        },
+        "answer": "d",
+        "explanation": "In a simple assignment (a = b), the value of b is copied into a. Subsequent changes to b do not affect a."
+      },
+      {
+        "question": "Which one of the following is true statement about an algorithm?",
+        "choices": {
+          "a": "Ambiguous steps are allowed in an algorithm.",
+          "b": "Complex problems cannot have an algorithm.",
+          "c": "An algorithm may not have a beginning and an end.",
+          "d": "An algorithm should take finite amount of time to compute."
+        },
+        "answer": "d",
+        "explanation": "An algorithm must be unambiguous, handle any valid input, and terminate in a finite amount of time."
+      },
+      {
+        "question": "Which of the following will NOT increase an integer variable \"i\" by 1?",
+        "choices": {
+          "a": "i+=1;",
+          "b": "i=i+1; E. ++i;",
+          "c": "i=i+i;",
+          "d": "i++;"
+        },
+        "answer": "c",
+        "explanation": "i = i + i; doubles the value of i, it does not increment it by 1."
+      },
+        {
+        "question": "What will happen in the following C++ code snippet? int a = 100, b = 200; int *p = &a, *q = &b; p = q;",
+        "choices": {
+          "a": "p now points to b",
+          "b": "b is assigned to a",
+          "c": "a is assigned to b",
+          "d": "q now points to a"
+        },
+        "answer": "a",
+        "explanation": "p = q; makes p point to the same memory location as q, which is the address of b. Therefore, p now points to b."
+      },
+      {
+        "question": "Given three classes A, B and C, where class C is derived from class B, which is derived from class A. If those classes are public classes and found in different package, then a class C object can access",
+        "choices": {
+          "a": "Any data in C and Only Protected and public data in A and B.",
+          "b": "Protected, default and public data only in C and B.",
+          "c": "Any data in C and only public data in A and B.",
+          "d": "Protected, default and public data only in C."
+        },
+        "answer": "a",
+        "explanation": "When using public inheritance, a derived class (C) can access its own members, public members of its base classes (A and B), and protected members of its base classes. Default members are package private, so cannot be accessed from a different package."
+      },
+      {
+        "question": "If the method is not static; how to invoke in the java programming language?",
+        "choices": {
+          "a": "Methodname()",
+          "b": "Classname.methodname()",
+          "c": "Objectname.methodname()",
+          "d": "Variablename.methodname"
+        },
+        "answer": "c",
+        "explanation": "Non-static methods are instance methods and require an object instance to be invoked. Objectname.methodname() is the correct way."
+      },
+      {
+        "question": "Which of the following statement is correct, when an overridden method is called from within a subclass?",
+        "choices": {
+          "a": "The Compiler will choose randomly the method to be executed",
+          "b": "It will always refer to the version of that method defined by the subclass",
+          "c": "Compile time error will occur",
+          "d": "It will always refer to the version of that method defined by the superclass"
+        },
+        "answer": "b",
+        "explanation": "When an overridden method is called from a subclass object, the subclass's version of the method is executed (dynamic method dispatch)."
+      },{
+        "question": "Which of the following statements not true?",
+        "choices": {
+          "a": "A private member of a class cannot be accessed by the methods of the same class",
+          "b": "A public member of a class can be accessed in all the packages",
+          "c": "A private member of a class cannot be accessed from its derived class",
+          "d": "A protected member of a class can be accessed from its derived class."
+        },
+        "answer": "a",
+        "explanation": "A private member *can* be accessed by the methods of the same class. Therefore, statement 'a' is incorrect."
+      },
+      {
+        "question": "_________is one of the basic principles of object oriented programming that use one object in multiple forms.",
+        "choices": {
+          "a": "Inheritance",
+          "b": "Interface",
+          "c": "Encapsulation",
+          "d": "None of the above"
+        },
+        "answer": "d",
+        "explanation": "The principle being described is polymorphism, which is not listed. Therefore, 'None of the above' is correct."
+      },
+      {
+        "question": "Consider the program: public class Student { int id; int section; void display(){ System.out.println(“ID : ” + id); System.out.println(“Section : ” + section);} public static void main(String[] args){ /*Create an object*/ }} Which of the following is a correct way to create an object in the main method of the above program?",
+        "choices": {
+          "A": "Student stud = Student (3983,20);",
+          "B": "Student stud;",
+          "C": "Student stud=new Student ();",
+          "D": "Student stud =new Student (3983,2);"
+        },
+        "answer": "c",
+        "explanation": "Student stud=new Student (); is the correct way to create an object of the Student class using the default constructor. A and D are incorrect because the Student class doesn't have a constructor with those parameters. B only declares the object and does not create it."
+      },
+      {
+        "question": "Suppose we want to determine the efficiency of the algorithm, then how we can measure the space factor",
+        "choices": {
+          "a": "To count the maximum memory required by the algorithm",
+          "b": "To count the average memory required by the algorithm",
+          "c": "To count the minimum memory required by the algorithm",
+          "d": "To count the maximum disk space needed by the algorithm"
+        },
+        "answer": "a",
+        "explanation": "Space complexity measures the maximum amount of memory required by an algorithm during its execution."
+      },
+      {
+        "question": "Two main measures for the efficiency of an algorithm are",
+        "choices": {
+          "a": "Processor and memory",
+          "b": "Data and space",
+          "c": "Complexity and capacity",
+          "d": "Time and space"
+        },
+        "answer": "d",
+        "explanation": "The two main measures for the efficiency of an algorithm are time complexity and space complexity."
+      },
+      {
+        "question": "What is the best time complexity we can achieve to precompute all-pairs shortest paths in a weighted graph?",
+        "choices": {
+          "a": "O(n^2)",
+          "b": "O(n^3)",
+          "c": "O(n)",
+          "d": "O(n^4)"
+        },
+        "answer": "b",
+        "explanation": "The Floyd-Warshall algorithm computes all-pairs shortest paths in O(n^3) time, which is the best known time complexity for this problem."
+      },
+      {
+        "question": "What is the time complexity of optimal binary search tree?",
+        "choices": {
+          "a": "O(n)",
+          "b": "O(n2)",
+          "c": "O(logn)",
+          "d": "O (n!)"
+        },
+        "answer": "b",
+        "explanation": "The time complexity to construct an optimal binary search tree is O(n^2) using dynamic programming. The lookup complexity, once the tree is built, is O(log n)."
+      },
+      {
+        "question": "Which of the following is the space complexity of a recursive algorithm with n levels of recursion and O(1) space complexity in each level?",
+        "choices": {
+          "a": "O(n^2)",
+          "b": "O(n)",
+          "c": "O(1)",
+          "d": "O(log n)"
+        },
+        "answer": "b",
+        "explanation": "Each recursive call adds a frame to the call stack. With n levels of recursion and O(1) space per level, the total space complexity is O(n)."
+      },
+      {
+        "question": "Which of the following is the best case time complexity of linear search algorithm?",
+        "choices": {
+          "a": "O(n^2)",
+          "b": "O(n)",
+          "c": "O(1)",
+          "d": "O(log n)"
+        },
+        "answer": "c",
+        "explanation": "The best-case scenario for linear search is when the target element is found at the first position, resulting in O(1) time complexity."
+      },
+      {
+        "question": "If the elements '1', '2', '3' and '4' are inserted in a queue, what would be order for the removal?",
+        "choices": {
+          "a": "4321",
+          "b": "3241",
+          "c": "1234",
+          "d": "None of the above"
+        },
+        "answer": "c",
+        "explanation": "Queues follow the FIFO (First-In, First-Out) principle. Therefore, the elements are removed in the same order they were inserted: 1, 2, 3, 4."
+      },{
+        "question": "What is the disadvantage of array data structure?",
+        "choices": {
+          "a": "The amount of memory to be allocated should be known beforehand.",
+          "b": "Elements of an array can be accessed in constant time.",
+          "c": "Elements are stored in contiguous memory blocks.",
+          "d": "Multiple other data structures can be implemented using arrays."
+        },
+        "answer": "a",
+        "explanation": "Arrays have a fixed size, meaning the memory must be allocated at the time of creation, and you cannot easily change it later. This is a significant disadvantage."
+      },
+      {
+        "question": "What is the maximum number of swaps that can be performed in the Selection Sort algorithm?",
+        "choices": {
+          "a": "n - 1",
+          "b": "1",
+          "c": "n",
+          "d": "n – 2"
+        },
+        "answer": "a",
+        "explanation": "Selection sort performs a maximum of n-1 swaps, where n is the number of elements. In each iteration, it finds the minimum element and swaps it with the element at the current position."
+      },
+      {
+        "question": "What would be the time complexity if user tries to insert the element at the end of the linked list (head pointer is known)?",
+        "choices": {
+          "a": "O(1)",
+          "b": "O(nlogn)",
+          "c": "c.O",
+          "d": "O(logn)"
+        },
+        "answer": "c",
+        "explanation": "The correct answer should be O(n). To insert at the end of a singly linked list when only the head pointer is known, you have to traverse the entire list to reach the last node. Therefore, the time complexity is O(n)."
+      },
+      {
+        "question": "Which data structure is required to convert the infix to prefix notation?",
+        "choices": {
+          "a": "Stack",
+          "b": "Queue",
+          "c": "Binary tree",
+          "d": "Linked list"
+        },
+        "answer": "a",
+        "explanation": "Stacks are essential for converting infix to prefix (or postfix) notation. They help manage the operators and operands during the conversion process."
+      },
+      {
+        "question": "Which one of the following is the process of inserting an element in the stack?",
+        "choices": {
+          "a": "Insert",
+          "b": "Add",
+          "c": "Push",
+          "d": "None of the above"
+        },
+        "answer": "c",
+        "explanation": "The operation for inserting an element into a stack is called 'push'."
+      },
+      {
+        "question": "Which of the following is a Divide and Conquer algorithm?",
+        "choices": {
+          "a": "Merge Sort",
+          "b": "Heap Sort",
+          "c": "Selection Sort",
+          "d": "Bubble Sort"
+        },
+        "answer": "a",
+        "explanation": "Merge sort is a classic example of a divide and conquer algorithm. It divides the array into halves, recursively sorts them, and then merges the sorted halves."
+      },{
+        "question": "----------is a collection of multiple logically related database distributed over a computer network.",
+        "choices": {
+          "a": "Data Fragmentation",
+          "b": "Distributed Database",
+          "c": "Data Allocation",
+          "d": "Data Replication"
+        },
+        "answer": "b",
+        "explanation": "A distributed database is a collection of multiple, logically related databases distributed over a computer network."
+      },
+      {
+        "question": "............... Means that a transaction must execute exactly once completely or not at all.",
+        "choices": {
+          "a": "Consistency",
+          "b": "Durability",
+          "c": "Isolation",
+          "d": "Atomicity"
+        },
+        "answer": "d",
+        "explanation": "Atomicity ensures that a transaction is treated as a single, indivisible unit of work. Either all operations within the transaction are completed, or none are."
+      },
+      {
+        "question": "A language that used to formulate the schema of database structure is______.",
+        "choices": {
+          "a": "Data Manipulation language",
+          "b": "Data Definition Language",
+          "c": "Transaction Control Language",
+          "d": "Data Control Language"
+        },
+        "answer": "b",
+        "explanation": "Data Definition Language (DDL) is used to define the structure or schema of a database."
+      },
+      {
+        "question": "A table can have only one",
+        "choices": {
+          "a": "Unique Key",
+          "b": "Candidate key",
+          "c": "Primary key",
+          "d": "Foreign key"
+        },
+        "answer": "c",
+        "explanation": "A table can have only one primary key, which uniquely identifies each record in the table."
+      },
+      {
+        "question": "Checkpoints are a part of",
+        "choices": {
+          "a": "Recovery measures",
+          "b": "Concurrency measures",
+          "c": "Authorization measures",
+          "d": "Security measures"
+        },
+        "answer": "a",
+        "explanation": "Checkpoints are used in database recovery to reduce the time required to restore a database after a crash."
+      },
+      {
+        "question": "When the values in one or more attributes being used as a foreign key must exist there must be a corresponding primary key value in another table in the database, we have created___________",
+        "choices": {
+          "a": "Domain Integrity constraint",
+          "b": "Referential Integrity Constraint",
+          "c": "Transitive Dependency",
+          "d": "Entity Integrity Constraints"
+        },
+        "answer": "b",
+        "explanation": "Referential integrity constraints ensure that relationships between tables remain consistent by requiring that foreign key values match corresponding primary key values."
+      },
+      {
+        "question": "Which of the following is not a feature of DBMS?",
+        "choices": {
+          "a": "Support ACID Property",
+          "b": "Single-user Access only",
+          "c": "High Level of Security",
+          "d": "Minimum Duplication and Redundancy of Data"
+        },
+        "answer": "b",
+        "explanation": "Modern DBMS systems support multi-user access, not single-user access only."
+      },
+      {
+        "question": "Which of the following is not a function of the database?",
+        "choices": {
+          "a": "Analyzing code",
+          "b": "Provide Backup and recovery",
+          "c": "Manipulating data",
+          "d": "Managing stored data"
+        },
+        "answer": "a",
+        "explanation": "Databases are designed to manage and manipulate data, provide backup and recovery, but they do not analyze code."
+      },
+      {
+        "question": "Which of the following is not a recovery technique?",
+        "choices": {
+          "a": "ARIES Algorithm",
+          "b": "Two-phase commit",
+          "c": "Immediate update",
+          "d": "Deferred update"
+        },
+        "answer": "b",
+        "explanation": "Two-phase commit is a concurrency control protocol, not a recovery technique. ARIES, immediate update, and deferred update are all recovery techniques."
+      },
+      {
+        "question": "Which of the following is not true about OODBMS (object-oriented database management system).",
+        "choices": {
+          "a": "The key concepts is objects",
+          "b": "The object is persistent",
+          "c": "The key concept is relation",
+          "d": "Object Identity is unchangeable"
+        },
+        "answer": "c",
+        "explanation": "OODBMS systems focus on objects, persistence, and object identity. They do not primarily use relations like relational databases."
+      },
+      {
+        "question": "Which of the following techniques of query optimization is uses ordering of the operation?",
+        "choices": {
+          "a": "Sematic Query",
+          "b": "Heuristic- based",
+          "c": "Cost estimation",
+          "d": "Exhaustive search"
+        },
+        "answer": "b",
+        "explanation": "Heuristic-based query optimization uses rules and heuristics to determine the order of operations in a query execution plan."
+      },
+      {
+        "question": "Which of the following relationship is matched correctly with appropriate example of MANY TO-ONE?",
+        "choices": {
+          "a": "[ Building – Location]",
+          "b": "[ Employee – Department]",
+          "c": "[ Hospital – Patient]",
+          "d": "[ Author – Book]"
+        },
+        "answer": "b",
+        "explanation": "Many employees can belong to one department, which is a many-to-one relationship."
+      },{
+        "question": "During system design system decomposition is influenced by all except_______",
+        "choices": {
+          "a": "Coupling",
+          "b": "System’s functionality",
+          "c": "Cohesion",
+          "d": "Users thinking"
+        },
+        "answer": "d",
+        "explanation": "System decomposition is primarily influenced by technical factors like coupling, cohesion, and system functionality. User thinking is important during requirements gathering, but not directly during system decomposition."
+      },
+      {
+        "question": "The functional model is represented graphically with ——",
+        "choices": {
+          "a": "Use case diagram",
+          "b": "State transition diagram",
+          "c": "Class diagram",
+          "d": "Object diagram"
+        },
+        "answer": "a",
+        "explanation": "Use case diagrams represent the functional model by showing the interactions between actors and the system's functions."
+      },
+      {
+        "question": "Which of the following concept of software engineering is false statement.",
+        "choices": {
+          "a": "System Analysis Focuses on the user’s view of the system",
+          "b": "Design focuses on the developer point of view.",
+          "c": "Result of system analysis is a model that includes a subsystem decomposition",
+          "d": "Requirements elicitation focus only on the user’s view of the system."
+        },
+        "answer": "c",
+        "explanation": "While system analysis leads to models, subsystem decomposition is more directly a part of the design phase, not the analysis phase. Therefore, the statement that the result of system analysis includes subsystem decomposition is false."
+      },
+      {
+        "question": "Which of the following heuristics is not used to identify Entity objects",
+        "choices": {
+          "a": "Real-world entities",
+          "b": "Real-world activities",
+          "c": "Forms",
+          "d": "Data sources"
+        },
+        "answer": "c",
+        "explanation": "While forms are used to capture data, they are not directly used to identify entity objects. Real-world entities, activities, and data sources are more direct indicators of potential objects."
+      },
+      {
+        "question": "“Consider a system where, a heat sensor detects an intrusion and alerts the security company.” What kind of a requirement the system is providing?",
+        "choices": {
+          "a": "Functional Requirement",
+          "b": "Non-Functional",
+          "c": "Constraints",
+          "d": "Known Requirement"
+        },
+        "answer": "a",
+        "explanation": "A functional requirement describes what the system should do, such as detecting intrusions and alerting security."
+      },
+      {
+        "question": "which one of the following is used to Identifying Actors",
+        "choices": {
+          "a": "What kind of dependencies are exist among use cases.",
+          "b": "What information does the actor access?",
+          "c": "Which user groups execute the system’s main functions?",
+          "d": "What are the tasks that the actor wants the system to perform?"
+        },
+        "answer": "c",
+        "explanation": "Actors are identified by determining which user groups interact with the system's main functions."
+      },
+      {
+        "question": "In PHP, which function is used to establish a secure connection to a MySQL database using SSL encryption?",
+        "choices": {
+          "a": "mysqli_ssl_connect()",
+          "b": "pdo_connect_ssl()",
+          "c": "mysql_ssl_connect()",
+          "d": "secure_connect()"
+        },
+        "answer": "a",
+        "explanation": "mysqli_ssl_connect() is the correct function in PHP's MySQLi extension for establishing a secure connection using SSL."
+      },
+      {
+        "question": "Which JavaScript function is used to display a dialog box with an alert message?",
+        "choices": {
+          "a": "console.log()",
+          "b": "confirm()",
+          "c": "alert()",
+          "d": "prompt()"
+        },
+        "answer": "c",
+        "explanation": "alert() displays a dialog box with an alert message."
+      },
+      {
+        "question": "Which JavaScript method is used to select an HTML element by its ID?",
+        "choices": {
+          "a": "getElementById()",
+          "b": "getElementByTag()",
+          "c": "getElementByName()",
+          "d": "getElementByClass()"
+        },
+        "answer": "a",
+        "explanation": "getElementById() is used to select an HTML element by its ID attribute."
+      },
+      {
+        "question": "Which language is used to add interactivity and dynamic behavior to a web page?",
+        "choices": {
+          "a": "HTML",
+          "b": "PHP",
+          "c": "CSS",
+          "d": "JavaScript"
+        },
+        "answer": "d",
+        "explanation": "JavaScript is used to add interactivity and dynamic behavior to web pages."
+      },
+      {
+        "question": "Which of the following languages is primarily responsible for defining the structure and content of a web page?",
+        "choices": {
+          "a": "HTML",
+          "b": "JavaScript",
+          "c": "PHP",
+          "d": "CSS"
+        },
+        "answer": "a",
+        "explanation": "HTML defines the structure and content of a web page."
+      },
+      {
+        "question": "Which PHP function is used to check if a file or directory exists?",
+        "choices": {
+          "a": "file_exists()",
+          "b": "file_exists_check()",
+          "c": "is_file()",
+          "d": "file_check()"
+        },
+        "answer": "a",
+        "explanation": "file_exists() is used to check if a file or directory exists."
+      },
+      {
+        "question": "Which PHP function is used to retrieve the number of rows affected by an SQL query?",
+        "choices": {
+          "a": "num_rows()",
+          "b": "row_count()",
+          "c": "get_affected_rows()",
+          "d": "affected_rows()"
+        },
+        "answer": "d",
+        "explanation": "affected_rows() is the correct PHP function to get the number of rows affected by an SQL query."
+      },
+      {
+        "question": "Which PHP superglobal array is used to retrieve information about the server and execution environment?",
+        "choices": {
+          "a": "$_POST",
+          "b": "$_SESSION",
+          "c": "$_GET",
+          "d": "$_SERVER"
+        },
+        "answer": "d",
+        "explanation": "$_SERVER contains information about the server and execution environment."
+      },
+      {
+        "question": "Which PHP superglobal array is used to retrieve data sent from an HTML form using the POST method?",
+        "choices": {
+          "a": "$_REQUEST",
+          "b": "$_GET",
+          "c": "$_POST",
+          "d": "$_SERVER"
+        },
+        "answer": "c",
+        "explanation": "$_POST retrieves data sent from an HTML form using the POST method."
+      },{
+        "question": "An agent type which has condition-action rule and memory to remind the current state of the world and its evolution is called",
+        "choices": {
+          "a": "Simple reflex",
+          "b": "Model based reflex",
+          "c": "Goal based",
+          "d": "Utility based"
+        },
+        "answer": "b",
+        "explanation": "Model-based reflex agents use a model of the world to determine their actions, including remembering the current state and its evolution."
+      },
+      {
+        "question": "Assume that you are employed as a machine learning expert at the Ministry of Education (MoE). Which machine learning technique you would apply for the task of describing the existing higher education institutions as first generation, second generation and third generation.",
+        "choices": {
+          "a": "Reinforcement Learning",
+          "b": "Regression",
+          "c": "Classification",
+          "d": "Clustering"
+        },
+        "answer": "d",
+        "explanation": "Clustering is used to group similar data points together. In this case, you would cluster institutions based on their characteristics to categorize them into generations."
+      },
+      {
+        "question": "Consider the definition of AI: “The effort to design and implement intelligent software that solves problems by identifying best action sequence to achieve the desired goal” can be views AI as",
+        "choices": {
+          "a": "A system that acts humanly",
+          "b": "A system that thinks humanly",
+          "c": "A system that acts rationally",
+          "d": "A system that thinks rationally"
+        },
+        "answer": "c",
+        "explanation": "This definition emphasizes achieving goals through optimal action sequences, which aligns with the concept of rational action."
+      },
+      {
+        "question": "What is completeness of search algorithms?",
+        "choices": {
+          "a": "If there is a difference between the quality of goal states, the agent will find the best one",
+          "b": "An estimate of how much information the algorithm needs to store for finding a solution",
+          "c": "An estimate of how many search steps it takes to find a solution",
+          "d": "Provided that a solution exists, the algorithm will find it"
+        },
+        "answer": "d",
+        "explanation": "Completeness means that if a solution exists, the algorithm is guaranteed to find it."
+      },
+      {
+        "question": "Which one of the view of defining AI concerned with thought processing",
+        "choices": {
+          "a": "Viewing AI as a system which has complete autonomous",
+          "b": "Viewing AI as a system that think either humanly or think rationally",
+          "c": "Viewing AI as a system that act either humanly or think rationally",
+          "d": "Viewing AI as a system that act omnisciently to its environment"
+        },
+        "answer": "b",
+        "explanation": "Thought processing is directly related to how AI thinks, either in a human-like way or rationally."
+      },
+      {
+        "question": "Which one of the following statement is false",
+        "choices": {
+          "a": "Turing test is a mechanism to validate AI system that act humanly",
+          "b": "Validating AI system that act rationally can be made by its performance",
+          "c": "Validating AI system that thinks humanly is impossible",
+          "d": "Validating AI system that think rationally can be made by using its reasoning logic"
+        },
+        "answer": "c",
+        "explanation": "While it's very difficult, some attempts are made to validate human-like thinking in AI, for example, by using cognitive models. Therefore, the statement that it's impossible is false."
+      },
+      {
+        "question": "A context free Grammar is called ambiguous if there exists a string that can have?",
+        "choices": {
+          "a": "only one parse tree",
+          "b": "no parse tree",
+          "c": "Partial parse tree",
+          "d": "more than one parse tree"
+        },
+        "answer": "d",
+        "explanation": "An ambiguous grammar is one for which a string has more than one parse tree, indicating multiple possible derivations."
+      },
+      {
+        "question": "A context free grammar with production rules: S->aS / ε is equivalent to the regular expression",
+        "choices": {
+          "a": "a*",
+          "b": "(a+b)*",
+          "c": "a(a+b)*",
+          "d": "a+"
+        },
+        "answer": "a",
+        "explanation": "The grammar S->aS / ε generates any number of 'a's, including zero, which is represented by a*."
+      },
+      {
+        "question": "A push down automaton employs ________ data structure.",
+        "choices": {
+          "a": "Linked List",
+          "b": "Stack",
+          "c": "Hash Table",
+          "d": "Queue"
+        },
+        "answer": "b",
+        "explanation": "Pushdown automata use a stack to store and manipulate symbols, which is crucial for recognizing context-free languages."
+      },
+      {
+        "question": "Which of the following Machine is Equivalent for Regular grammar?",
+        "choices": {
+          "a": "Push down automata",
+          "b": "Linear bounded automata",
+          "c": "Finite state automata",
+          "d": "Turing Machine"
+        },
+        "answer": "c",
+        "explanation": "Finite state automata (FSAs) are equivalent to regular grammars and can recognize regular languages."
+      },
+      {
+        "question": "Given a context free grammar G= {V, ∑, P, S} and production P: a->b. Which one of the following is true?",
+        "choices": {
+          "a": "a∈(V+ ∑)",
+          "b": "a∈V",
+          "c": "a∈(V+∑)*",
+          "d": "b∈ (V+∑)*"
+        },
+        "answer": "d",
+        "explanation": "In a production rule a -> b, 'a' is a single variable from V (non-terminal), and 'b' is a string of terminals and/or non-terminals, so it can be in (V+∑)*."
+      },
+      {
+        "question": "Given a finite automata below, what will be the regular expression that correctly represents the language accepted by it.",
+        "choices": {
+          "A": "(a+b)ab(ab+bb+aa*(a+b)ab)*",
+          "B": "a*ab(ab+bb+aa*(a+b)ab)*",
+          "C": "a*(a+b)ab(ab+bb+aa*(a+b)ab)",
+          "D": "(aa*(a+b)ab )*"
+        },
+        "answer": "A",
+        "explanation": "The automata starts with either 'a' or 'b', then followed by 'ab', and then it can loop through the states with different combinations. Therefore the answer is A."
+      },{
+        "question": "Identify the technique used toreplace run-time computations with compile-time computations?",
+        "choices": {
+          "a": "Pee hole optimization",
+          "b": "Constant folding",
+          "c": "Invariant computation",
+          "d": "Code hoisting"
+        },
+        "answer": "b",
+        "explanation": "Constant folding is a compiler optimization technique that evaluates constant expressions at compile time, replacing them with their computed values."
+      },
+      {
+        "question": "In which does the compiler translate the source code?",
+        "choices": {
+          "a": "Binary code",
+          "b": "Executable code",
+          "c": "Both a and b",
+          "d": "Machine code"
+        },
+        "answer": "c",
+        "explanation": "A compiler translates source code into machine code, which can be in binary or executable format."
+      },
+      {
+        "question": "Through which type of grammar can synthesized attributes can be simulated?",
+        "choices": {
+          "a": "Ambiguous grammar",
+          "b": "LR grammar",
+          "c": "LL grammar",
+          "d": "None"
+        },
+        "answer": "b",
+        "explanation": "LR grammars are typically used for simulating synthesized attributes because they allow for bottom-up parsing, where attribute values are calculated from child nodes to parent nodes."
+      },
+      {
+        "question": "What is regular expression for an Identifier?",
+        "choices": {
+          "a": "Letter(letter+ | digit*)*",
+          "b": "Letter(letter | digit)+",
+          "c": "Letter(letter | digit)*",
+          "d": "Letter(letter_digit)*"
+        },
+        "answer": "c",
+        "explanation": "An identifier typically starts with a letter and can be followed by any combination of letters or digits, including zero or more occurrences. Therefore, Letter(letter | digit)* is the correct regular expression."
+      },
+      {
+        "question": "What is the process of finding a parse tree for a string of tokens called?",
+        "choices": {
+          "a": "Recognizing",
+          "b": "Parsing",
+          "c": "Tokenizing",
+          "d": "Analyzing"
+        },
+        "answer": "b",
+        "explanation": "Parsing is the process of constructing a parse tree from a sequence of tokens, verifying the syntactic structure of the input."
+      },
+      {
+        "question": "What is the action of parsing the source program into proper syntactic classes?",
+        "choices": {
+          "a": "Interpretation analysis",
+          "b": "Lexical analysis",
+          "c": "Syntax analysis",
+          "d": "General syntax analysis"
+        },
+        "answer": "b",
+        "explanation": "Lexical analysis, also known as tokenization, is the process of breaking the source code into tokens, which are classified into proper syntactic classes."
+      },
+      {
+        "question": "All are properties of the integrity goal of a computer system, except",
+        "choices": {
+          "a": "Integrity can be compromised by Deception",
+          "b": "Integrity can be compromised by Disclosure",
+          "c": "Ensures there was an authorized modification",
+          "d": "Keep resources from active attacks"
+        },
+        "answer": "b",
+        "explanation": "Integrity focuses on ensuring data is not improperly modified. Disclosure relates to confidentiality, not integrity. Deception, authorized modification, and active attacks directly impact integrity."
+      },
+      {
+        "question": "Assume, you went to the Ethiopian airport to catch a flight and told the airport personnel your name. For sure, they would ask you some questions like your passport number and your reservation ticket number for some proof of your identity. Then what do we call this process?",
+        "choices": {
+          "a": "Authentication",
+          "b": "Authorization",
+          "c": "Access control",
+          "d": "All"
+        },
+        "answer": "a",
+        "explanation": "Authentication is the process of verifying the identity of a user or entity. The airport personnel are verifying your identity by asking for proof."
+      },
+      {
+        "question": "Assume, you went to the nearby commercial bank’s automatic teller machine (ATM) to withdraw money. You inserted your ATM card into the machine, and the machine asked you to enter your personal identification number (PIN). Then, when you type your password, someone intercepts your ATM card number, and which of your security goals is compromised?",
+        "choices": {
+          "a": "Integrity",
+          "b": "Authorization",
+          "c": "Confidentiality",
+          "d": "Availability"
+        },
+        "answer": "c",
+        "explanation": "Confidentiality is compromised when unauthorized individuals gain access to sensitive information like your ATM card number and PIN."
+      },
+      {
+        "question": "Which attack can be used for monitoring children’s activity?",
+        "choices": {
+          "a": "Spyware",
+          "b": "Ransomwares",
+          "c": "Worms",
+          "d": "Adware"
+        },
+        "answer": "a",
+        "explanation": "Spyware is specifically designed to monitor and collect information about a user's activities without their knowledge, making it suitable for monitoring children's activity."
+      }, {
+        "question": "_______is a type of data link layer attack in TCP/IP protocol stack",
+        "choices": {
+          "a": "ARP spoofing",
+          "b": "DNS spoofing",
+          "c": "SYNC-FLOOD attack",
+          "d": "All except c"
+        },
+        "answer": "d",
+        "explanation": "ARP spoofing and DNS spoofing are data link layer attacks. SYNC-FLOOD is a network layer attack. Therefore, 'All except c' is the correct answer."
+      },
+      {
+        "question": "Which one of the following statements is true about worms and Viruses",
+        "choices": {
+          "a": "Worms requires a host to spread while viruses doesn’t require",
+          "b": "Worms requires a user action for replicate while viruses doesn’t require",
+          "c": "Virus requires a host to spread while Worms doesn’t require",
+          "d": "Worms spreading speed is slower than Virus Spreading speed"
+        },
+        "answer": "c",
+        "explanation": "Viruses require a host file or program to spread, while worms are self-replicating and do not need a host."
+      },
+      {
+        "question": "What is the bit pattern for the first octet of a class –B network address?",
+        "choices": {
+          "a": "110XXXXX",
+          "b": "1110XXXXX",
+          "c": "10XXXXXX",
+          "d": "0XXXXXXX"
+        },
+        "answer": "c",
+        "explanation": "Class B network addresses have the first two bits set to 10, meaning the first octet ranges from 128 to 191."
+      },
+      {
+        "question": "Which OSI model layer is responsible for flow control?",
+        "choices": {
+          "a": "Application Layer",
+          "b": "Transport Layer",
+          "c": "Session Layer",
+          "d": "Presentation Layer"
+        },
+        "answer": "b",
+        "explanation": "The transport layer is responsible for flow control, ensuring that data is transmitted at a rate that the receiver can handle."
+      },
+      {
+        "question": "Which of the following networking device is used in physical layer?",
+        "choices": {
+          "a": "Bridge",
+          "b": "Router",
+          "c": "Switch",
+          "d": "Hub"
+        },
+        "answer": "d",
+        "explanation": "A hub operates at the physical layer, simply repeating signals to all connected devices."
+      },
+      {
+        "question": "Assuming that Company VWX has main site and remote site. The main site has three LANs with LAN 1 has 100 hosts, LAN 2 has 60 hosts, and LAN 3 has 29 hosts. The remote site has two LANs, each with 100 hosts. The network uses private addresses. The Internet service provider assigned the company the network 200.100.50.2/26.vThe remote site uses the network prefix 192.168.10.0/24. What subnets and masks can you use for the LANs at the remote site and conserve address space?",
+        "choices": {
+          "A": "192.168.10.0/25 and 192.168.10.128/25",
+          "B": "192.168.10.0/30 and 192.168.10.128/30",
+          "C": "192.168.10.64/26 and 192.168.10.192/26",
+          "D": "192.168.10.32/28 and 192.168.10.64/28"
+        },
+        "answer": "A",
+        "explanation": "Each remote site LAN has 100 hosts. A /25 subnet provides 126 usable host addresses, which is sufficient. Therefore, 192.168.10.0/25 and 192.168.10.128/25 are the correct subnets."
+      },
+      {
+        "question": "The main site uses the network prefix 192.168.15.0/24. What subnets and masks can you use to provide sufficient addresses for LANs at the main site and conserve address space?",
+        "choices": {
+          "A": "192.168.15.0/25 for LAN 1, 192.168.15.128/26 for LAN 2, and 192.168.15.192/27 for LAN",
+          "B": "192.168.15.0/26 for LAN 1, 192.168.15.128/26 for LAN 2, and 172.15.192.0/29 for LAN 3",
+          "C": "192.168.15.0/27 for LAN 1, 192.168.15.128/26 for LAN 2, and 172.15.192.0/25 for LAN 3",
+          "D": "192.168.15.0/100 for LAN 1, 192.168.15.128/60 for LAN 2, and 172.15.192.0/29 for LAN 3"
+        },
+        "answer": "A",
+        "explanation": "LAN 1 needs 100 hosts, so /25 (126 hosts) is sufficient. LAN 2 needs 60 hosts, so /26 (62 hosts) is sufficient. LAN 3 needs 29 hosts, so /27 (30 hosts) is sufficient. Therefore, option A is correct."
+      },
+      {
+        "question": "Which network and mask would you use for the WAN link to save the most address space?",
+        "choices": {
+          "A": "192.168.11.240/27",
+          "B": "192.168.11.240/28",
+          "C": "192.168.11.240/29",
+          "D": "192.168.11.240/30"
+        },
+        "answer": "D",
+        "explanation": "WAN links typically connect two devices, so only two IP addresses are needed. A /30 subnet provides 2 usable host addresses, which is the most efficient use of addresses for a point-to-point WAN link."
+      },
+      {
+        "question": "In DNS concept the process of getting IP address by using its hostname is called: _________",
+        "choices": {
+          "a": "Forward resolution",
+          "b": "Backward resolution",
+          "c": "Binding",
+          "d": "Resolving"
+        },
+        "answer": "a",
+        "explanation": "Forward resolution is the process of resolving a hostname to its corresponding IP address."
+      },
+      {
+        "question": "Let’s assume that you know the domain name of Face Book server, but you don’t know its IP address. So which network troubleshooting tool you use to get its IP address?",
+        "choices": {
+          "a": "Nslookup",
+          "b": "Ping command",
+          "c": "Traceroute",
+          "d": "Netstat"
+        },
+        "answer": "a",
+        "explanation": "Nslookup (or dig) is used to query DNS servers and obtain IP addresses from domain names."
+      },{
+        "question": "Where/when Network administrator should have to use the concept of Network Address translation? Network admin should use NAT where: -",
+        "choices": {
+          "a": "Default gateway of LAN isn’t configured",
+          "b": "Global IP address is used in the LAN",
+          "c": "He/she don’t know type of IP address used in the LAN",
+          "d": "Private IP address is used in the LAN"
+        },
+        "answer": "d",
+        "explanation": "NAT is used when private IP addresses are used within a local network and need to be translated to a public IP address for communication with the internet."
+      },
+      {
+        "question": "Where/When we can use DHCP Services? It is recommended to use DHCP when: -",
+        "choices": {
+          "a": "There are small number of network users",
+          "b": "Network admin went to use same end devices for specific purpose",
+          "c": "Number of devices in the network are very complex",
+          "d": "All are correct"
+        },
+        "answer": "c",
+        "explanation": "DHCP is most beneficial in large, complex networks where manual IP address assignment would be impractical. It simplifies IP address management and reduces errors."
+      },
+      {
+        "question": "Which of the following server type is used to store, process, and respond to the client request for webpages via http/https protocols",
+        "choices": {
+          "a": "Http Server",
+          "b": "Web Server",
+          "c": "FTP server",
+          "d": "DNS Server"
+        },
+        "answer": "b",
+        "explanation": "A web server is specifically designed to handle HTTP/HTTPS requests and serve web pages to clients."
+      },
+      {
+        "question": "____________ is a network security device that monitors incoming and outgoing network traffic.",
+        "choices": {
+          "a": "Proxy",
+          "b": "Firewall",
+          "c": "Gateway",
+          "d": "Router"
+        },
+        "answer": "b",
+        "explanation": "A firewall monitors and controls network traffic based on predefined security rules, acting as a barrier between a trusted and untrusted network."
+      },
+      {
+        "question": "A process can be terminated due to:",
+        "choices": {
+          "a": "killed by another process",
+          "b": "normal exit",
+          "c": "all of the mentioned",
+          "d": "fatal error"
+        },
+        "answer": "c",
+        "explanation": "A process can be terminated for various reasons, including being killed by another process, exiting normally, or encountering a fatal error."
+      },
+      {
+        "question": "To access the services of operating system, the interface is provided by the:",
+        "choices": {
+          "a": "library",
+          "b": "system calls",
+          "c": "assembly instructions",
+          "d": "API"
+        },
+        "answer": "b",
+        "explanation": "System calls provide the interface for user programs to request services from the operating system kernel."
+      },
+      {
+        "question": "Which module gives control of the CPU to the process selected by the short-term scheduler?",
+        "choices": {
+          "a": "Interrupt",
+          "b": "Dispatcher",
+          "c": "Scheduler",
+          "d": "none of the mentioned"
+        },
+        "answer": "b",
+        "explanation": "The dispatcher is responsible for handing over CPU control to the process selected by the short-term scheduler."
+      },
+      {
+        "question": "Which of the following condition is required for deadlock to be possible?",
+        "choices": {
+          "a": "mutual exclusion",
+          "b": "all of the mentioned",
+          "c": "a process may hold allocated resources while awaiting assignment of other resources",
+          "d": "no resource can be forcibly removed from a process holding it"
+        },
+        "answer": "b",
+        "explanation": "Deadlock requires all four conditions: mutual exclusion, hold and wait, no preemption, and circular wait."
+      },{
+        "question": "Which scheduling algorithm allocates the CPU first to the process that requests the CPU first?",
+        "choices": {
+          "a": "first-come, first-served scheduling",
+          "b": "priority scheduling",
+          "c": "shortest job scheduling",
+          "d": "none of the mentioned"
+        },
+        "answer": "a",
+        "explanation": "First-come, first-served (FCFS) scheduling allocates the CPU to processes in the order they request it."
+      },
+      {
+        "question": "Which one of the following is not true?",
+        "choices": {
+          "a": "kernel is the first part of operating system to load into memory during booting",
+          "b": "kernel is made of various modules which cannot be loaded in running operating system",
+          "c": "kernel is the program that constitutes the central core of the operating system",
+          "d": "kernel remains in the memory during the entire computer session"
+        },
+        "answer": "b",
+        "explanation": "Modern operating systems support loadable kernel modules, meaning that modules can be loaded and unloaded while the system is running. Therefore, the statement that modules cannot be loaded in a running operating system is false."
+      },
+      {
+        "question": "A processor performing fetch or decoding of different instruction during the execution of another instruction is called ______",
+        "choices": {
+          "a": "Super-scaling",
+          "b": "None of the above",
+          "c": "Parallel Computation",
+          "d": "Pipe-lining"
+        },
+        "answer": "d",
+        "explanation": "Pipelining is a technique where multiple instructions are overlapped in execution, with different stages of the instructions being processed simultaneously."
+      },
+      {
+        "question": "An instruction that will jump to the next instruction if the condition is met",
+        "choices": {
+          "a": "Branch instruction",
+          "b": "Return instruction",
+          "c": "Skip instruction",
+          "d": "Jump instruction"
+        },
+        "answer": "c",
+        "explanation": "A skip instruction typically jumps to the next instruction based on a condition, effectively skipping an instruction."
+      },
+      {
+        "question": "An interrupt that is caused by register overflow, attempt to divide by zero, an invalid operation code, stack overflow can be?",
+        "choices": {
+          "a": "None of the above",
+          "b": "Software interrupt",
+          "c": "External interrupt",
+          "d": "Internal interrupt"
+        },
+        "answer": "d",
+        "explanation": "Internal interrupts, also known as exceptions or traps, are caused by events within the processor, such as arithmetic errors or invalid instructions."
+      },
+      {
+        "question": "Computer address bus is",
+        "choices": {
+          "a": "Unidirectional",
+          "b": "None of the above",
+          "c": "Multidirectional",
+          "d": "Bidirectional"
+        },
+        "answer": "a",
+        "explanation": "The address bus is unidirectional because the CPU sends address signals to memory or I/O devices, but the devices do not send address signals back to the CPU."
+      },
+      {
+        "question": "The simplest way to organize a computer is to have one processor register and an instruction code format with two parts. The first part specifies the operation to be performed and the second specifies .",
+        "choices": {
+          "a": "address",
+          "b": "output",
+          "c": "Input",
+          "d": "operand"
+        },
+        "answer": "a",
+        "explanation": "In a basic instruction format, the second part of the instruction specifies the memory address of the operand."
+      },
+      {
+        "question": "Which of the following computer memory is fastest?",
+        "choices": {
+          "a": "RAM",
+          "b": "Register",
+          "c": "None of the above",
+          "d": "Hard disk"
+        },
+        "answer": "b",
+        "explanation": "Registers are the fastest type of memory because they are located directly within the CPU and can be accessed very quickly."
       }
 ]
