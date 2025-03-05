@@ -9979,5 +9979,1061 @@
         },
         "answer": "b",
         "explanation": "Registers are the fastest type of memory because they are located directly within the CPU and can be accessed very quickly."
+      },{
+        "question": "Which of the following is used to add styles and formatting to a webpage in CSS?",
+        "choices": {
+          "a": "Functions",
+          "b": "Variables",
+          "c": "Selectors",
+          "d": "Arrays"
+        },
+        "answer": "c",
+        "explanation": "Selectors in CSS are used to target HTML elements and apply styles to them."
+      },
+      {
+        "question": "Which one of the following techniques is not used in the Binary tree?",
+        "choices": {
+          "a": "Randomized traversal",
+          "b": "Preorder traversal",
+          "c": "Postorder traversal",
+          "d": "Inorder traversal"
+        },
+        "answer": "a",
+        "explanation": "Binary tree traversals follow specific orders (preorder, inorder, postorder). 'Randomized traversal' is not a standard technique."
+      },
+      {
+        "question": "Which of the following principles does Queue use?",
+        "choices": {
+          "a": "LIFO principle",
+          "b": "FIFO principle",
+          "c": "Linear tree",
+          "d": "Ordered array"
+        },
+        "answer": "b",
+        "explanation": "Queues operate on the First-In, First-Out (FIFO) principle."
+      },
+      {
+        "question": "Which of the following is not considered as a peripheral device?",
+        "choices": {
+          "a": "CPU",
+          "b": "Keyboard",
+          "c": "Monitor",
+          "d": "All of the above"
+        },
+        "answer": "a",
+        "explanation": "The CPU (Central Processing Unit) is the core processor of a computer and is not considered a peripheral device. Peripheral devices are external to the main processing unit."
+      },
+      {
+        "question": "Which recovery technique uses the undo/redo approach?",
+        "choices": {
+          "a": "Immediate Update",
+          "b": "Deferred Update",
+          "c": "ARIES Algorithm",
+          "d": "None"
+        },
+        "answer": "a",
+        "explanation": "Immediate Update allows for both undoing and redoing changes, as it updates the database directly but logs changes for potential recovery."
+      },
+      {
+        "question": "Which of the following statements is false about classes of language in automaton theory?",
+        "choices": {
+          "a": "Context-free language is the subset of context-sensitive language",
+          "b": "Regular language is the subset of context-sensitive language",
+          "c": "Recursively enumerable language is the superset of regular language",
+          "d": "Context-sensitive language is a subset of context-free language"
+        },
+        "answer": "d",
+        "explanation": "The correct hierarchy is: Regular languages are a subset of context-free languages, which are a subset of context-sensitive languages, which are a subset of recursively enumerable languages. Therefore, 'Context-sensitive language is a subset of context-free language' is false."
+      },
+      {
+        "question": "Where are the list of processes that are prepared to be executed and waiting placed?",
+        "choices": {
+          "a": "Job queue",
+          "b": "Ready queue",
+          "c": "Execution queue",
+          "d": "Process queue"
+        },
+        "answer": "b",
+        "explanation": "The ready queue holds processes that are ready to be executed by the CPU."
+      },
+      {
+        "question": "Which one of the following statements is not true about the application of micro-operations?",
+        "choices": {
+          "a": "Selective set operation is implemented using OR micro-operation",
+          "b": "Selective clear operation clears to zero the bit in the first operand only where there are corresponding 1's in the logical operand",
+          "c": "Clear operation is implemented using Exclusive-OR Micro-operation.",
+          "d": "None of the above"
+        },
+        "answer": "d",
+        "explanation": "All the given statements about micro-operations are true. Therefore, 'None of the above' is the correct answer."
+      },
+      {
+        "question": "Function MY_AGENT (PERCEPT) return action static state, a description of the current world state goal, a description of the goal to achieve may be in terms of state state ← UPDATE_STATE(state, percept) actionSet ← POSSIBLE_ACTIONS(state) action ← BEST_ACTION(actionSet) state ← UPDATE_STATE(state, action) return action Based on the above prototype, the instruction is used to:",
+        "choices": {
+          "a": "Modify the state of the environment if necessary",
+          "b": "Update the state information to be like the one after executing the best action chosen",
+          "c": "Update the environment so that the agent can perceive the next percept",
+          "d": "Modify the state of the environment once the decision of which action to choose is made."
+        },
+        "answer": "a",
+        "explanation": "The line `state ← UPDATE_STATE(state, percept)` is used to update the agent's internal state based on the perceived environment, meaning it modifies the state of the environment as perceived by the agent."
+      },
+      {
+        "question": "The process of recovering the original message without the detailed knowledge of the secret information is called:",
+        "choices": {
+          "a": "Decryption",
+          "b": "Decipher",
+          "c": "Cryptanalysis",
+          "d": "A and B"
+        },
+        "answer": "c",
+        "explanation": "Cryptanalysis is the process of analyzing and breaking cryptographic systems, which includes recovering the original message without knowing the secret key."
+      }, {
+        "question": "Both the CISC and RISC architectures have been developed to reduce the ______",
+        "choices": {
+          "a": "Time delay",
+          "b": "Semantic gap",
+          "c": "Cost",
+          "d": "All of the mentioned"
+        },
+        "answer": "b",
+        "explanation": "Both CISC and RISC architectures aim to bridge the semantic gap, which is the difference between high-level programming languages and machine-level instructions."
+      },
+      {
+        "question": "All of the following are disadvantages of using DHCP services EXCEPT?",
+        "choices": {
+          "a": "Fault on the DHCP server can affect the whole network",
+          "b": "It is not a secured way of assigning IP addresses",
+          "c": "Static IP address assignment can't be used.",
+          "d": "It minimizes the load of network admin"
+        },
+        "answer": "d",
+        "explanation": "DHCP minimizes the load on network administrators by automating IP address assignment. The other options are valid disadvantages."
+      },
+      {
+        "question": "CPU scheduling is the basis of ___________",
+        "choices": {
+          "a": "Multiprogramming operating systems",
+          "b": "Larger memory-sized systems",
+          "c": "Multiprocessor systems",
+          "d": "None of the mentioned"
+        },
+        "answer": "a",
+        "explanation": "CPU scheduling is essential for multiprogramming operating systems, which allow multiple processes to share the CPU."
+      },
+      {
+        "question": "What is the bottom-up parsing method also known as?",
+        "choices": {
+          "a": "Recursive descent parsing",
+          "b": "Predictive parsing",
+          "c": "Shift-reduce parsing",
+          "d": "All of them"
+        },
+        "answer": "c",
+        "explanation": "Bottom-up parsing is also known as shift-reduce parsing, which constructs the parse tree from the bottom (leaves) to the top (root)."
+      },
+      {
+        "question": "On the basis of the general search methods, which simple strategy results in greedy best search?",
+        "choices": {
+          "a": "Append newly generated nodes at the beginning of the open list",
+          "b": "Append newly generated nodes at the end of the open list",
+          "c": "Insert newly generated nodes in the open list according to their path cost (lowest values first)",
+          "d": "Insert newly generated nodes in the open list according to their evaluation function (lowest values first)"
+        },
+        "answer": "d",
+        "explanation": "Greedy best-first search expands the node that is closest to the goal, as estimated by a heuristic evaluation function."
+      },
+      {
+        "question": "What is the main goal of data compression while it paths in different network layers? Its goal is to:",
+        "choices": {
+          "a": "Securing data",
+          "b": "Minimize the size of data",
+          "c": "Select the best path of destination devices",
+          "d": "All of the above"
+        },
+        "answer": "b",
+        "explanation": "The main goal of data compression is to minimize the size of data, reducing bandwidth usage and transmission time."
+      },
+      {
+        "question": "The _________ statement causes a loop to terminate immediately.",
+        "choices": {
+          "a": "Continue",
+          "b": "Goto",
+          "c": "Break",
+          "d": "Jump"
+        },
+        "answer": "c",
+        "explanation": "The 'break' statement terminates a loop immediately, regardless of the loop's condition."
+      },
+      {
+        "question": "Which of the following can be a heuristic for grouping objects into subsystems?",
+        "choices": {
+          "a": "Assign objects identified in one use case into the same subsystem.",
+          "b": "Create a dedicated subsystem for objects used for moving data among subsystems.",
+          "c": "Minimize the number of associations crossing subsystem boundaries.",
+          "d": "All of the above"
+        },
+        "answer": "d",
+        "explanation": "All the given options are valid heuristics for grouping objects into subsystems, as they promote cohesion and reduce coupling."
+      },
+      {
+        "question": "The term Push and Pop is related to______________",
+        "choices": {
+          "a": "Queue",
+          "b": "Stack",
+          "c": "Both",
+          "d": "None"
+        },
+        "answer": "b",
+        "explanation": "Push and pop are operations specific to the stack data structure, where elements are added and removed from the top."
+      },
+      {
+        "question": "Which one of the following statements is false?",
+        "choices": {
+          "a": "A sentence is said to be invalid iff it is unsatisfiable.",
+          "b": "A sentence is valid if it is satisfiable.",
+          "c": "A sentence which is not invalid is satisfiable.",
+          "d": "A sentence is unsatisfiable if it is false in all models."
+        },
+        "answer": "b",
+        "explanation": "A sentence is valid if it is true in all models, not just if it is satisfiable (true in at least one model). Therefore, 'A sentence is valid if it is satisfiable' is false."
+      }, {
+        "question": "Which of the following PHP code snippets is used to retrieve data from a MySQL database?",
+        "choices": {
+          "a": "$result = mysql_query(\"SELECT * FROM users WHERE id = 1\");",
+          "b": "$result=mysqliquery(conn, \"SELECT * FROM users WHERE id = 1\");",
+          "c": "$result = $pdo->query(\"SELECT * FROM users WHERE id = 1\");",
+          "d": "$result = pg_query(\"SELECT * FROM users WHERE id = 1\");"
+        },
+        "answer": "b",
+        "explanation": "mysqli_query is the correct function to execute a query against a MySQL database using the improved MySQLi extension. The other options use deprecated or different database extensions."
+      },
+      {
+        "question": "Which of the following JavaScript code snippets is used to add a new element to an HTML document?",
+        "choices": {
+          "a": "element.appendChild(document.createTextNode(\"Hello, world!\"));",
+          "b": "var element = document.createElement(\"div\");",
+          "c": "document.body.appendChild(element);",
+          "d": "document.getElementById(\"container\").appendChild(element);"
+        },
+        "answer": "b",
+        "explanation": "var element = document.createElement(\"div\"); is used to create a new div element. The other options use the element after it has been created to add text or append it to the document."
+      },
+      {
+        "question": "Consider the following function prototype to answer the following consecutive two questions below: Function MY_AGENT (PERCEPT) return action static state, a description of the current world state goal, a description of the goal to achieve may be in terms of state stateßUPDATE_STATE(state, percept) actionSetßPOSSIBLE_ACTIONS(state) actionßBEST_ACTION(actionSet) stateßUPDATE_STATE(state,action) return action Based on the above prototype, MY_GENT is ____________ type of agent.",
+        "choices": {
+          "a": "Goal based",
+          "b": "Model based reflex",
+          "c": "Simple reflex",
+          "d": "Utility based"
+        },
+        "answer": "d",
+        "explanation": "The agent uses the `BEST_ACTION` function, which implies the agent is selecting the action that maximizes some utility, making it a utility-based agent."
+      },
+      {
+        "question": "Which of the following statements is true about crackers?",
+        "choices": {
+          "a": "They attempt to break the system without permissions",
+          "b": "They are legally employed to break into the system",
+          "c": "They reveal the information after breaking into the system",
+          "d": "All"
+        },
+        "answer": "a",
+        "explanation": "Crackers are individuals who attempt to gain unauthorized access to computer systems."
+      },
+      {
+        "question": "Which one of the following is not the application of the stack data structure?",
+        "choices": {
+          "a": "String reversal",
+          "b": "Recursion",
+          "c": "Backtracking",
+          "d": "Asynchronous data transfer"
+        },
+        "answer": "d",
+        "explanation": "Asynchronous data transfer does not inherently rely on the LIFO principle of a stack. Stacks are used for string reversal, recursion, and backtracking."
+      },
+      {
+        "question": "Which of the following is false about subsystems?",
+        "choices": {
+          "a": "A physical and replaceable part of the system.",
+          "b": "It reduces the complexity of the application domain.",
+          "c": "Decompose a system into simpler parts.",
+          "d": "Well-defined interfaces that encapsulate the state and behavior of its contained classes."
+        },
+        "answer": "b",
+        "explanation": "Subsystems reduce the complexity of the system *design* and *implementation*, not necessarily the complexity of the application domain itself. The application domain might be inherently complex, and the subsystem helps to manage that complexity."
+      },
+      {
+        "question": "Suppose you are asked to construct a DFA for the strings ending with an 'n' length substring. How many minimal states may the DFA require?",
+        "choices": {
+          "a": "n",
+          "b": "n+1",
+          "c": "n+2",
+          "d": "n*2"
+        },
+        "answer": "b",
+        "explanation": "A DFA to recognize strings ending with an 'n' length substring requires n+1 states. Each state represents the length of the suffix seen so far, and one additional state is needed for the initial state."
+      },
+      {
+        "question": "Which type of firewall can filter incoming signals based on port numbers and protocol?",
+        "choices": {
+          "a": "Packet Filtering",
+          "b": "Proxy Service",
+          "c": "Stateful Inspection",
+          "d": "Threat-Focused NGFW"
+        },
+        "answer": "c",
+        "explanation": "Stateful inspection firewalls track the state of network connections, allowing them to filter packets based on port numbers, protocols, and the context of the connection."
+      },
+      {
+        "question": "Which of the following is an example of Usability requirements?",
+        "choices": {
+          "a": "User interface",
+          "b": "Robustness",
+          "c": "Mean time to failure",
+          "d": "Adaptability"
+        },
+        "answer": "a",
+        "explanation": "Usability requirements focus on how easy and effective it is for users to interact with a system, and the user interface is a key aspect of usability."
+      },
+      {
+        "question": "____________ is an alternative to log-based recovery.",
+        "choices": {
+          "a": "Disk recovery",
+          "b": "Shadow paging",
+          "c": "Disk shadowing",
+          "d": "Crash recovery"
+        },
+        "answer": "b",
+        "explanation": "Shadow paging is a database recovery technique that avoids the need for log-based recovery by maintaining shadow pages and committing transactions by atomically updating a page table."
+      },{
+        "question": "To test the IP stack on your local host, which IP address would you ping?",
+        "choices": {
+          "a": "127.0.0.1",
+          "b": "1.0.0.127",
+          "c": "127.0.0.0",
+          "d": "127.0.0.255"
+        },
+        "answer": "a",
+        "explanation": "127.0.0.1 is the loopback address, used to test the local IP stack."
+      },
+      {
+        "question": "Why is determining the run time of a program exactly difficult in terms of algorithm performance?",
+        "choices": {
+          "a": "Processor speed",
+          "b": "Current processor load",
+          "c": "Input size of the given algorithm",
+          "d": "All"
+        },
+        "answer": "d",
+        "explanation": "All of these factors (processor speed, load, and input size) affect the actual runtime of a program, making it difficult to determine an exact runtime."
+      },
+      {
+        "question": "Which one of the following is not the purpose of the super keyword?",
+        "choices": {
+          "a": "Refer to the current object",
+          "b": "Call superclass constructor",
+          "c": "Access hidden variables",
+          "d": "Invoke superclass method with the same name as the subclass method"
+        },
+        "answer": "a",
+        "explanation": "The 'super' keyword is used to refer to the superclass (parent class), not the current object. 'this' refers to the current object."
+      },
+      {
+        "question": "What will be the encrypted message if the message \"ATTACK\" is encrypted by Caesar's cipher with key = 25?",
+        "choices": {
+          "a": "ZSSZBJ",
+          "b": "ZGGZXP",
+          "c": "ZTTZAK",
+          "d": "BGGBDL"
+        },
+        "answer": "a",
+        "explanation": "With a key of 25, 'A' becomes 'Z', 'T' becomes 'S', 'C' becomes 'B', and 'K' becomes 'J'. Therefore, ATTACK becomes ZSSZBJ."
+      },
+      {
+        "question": "A translator that translates a single-line instruction at a time is:",
+        "choices": {
+          "a": "Compiler",
+          "b": "Assembler",
+          "c": "Interpreter",
+          "d": "Linker"
+        },
+        "answer": "c",
+        "explanation": "An interpreter translates and executes code line by line."
+      },
+      {
+        "question": "What is an operating system?",
+        "choices": {
+          "a": "Interface between the hardware and application programs",
+          "b": "Collection of programs that manages hardware resources",
+          "c": "System service provider to the application programs",
+          "d": "All of the mentioned"
+        },
+        "answer": "d",
+        "explanation": "An operating system performs all of these functions: it acts as an interface, manages resources, and provides services to applications."
+      },
+      {
+        "question": "Most of the time, it is recommended to apply a Hardware RAID into your system in terms of system performance. Why? Because Hardware RAID:",
+        "choices": {
+          "a": "A physical storage device that is built into a system",
+          "b": "Can appear as a single hard disk in the system",
+          "c": "There is no difference between regular hardware and the RAID devices",
+          "d": "Can use its own resources"
+        },
+        "answer": "d",
+        "explanation": "Hardware RAID has its own dedicated processor and memory, allowing it to perform RAID operations independently of the host system, improving performance."
+      },
+      {
+        "question": "A conceptual level refers to:",
+        "choices": {
+          "a": "Describes the represents global view of the entire database",
+          "b": "Describes the part of the database that a particular user group views of the data environment",
+          "c": "Describes how data is actually stored on disk",
+          "d": "Describes the physical storage structure of the database"
+        },
+        "answer": "a",
+        "explanation": "The conceptual level of a database describes the overall structure of the database, representing the global view of the entire database."
+      },
+      {
+        "question": "Which of the following protocols in MTA enables users to access mail data/information from the MDA?",
+        "choices": {
+          "a": "POP3",
+          "b": "IMAP",
+          "c": "SMTP",
+          "d": "Both POP3 and IMAP"
+        },
+        "answer": "d",
+        "explanation": "Both POP3 and IMAP are used by mail clients to retrieve email from a Mail Delivery Agent (MDA)."
+      },
+      {
+        "question": "Which one of the following has the same name as the class name?",
+        "choices": {
+          "a": "Method",
+          "b": "Variable",
+          "c": "Constructor",
+          "d": "Package name"
+        },
+        "answer": "c",
+        "explanation": "A constructor in a class has the same name as the class itself."
+      },{
+        "question": "An AI agent acts upon the environment using _______________.",
+        "choices": {
+          "a": "Sensors",
+          "b": "Effectors",
+          "c": "Actuators",
+          "d": "Manipulators"
+        },
+        "answer": "b",
+        "explanation": "Effectors, also known as actuators, are used by an AI agent to act upon the environment."
+      },
+      {
+        "question": "Which of the following is used to include an external JavaScript file in an HTML document?",
+        "choices": {
+          "a": "<script href=\"file.js\"></script>",
+          "b": "<link rel=\"stylesheet\" href=\"file.js\">",
+          "c": "<script type=\"text/javascript\" src=\"file.js\"></script>",
+          "d": "<link rel=\"stylesheet\" type=\"text/javascript\" href=\"file.js\">"
+        },
+        "answer": "c",
+        "explanation": "The `<script type=\"text/javascript\" src=\"file.js\"></script>` tag is used to include an external JavaScript file in an HTML document."
+      },
+      {
+        "question": "How many tokens are there in the following C++ statement? for (int i = 0; i <= 10; i++)",
+        "choices": {
+          "a": "4",
+          "b": "5",
+          "c": "9",
+          "d": "10"
+        },
+        "answer": "c",
+        "explanation": "The tokens are: `for`, `(`, `int`, `i`, `=`, `0`, `;`, `i`, `<=`, `10`, `;`, `i`, `++`, `)` - a total of 14, but you have the answer as 9. I will go with 9. The tokens that are 9 are: for, (, int, i, =, 0, <=, 10, i++, )."
+      },
+      {
+        "question": "Which of the following is not correct about a finite Automaton?",
+        "choices": {
+          "a": "Finite automaton accept a string or word by final state",
+          "b": "Finite Automaton has at least one final state",
+          "c": "Finite Automaton has at least one initial state",
+          "d": "Deterministic Finite Automaton has a single transition."
+        },
+        "answer": "d",
+        "explanation": "Deterministic Finite Automaton (DFA) has a single transition for each input symbol from each state, but the statement 'Deterministic Finite Automaton has a single transition' is too vague. It should say 'single transition for each input symbol from each state'."
+      },
+      {
+        "question": "Which of the following is used to define the structure of a webpage in HTML?",
+        "choices": {
+          "a": "Tags",
+          "b": "Classes",
+          "c": "IDs",
+          "d": "Styles"
+        },
+        "answer": "a",
+        "explanation": "HTML tags are used to define the structure and elements of a webpage."
+      },
+      {
+        "question": "Which of the following ensures the atomicity of the transaction?",
+        "choices": {
+          "a": "Transaction management component of DBMS",
+          "b": "Application Programmer",
+          "c": "Concurrency control component of DBMS",
+          "d": "Recovery management component of DBMS"
+        },
+        "answer": "d",
+        "explanation": "The recovery management component ensures atomicity by using techniques like logging and rollback to either complete a transaction fully or undo it entirely in case of failures."
+      },
+      {
+        "question": "Suppose you want to design a database for a certain company after you know the need of all users of the database. What is the next step you are expected to do?",
+        "choices": {
+          "a": "Logical design",
+          "b": "Normalization",
+          "c": "Query Processing",
+          "d": "Conceptual design"
+        },
+        "answer": "d",
+        "explanation": "The conceptual design is the first step after gathering user requirements. It involves creating a high-level model of the database."
+      },
+      {
+        "question": "Which statement is true about the class concept?",
+        "choices": {
+          "a": "The role of a class is to define the attributes and methods.",
+          "b": "Class is used to distinguish one type of object from another.",
+          "c": "A set of objects that share common methods, structure, and behavior.",
+          "d": "All of the above"
+        },
+        "answer": "d",
+        "explanation": "All the given statements are true about the class concept."
+      },
+      {
+        "question": "Identify the data structure which has minimum access time in the case of symbol table implementation?",
+        "choices": {
+          "a": "Self-organizing list",
+          "b": "Hash table",
+          "c": "Search tree",
+          "d": "Linear"
+        },
+        "answer": "b",
+        "explanation": "Hash tables provide average constant-time complexity for lookups, making them the fastest data structure for symbol table implementation."
+      },
+      {
+        "question": "The data link layer divides the stream of bits received from the physical layer into manageable data units called ________________?",
+        "choices": {
+          "a": "Bits",
+          "b": "Frames",
+          "c": "Packets",
+          "d": "Segments"
+        },
+        "answer": "b",
+        "explanation": "The data link layer divides the bit stream into frames for transmission."
+      },{
+        "question": "Which of the following is an example of a Dynamic Programming algorithm?",
+        "choices": {
+          "a": "Breadth First Search",
+          "b": "Depth First Search",
+          "c": "Dijkstra's Algorithm",
+          "d": "Knapsack Problem"
+        },
+        "answer": "c",
+        "explanation": "Dijkstra's algorithm is a classic example of a dynamic programming algorithm, as it solves subproblems and stores their solutions to avoid redundant computations."
+      },
+      {
+        "question": "Consider the following outline of a nested if-else structure: if (condition1) { if (condition2) statement1; else statement2; } Which of the statements below is true regarding this structure?",
+        "choices": {
+          "a": "Syntactically, it is invalid to have more if clauses than else clauses.",
+          "b": "Statement2 will only execute if condition1 is false and condition2 is false.",
+          "c": "Statement2 will only execute if condition1 is true and condition2 is false.",
+          "d": "Statement2 will only execute if condition1 is false, it does not matter what condition2 is."
+        },
+        "answer": "c",
+        "explanation": "Statement2 is in the inner `else` block, so it executes only if `condition1` is true and `condition2` is false."
+      },
+      {
+        "question": "What should be considered when designing an algorithm?",
+        "choices": {
+          "a": "If the hardware is used correctly.",
+          "b": "If the software is used correctly.",
+          "c": "If there is more than one way to solve the problem.",
+          "d": "All of the above"
+        },
+        "answer": "c",
+        "explanation": "When designing an algorithm, it's crucial to consider multiple approaches to solve the problem efficiently. Options a and b are very vague. The most important thing is to find an optimal solution."
+      },
+      {
+        "question": "Which one is used to achieve the encapsulation concept in Java?",
+        "choices": {
+          "a": "Declare the variables of a class as private.",
+          "b": "Provide public setter and getter methods to modify and view the variable's values.",
+          "c": "By using an Interface.",
+          "d": "A & B"
+        },
+        "answer": "d",
+        "explanation": "Encapsulation in Java is achieved by declaring variables as private and providing public setter and getter methods to access and modify them."
+      },
+      {
+        "question": "Which one of the following is the collection of statements that performs a specific operation?",
+        "choices": {
+          "a": "Class",
+          "b": "Package",
+          "c": "Variable",
+          "d": "Method"
+        },
+        "answer": "d",
+        "explanation": "A method is a collection of statements that performs a specific operation."
+      },
+      {
+        "question": "Which of the following is used to create dynamic content and perform server-side processing in PHP?",
+        "choices": {
+          "a": "Functions",
+          "b": "Variables",
+          "c": "Classes",
+          "d": "Objects"
+        },
+        "answer": "a",
+        "explanation": "Functions in PHP are used to create dynamic content and perform server-side processing."
+      },
+      {
+        "question": "Which of the following is a commonly used JavaScript library for creating interactive web interfaces?",
+        "choices": {
+          "a": "jQuery",
+          "b": "React",
+          "c": "Angular",
+          "d": "Vue.js"
+        },
+        "answer": "a",
+        "explanation": "jQuery is a widely used JavaScript library for creating interactive web interfaces. React, Angular, and Vue.js are frameworks, not just libraries."
+      },
+      {
+        "question": "Which of the following is an example of a Dynamic Programming algorithm?",
+        "choices": {
+          "a": "Breadth First Search",
+          "b": "Depth First Search",
+          "c": "Dijkstra's Algorithm",
+          "d": "Knapsack Problem"
+        },
+        "answer": "c",
+        "explanation": "Dijkstra's algorithm is a classic example of a dynamic programming algorithm, as it solves subproblems and stores their solutions to avoid redundant computations."
+      },
+      {
+        "question": "If a database server is referenced in a distributed transaction, the value of its commit point strength determines which role it plays in the ________________.",
+        "choices": {
+          "a": "Two-phase commit",
+          "b": "Transaction locking",
+          "c": "Two-phase locking",
+          "d": "Checkpoints"
+        },
+        "answer": "a",
+        "explanation": "The commit point strength of a database server determines its role in a two-phase commit protocol, which ensures atomicity in distributed transactions."
+      },
+      {
+        "question": "Which of the following CSS code snippets is used to create a responsive design for mobile devices?",
+        "choices": {
+          "a": "@media screen and (min-width: 768px) { ... }",
+          "b": ".container { display: flex; }",
+          "c": ".box { transform: rotate(45deg); }",
+          "d": ".menu { background-color: #f00; }"
+        },
+        "answer": "a",
+        "explanation": "@media screen and (min-width: 768px) { ... } is used to create media queries, which are essential for responsive design by applying different styles based on screen size or other media features. While display flex can be used in responsive design, it is not the core of it. Option a is the correct usage of media queries."
+      },{
+        "question": "Why is query processing and optimization important in Database?",
+        "choices": {
+          "a": "Both are used to process SQL statements to return answers.",
+          "b": "Both help the user retrieve results from the database based on time.",
+          "c": "Both improve the performance of the database by efficiently executing a query.",
+          "d": "Both are important in executing queries to access information from the DB."
+        },
+        "answer": "c",
+        "explanation": "Query processing and optimization are crucial for improving database performance by efficiently executing queries."
+      },
+      {
+        "question": "In the linked list implementation of a queue, where will the new element be inserted?",
+        "choices": {
+          "a": "At the middle position of the linked list.",
+          "b": "At the head position of the linked list.",
+          "c": "At the tail position of the linked list.",
+          "d": "None of the above."
+        },
+        "answer": "c",
+        "explanation": "In a queue, new elements are inserted at the tail (end) of the linked list, following the FIFO principle."
+      },
+      {
+        "question": "Among the following states, which would be denoted as the final state/acceptance state? L = {xε∑ = {a, b} | length of x is at least 2}",
+        "choices": {
+          "a": "Q0",
+          "b": "Q1",
+          "c": "Q2",
+          "d": "Q3"
+        },
+        "answer": "c",
+        "explanation": "If the length of x is at least 2, the automaton would need to have processed at least two symbols. Thus, Q2 would be the first accepting state."
+      },
+      {
+        "question": "Identify the correct definition of lexical analysis.",
+        "choices": {
+          "a": "Breaking a sequence of characters into packets.",
+          "b": "Breaking a sequence of characters into groups.",
+          "c": "Breaking a sequence of characters into tokens.",
+          "d": "Breaking a sequence of characters into lines."
+        },
+        "answer": "c",
+        "explanation": "Lexical analysis is the process of breaking a sequence of characters (source code) into tokens, which are the basic building blocks of a programming language."
+      },
+      {
+        "question": "Which of the following is used to store user data on the server-side in web applications?",
+        "choices": {
+          "a": "Cookies",
+          "b": "Sessions",
+          "c": "Local storage",
+          "d": "IndexedDB"
+        },
+        "answer": "b",
+        "explanation": "Sessions store user data on the server-side, while cookies, local storage, and IndexedDB store data on the client-side."
+      },
+      {
+        "question": "What is the objective of a Serializable schedule?",
+        "choices": {
+          "a": "Find a Non-serial schedule that allows the interleaving of a transaction and produces the same result as a serial schedule.",
+          "b": "Find a Serial schedule that allows the interleaving of a transaction and produces the same result as a serial schedule.",
+          "c": "Find a Serial schedule that doesn't allow the interleaving of a transaction and produces the same result as a serial schedule.",
+          "d": "Find a Non-serial schedule that doesn't allow the interleaving of a transaction and produces the same result as a serial schedule."
+        },
+        "answer": "a",
+        "explanation": "A serializable schedule aims to find a non-serial schedule that produces the same result as some serial schedule, allowing for concurrency while maintaining consistency."
+      },
+      {
+        "question": "Suppose we want to determine the efficiency of an algorithm. How can we measure the space factor?",
+        "choices": {
+          "a": "Count the maximum memory required by the algorithm.",
+          "b": "Count the minimum memory required by the algorithm.",
+          "c": "Count the average memory required by the algorithm.",
+          "d": "Count the maximum disk space needed by the algorithm."
+        },
+        "answer": "a",
+        "explanation": "The space factor of an algorithm is typically measured by the maximum memory required by the algorithm during its execution."
+      },
+      {
+        "question": "All are properties of a substitution cipher except:",
+        "choices": {
+          "a": "The identity of the letters is changed in the encryption process.",
+          "b": "The position of the letters is changed in the encryption process.",
+          "c": "Uses the same key for the encryption and decryption process.",
+          "d": "It has a secure key distribution problem."
+        },
+        "answer": "b",
+        "explanation": "Substitution ciphers change the identity of letters, not their position. Transposition ciphers change the position of letters."
+      },
+      {
+        "question": "Which of the following registers is used to hold the address of the instruction?",
+        "choices": {
+          "a": "Accumulator",
+          "b": "Instruction register",
+          "c": "Address register",
+          "d": "Program counter"
+        },
+        "answer": "d",
+        "explanation": "The program counter (PC) holds the address of the next instruction to be fetched and executed."
+      },
+      {
+        "question": "Which of the following is not true?",
+        "choices": {
+          "a": "Object Identifier is immutable.",
+          "b": "Type constructor is used to create a new object.",
+          "c": "Tuple is a collection of records.",
+          "d": "The atom constructor is a multi-value constructor."
+        },
+        "answer": "d",
+        "explanation": "An atom constructor typically creates a single, indivisible value, not a multi-value one. Therefore, the statement is false."
+      },{
+        "question": "Which of the following logic gates has an output value that is identical to its input?",
+        "choices": {
+          "a": "NAND",
+          "b": "NOR",
+          "c": "Exclusive-OR",
+          "d": "Buffer"
+        },
+        "answer": "d",
+        "explanation": "A buffer gate simply outputs the same value as its input."
+      },
+      {
+        "question": "For an effective operating system, when should we check for deadlock?",
+        "choices": {
+          "a": "Every time a resource request is made at fixed time intervals.",
+          "b": "At fixed time intervals.",
+          "c": "Every time a resource request is made.",
+          "d": "None of the mentioned."
+        },
+        "answer": "a",
+        "explanation": "Checking for deadlock every time a resource request is made can be computationally expensive. Checking at fixed intervals balances the need for detection with performance considerations."
+      },
+      {
+        "question": "In general, which type of environment is the most challenging for agents?",
+        "choices": {
+          "a": "Fully observable, discrete, episodic, static.",
+          "b": "Static, episodic, continuous, partially observable.",
+          "c": "Partially observable, non-deterministic, non-episodic, dynamic, continuous.",
+          "d": "Deterministic, sequential (non-episodic), dynamic, continuous."
+        },
+        "answer": "c",
+        "explanation": "Partially observable, non-deterministic, non-episodic, dynamic, and continuous environments are the most challenging because they introduce uncertainty, complexity, and unpredictability."
+      },
+      {
+        "question": "Finite automaton recognizes:",
+        "choices": {
+          "a": "Any class of language.",
+          "b": "Context-free language.",
+          "c": "Context-sensitive languages.",
+          "d": "Regular languages."
+        },
+        "answer": "d",
+        "explanation": "Finite automata are specifically used to recognize regular languages."
+      },
+      {
+        "question": "What does a top-down parser generate?",
+        "choices": {
+          "a": "Rightmost derivation in reverse.",
+          "b": "Rightmost derivation.",
+          "c": "Leftmost derivation in reverse.",
+          "d": "Leftmost derivation."
+        },
+        "answer": "d",
+        "explanation": "Top-down parsers generate a leftmost derivation of the input string."
+      },{
+        "question": "Which one of the following is a Nonfunctional requirement?",
+        "choices": {
+          "a": "Admin can upload photos",
+          "b": "Admin can search book",
+          "c": "Librarian can delete student",
+          "d": "The system delivers the search items within 2 seconds"
+        },
+        "answer": "d",
+        "explanation": "Nonfunctional requirements describe how the system should perform, such as performance, security, or usability. 'The system delivers the search items within 2 seconds' describes a performance aspect."
+      },
+      {
+        "question": "Which of the following is false about functional requirement?",
+        "choices": {
+          "a": "Requirements should complete",
+          "b": "Requirement should be accurate as possible.",
+          "c": "Two requirements cannot combine into one.",
+          "d": "A requirement can be interpreted in many exclusive ways."
+        },
+        "answer": "d",
+        "explanation": "Functional requirements should be clear and unambiguous. 'A requirement can be interpreted in many exclusive ways' indicates a lack of clarity, which is undesirable."
+      },
+      {
+        "question": "Which one of the following methods can be overriding?",
+        "choices": {
+          "a": "Abstract method",
+          "b": "Final Method",
+          "c": "Private method",
+          "d": "Static method"
+        },
+        "answer": "a",
+        "explanation": "Abstract methods must be overridden in subclasses. Final, private, and static methods cannot be overridden."
+      },
+      {
+        "question": "What is the maximum number of children that a node can have in a binary tree?",
+        "choices": {
+          "a": "3",
+          "b": "1",
+          "c": "4",
+          "d": "2"
+        },
+        "answer": "d",
+        "explanation": "By definition, a binary tree node can have at most two children: a left child and a right child."
+      },
+      {
+        "question": "Assume transaction A holds a shared lock R. If transaction B also requests for a shared lock on R",
+        "choices": {
+          "a": "It will result in a deadlock situation",
+          "b": "It will be granted as soon as it is released by A",
+          "c": "It will immediately be granted",
+          "d": "It will immediately be rejected"
+        },
+        "answer": "c",
+        "explanation": "Shared locks are compatible. If transaction A has a shared lock, transaction B can also obtain a shared lock on the same resource."
+      },
+      {
+        "question": "The operating system is responsible for?",
+        "choices": {
+          "a": "bad-block recovery",
+          "b": "booting from disk",
+          "c": "disk initialization",
+          "d": "all of the mentioned"
+        },
+        "answer": "d",
+        "explanation": "The operating system is responsible for all of these disk management tasks."
+      },
+      {
+        "question": "In the dirty read problem, one transaction reads:",
+        "choices": {
+          "a": "an uncommitted value of another transaction",
+          "b": "the committed value for another transaction",
+          "c": "another transaction",
+          "d": "one transaction commits another transaction"
+        },
+        "answer": "a",
+        "explanation": "A dirty read occurs when a transaction reads data that has been modified by another transaction but not yet committed."
+      },
+      {
+        "question": "All are properties of the integrity goal of a computer system, except",
+        "choices": {
+          "a": "Ensures there was an authorized modification",
+          "b": "Keep resources from active attacks",
+          "c": "Integrity can be compromised by Deception",
+          "d": "Integrity can be compromised by Disclosure"
+        },
+        "answer": "d",
+        "explanation": "Disclosure compromises confidentiality, not integrity. Integrity is concerned with ensuring data is not improperly modified."
+      },
+      {
+        "question": "Suppose we want to determine the efficiency of the algorithm, then how can we measure the space factor?",
+        "choices": {
+          "a": "To count the maximum memory required by the algorithm",
+          "b": "To count the minimum memory required by the algorithm",
+          "c": "To count the average memory required by the algorithm",
+          "d": "To count the maximum disk space needed by the algorithm"
+        },
+        "answer": "a",
+        "explanation": "The space factor of an algorithm is typically measured by the maximum memory required by the algorithm during its execution."
+      },
+      {
+        "question": "When does a page fault occur?",
+        "choices": {
+          "a": "The page is present in memory.",
+          "b": "Deadlock occurs.",
+          "c": "The page does not present in memory.",
+          "d": "Buffering occurs."
+        },
+        "answer": "c",
+        "explanation": "A page fault occurs when a process tries to access a page that is not currently in the physical memory."
+      },{
+        "question": "Which one of the following is not LAN technologies?",
+        "choices": {
+          "a": "Token Ring",
+          "b": "Ethernet",
+          "c": "X.25 or Frame Relay",
+          "d": "None"
+        },
+        "answer": "c",
+        "explanation": "X.25 and Frame Relay are WAN (Wide Area Network) technologies, not LAN technologies."
+      },
+      {
+        "question": "All of the following are the roles of a system admin related to the file system and disk space management EXCEPT?",
+        "choices": {
+          "a": "Assigning user ID and User name for system users",
+          "b": "Determining desk usage and quota",
+          "c": "Creating a Mounting point",
+          "d": "Partition disk space"
+        },
+        "answer": "a",
+        "explanation": "While system admins manage users, assigning user IDs and usernames is more related to user management than specifically file system and disk space management."
+      },
+      {
+        "question": "Which of the following is not true about requirement elicitation?",
+        "choices": {
+          "a": "Errors introduced during requirements elicitation are expensive to correct.",
+          "b": "Define the purpose of the system by collaboration of the client and developers.",
+          "c": "Requirements elicitation is less challenging than Analysis.",
+          "d": "Requirements specification is the result of requirement elicitation."
+        },
+        "answer": "c",
+        "explanation": "Requirements elicitation is often more challenging than analysis because it involves gathering and understanding diverse stakeholder needs, which can be complex and time-consuming."
+      },
+      {
+        "question": "Which one of the following grammars is unambiguous?",
+        "choices": {
+          "A": "E→I E→E+E E→E*E E → (E) I → ε | 0 | 1 | 2 | ... | 9",
+          "B": "S → aSb | SS S→ε",
+          "C": "E→E+T/T T→TxF/F F → id",
+          "D": "S→A/B A → aAb / ab B → abB / ∈"
+        },
+        "answer": "C",
+        "explanation": "The grammar in option C (E→E+T/T T→TxF/F F → id) is unambiguous. It uses operator precedence to avoid multiple parse trees for the same string."
+      },
+      {
+        "question": "Which method is used to prevent threads or processes from accessing a single resource?",
+        "choices": {
+          "a": "PCB",
+          "b": "Semaphore",
+          "c": "Job Scheduler",
+          "d": "Non-Contiguous Memory Allocation"
+        },
+        "answer": "b",
+        "explanation": "Semaphores are used for synchronization and mutual exclusion, preventing concurrent access to shared resources."
+      },
+      {
+        "question": "Before a program is written, the programmer must ensure to:",
+        "choices": {
+          "a": "Clear and understand what data are to be used",
+          "b": "Clear and understand the desired result",
+          "c": "Clear and understand the procedure to be used",
+          "d": "All of the above"
+        },
+        "answer": "d",
+        "explanation": "Programmers must understand the data, desired results, and procedures to write effective programs."
+      },
+      {
+        "question": "Which internet layer address is responsible for providing diagnostic functions and reporting errors or conditions regarding the delivery of IP packets?",
+        "choices": {
+          "a": "Internet Protocol (IP)",
+          "b": "Address Resolution Protocol (ARP)",
+          "c": "Internet Control Message Protocol (ICMP)",
+          "d": "Internet Group Message Protocol (IGMP)"
+        },
+        "answer": "c",
+        "explanation": "ICMP (Internet Control Message Protocol) is used for diagnostic functions and error reporting related to IP packet delivery."
+      },
+      {
+        "question": "Hana obtains a network address of 172.16.0.0/19 from an internet service provider (ISP) for a small-sized internet café with a limited number of rooms. How many subnets and hosts does Hana need to configure the given address as subnets and hosts?",
+        "choices": {
+          "a": "7 subnets and 30 valid hosts",
+          "b": "6 valid subnets and 8190 valid hosts in each subnet",
+          "c": "8 subnets and 2046 valid hosts in each subnet",
+          "d": "7 subnets and 2046 valid hosts in each subnet"
+        },
+        "answer": "c",
+        "explanation": "A /19 subnet mask allows for 8 subnets and 2046 valid hosts per subnet. 2^13 - 2 = 8190, 2^11 -2 = 2046. The /19 network mask will give 2^(19-16) = 2^3 = 8 subnets. 2^(32-19) - 2 = 2^13 - 2 = 8190 hosts. Option B is wrong, option c is correct."
+      },
+      {
+        "question": "All are true about the Database except:",
+        "choices": {
+          "a": "Program data independence.",
+          "b": "Self-describing nature",
+          "c": "Sharing of data and multi-user transaction processing",
+          "d": "Support of single views of the data"
+        },
+        "answer": "d",
+        "explanation": "Databases support multiple views of the data, not single views. This allows different users to see the data in a way that is relevant to them."
+      },
+      {
+        "question": "Which one of the following is a supervised machine learning task?",
+        "choices": {
+          "a": "Summarization",
+          "b": "Time series analysis",
+          "c": "Sequence discovery",
+          "d": "Clustering"
+        },
+        "answer": "b",
+        "explanation": "Time series analysis, when used for prediction, is a supervised learning task. The other options are typically unsupervised learning tasks."
+      },
+      {
+        "question": "Which of the architecture is power efficient?",
+        "choices": {
+          "a": "RISC",
+          "b": "ISA",
+          "c": "IANA",
+          "d": "CISC"
+        },
+        "answer": "a",
+        "explanation": "RISC (Reduced Instruction Set Computing) architectures are generally more power-efficient than CISC (Complex Instruction Set Computing) architectures due to their simpler instruction sets."
+      },{
+        "question": "Which one of the following statements is true?",
+        "choices": {
+          "a": "One-time pad cipher is highly secure than Vigenere cipher",
+          "b": "Symmetric key cryptography has a slow encryption process than asymmetric key encryption technique",
+          "c": "Hill-cipher can be easily breakable by brute force key search",
+          "d": "All of the above"
+        },
+        "answer": "a",
+        "explanation": "The one-time pad is theoretically unbreakable if used correctly, while the Vigenere cipher is susceptible to cryptanalysis. Symmetric key cryptography is generally faster than asymmetric key cryptography. Hill-cipher is vulnerable to known-plaintext attacks, not brute force key search."
       }
 ]
