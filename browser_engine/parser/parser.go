@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 	"unicode/utf8"
 )
 
@@ -48,4 +49,14 @@ func (p *Parser) consume_while(test func(rune) bool) string {
 		result.WriteRune(p.consume_char())
 	}
 	return result.String()
+}
+
+func (p *Parser) consume_whitespace() {
+	p.consume_while(unicode.IsSpace)
+}
+
+func (p *Parser) parse_name() string {
+	return p.consume_while(func(c rune) bool {
+		return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')
+	})
 }
