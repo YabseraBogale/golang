@@ -5,6 +5,8 @@ import (
 	"strings"
 	"unicode"
 	"unicode/utf8"
+
+	"github.com/YabseraBogale/golang/browser_engine/dom"
 )
 
 type Parser struct {
@@ -59,4 +61,81 @@ func (p *Parser) parse_name() string {
 	return p.consume_while(func(c rune) bool {
 		return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')
 	})
+}
+
+func (p *Parser) parse_attr_value() string {
+	open_quote := p.consume_char()
+	assert(open_quote == '"' || open_quote == '\'', "failed in parse_attr_value")
+	value := p.consume_while(func(r rune) bool {
+		return r != open_quote
+	})
+	close_quote := p.consume_char()
+	assert(close_quote == open_quote, "failed in parse_attr_value")
+	return value
+}
+
+func (p *Parser) parse_attr() (name string, value string) {
+	name = p.parse_name()
+	p.expect("=")
+	value = p.parse_attr_value()
+	return name, value
+
+}
+
+func (p *Parser) parse_attributes() dom.AttrMap {
+	attributes := map[string]string{}
+	for {
+		p.consume_whitespace()
+		if p.next_char() == '<' {
+			break
+		}
+		name, value := p.parse_attr()
+		attributes[name] = value
+	}
+	return attributes
+}
+
+func (p *Parser) parse_element() dom.Node {
+	p.expect("<")
+	tag_name := p.parse_name()
+	attrs := p.parse_attributes()
+	p.expect(">")
+	childen := p.parse_nodes()
+	p.expect("</")
+	p.expect(tag_name)
+	p.expect(">")
+	return dom.Elem(tag_name, attrs, childen)
+}
+
+func (p *Parser) parse_text() dom.Node {
+	return dom.Text(p.consume_while(func(r rune) bool {
+		return r != '<'
+	}))
+}
+
+func (p *Parser) parse_node() dom.Node {
+	if p.starts_with("<") {
+		return p.parse_element()
+	} else {
+		return p.parse_text()
+	}
+}
+
+func (p *Parser) parse_nodes() []dom.Node {
+	nodes := []dom.Node{}
+	for {
+		p.consume_whitespace()
+		if p.eof() || p.starts_with("</") {
+			break
+		}
+		nodes = append(nodes, p.parse_node())
+	}
+	return nodes
+}
+
+func assert(condition bool, message string) {
+	if !condition {
+		msg := fmt.Sprintf("Assertion failed: %s", message)
+		panic(msg)
+	}
 }
