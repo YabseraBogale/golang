@@ -10,38 +10,38 @@ import (
 )
 
 type Parser struct {
-	pos   int
-	input string
+	Pos   int
+	Input string
 }
 
 func (p *Parser) Next_Char() rune {
 	if p.Eof() {
 		return 0
 	}
-	r, _ := utf8.DecodeLastRuneInString(p.input[p.pos:])
+	r, _ := utf8.DecodeLastRuneInString(p.Input[p.Pos:])
 	return r
 }
 
 func (p *Parser) Starts_With(s string) bool {
-	return len(p.input[p.pos:]) >= len(s) && p.input[p.pos:p.pos+len(s)] == s
+	return len(p.Input[p.Pos:]) >= len(s) && p.Input[p.Pos:p.Pos+len(s)] == s
 }
 
 func (p *Parser) Expect(s string) {
 	if p.Starts_With(s) {
-		p.pos += len(s)
+		p.Pos += len(s)
 	} else {
-		msg := fmt.Sprintf("Expected %s at byte %d but it was not found", s, p.pos)
+		msg := fmt.Sprintf("Expected %s at byte %d but it was not found", s, p.Pos)
 		panic(msg)
 	}
 }
 
 func (p *Parser) Eof() bool {
-	return p.pos >= len(p.input)
+	return p.Pos >= len(p.Input)
 }
 
 func (p *Parser) Consume_Char() rune {
 	c := p.Next_Char()
-	p.pos += utf8.RuneLen(c)
+	p.Pos += utf8.RuneLen(c)
 	return c
 }
 
