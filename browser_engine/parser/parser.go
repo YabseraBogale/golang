@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"unicode/utf8"
 )
 
@@ -39,4 +40,12 @@ func (p *Parser) consume_char() rune {
 	c := p.next_char()
 	p.pos += utf8.RuneLen(c)
 	return c
+}
+
+func (p *Parser) consume_while(test func(rune) bool) string {
+	var result strings.Builder
+	for !p.eof() && test(p.next_char()) {
+		result.WriteRune(p.consume_char())
+	}
+	return result.String()
 }
