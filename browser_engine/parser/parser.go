@@ -19,6 +19,7 @@ func (p *Parser) Next_Char() rune {
 		return 0
 	}
 	r, _ := utf8.DecodeLastRuneInString(p.Input[p.Pos:])
+
 	return r
 }
 
@@ -27,6 +28,7 @@ func (p *Parser) Starts_With(s string) bool {
 }
 
 func (p *Parser) Expect(s string) {
+	fmt.Println(s)
 	if p.Starts_With(s) {
 		p.Pos += len(s)
 	} else {
@@ -100,10 +102,12 @@ func (p *Parser) Parse_Element() dom.Node {
 	tag_name := p.Parse_Name()
 	attrs := p.Parse_Attributes()
 	p.Expect(">")
+
 	childen := p.Parse_Nodes()
 	p.Expect("</")
 	p.Expect(tag_name)
 	p.Expect(">")
+
 	return dom.Elem(tag_name, attrs, childen)
 }
 
