@@ -16,7 +16,7 @@ func New(input string) *Lexer {
 	return l
 }
 
-func (l *Lexer) NextToken(input string) token.Token {
+func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 	switch l.ch {
 	case '=':
@@ -39,6 +39,7 @@ func (l *Lexer) NextToken(input string) token.Token {
 		tok.Literal = ""
 		tok.Type = token.EOF
 	}
+	l.readChar()
 	return tok
 }
 
