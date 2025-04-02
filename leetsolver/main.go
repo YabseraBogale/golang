@@ -1,45 +1,52 @@
 package main
 
 import (
-	"bytes"
+	"context"
 	"fmt"
-	"io"
+	"image/png"
 	"log"
-	"net/http"
 	"os"
+
+	"github.com/google/generative-ai-go/genai"
+	"github.com/vova616/screenshot"
+	"google.golang.org/api/option"
 )
 
 func main() {
-	url := "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + os.Getenv("api")
-	data := []byte(`{
-    "contents": [
-      {
-        "parts": [
-          {
-            "text": "Explain how AI works in a few words"
-          }
-        ]
-      }
-    ]
-  }`)
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(data))
+	api := os.Getenv("api")
+	ctx := context.Background()
+
+	client, err := genai.NewClient(ctx, option.WithAPIKey(api))
 	if err != nil {
-		log.Println(err)
+		log.Fatal(err)
+	}
+	defer client.Close()
+	for {
+		file, err := os.Create("image.png")
+		if err != nil {
+			log.Println(err)
+		}
+		defer file.Close()
+		screen, err := screenshot.CaptureScreen()
+		if err != nil {
+			log.Println(err)
+		}
+		err = png.Encode(file, screen)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		question := ""
+		if question == "" {
+
+		} else {
+			model := client.GenerativeModel("gemini-2.0-flash")
+			resp, err := model.GenerateContent(ctx, genai.Text("How does AI work?"))
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Println(resp)
+		}
 	}
 
-	req.Header.Set("Content-Type", "application/json")
-	client := &http.Client{}
-
-	resp, err := client.Do(req)
-	if err != nil {
-		log.Println(err)
-	}
-	defer resp.Body.Close()
-
-	body, err := io.ReadAll(req.Body)
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(resp.Status)
-	fmt.Println(len(body))
 }
