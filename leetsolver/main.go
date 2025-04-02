@@ -2,6 +2,8 @@ package main
 
 import (
 	"bytes"
+	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -33,4 +35,11 @@ func main() {
 		log.Println(err)
 	}
 	defer resp.Body.Close()
+
+	body, err := io.ReadAll(req.Body)
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(resp.Status)
+	fmt.Println(len(body))
 }
