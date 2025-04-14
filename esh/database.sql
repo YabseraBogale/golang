@@ -5,7 +5,7 @@ create table if not exists Job(
 );
 
 create table if not exists Emergency_Contact(
-    emergency_contact_id not null primary key,
+    emergency_contact_id int not null primary key,
     firstname varchar(30) not null,
     middlename varchar(30) not null,
     lastname varchar(30) not null,
@@ -35,6 +35,5 @@ create table if not exists item(
     item_description text not null,
     item_quantity int not null,
     status varchar(30) not null,
-    date date not null,
-    
+    date date not null
 )
