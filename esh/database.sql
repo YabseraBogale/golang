@@ -1,10 +1,10 @@
-create table Job(
+create table if not exists Job(
     job_id int not null primary key,
     job_title text not null,
     job_description text not null
 );
 
-create table Employee(
+create table if not exists Employee(
     id int not null primary key,
     firstname varchar(30) not null,
     middlename varchar(30) not null,
