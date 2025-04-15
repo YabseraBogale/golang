@@ -28,6 +28,19 @@ create table if not exists Employee(
     job_id int references Job
 );
 
+create table if not exists Candate(
+    candate_id int not null,
+    firstname varchar(30) not null,
+    middlename varchar(30) not null,
+    lastname varchar(30) not null,
+    phonenumber int not null,
+    fyda_id text not null,
+    email text not null,
+    hire_date date not null,
+    cv text null,
+    job_id int references Job                        
+)
+
 create table if not exists Item(
     employee_id int references Employee,
     item_id varchar(30) not null primary key,
