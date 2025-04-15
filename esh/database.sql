@@ -1,7 +1,3 @@
-drop table Job
-drop table Emergency_Contact
-drop table Employee
-drop table item
 create table if not exists Job(
     job_id int not null primary key,
     job_title text not null,
