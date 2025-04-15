@@ -27,7 +27,7 @@ create table if not exists Employee(
     phonenumber int not null,
     fyda_id text not null,
     email text not null,
-    date date not null,
+    hire_date date not null,
     emergency_contact_id int references Emergency_Contact,
     job_id int references Job
 );
@@ -38,6 +38,6 @@ create table if not exists item(
     item_name varchar(30) not null,
     item_description text not null,
     item_quantity int not null,
-    status varchar(30) not null,
-    date date not null
+    item_status varchar(30) not null,
+    item_date date not null
 )
