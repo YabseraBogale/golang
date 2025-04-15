@@ -26,7 +26,7 @@ type Candate struct {
 	Phonenumber string
 	FydaId      string
 	Email       string
-	HireDate    string
+	HireDate    time.Time
 	Cv          string
 	JobId       int
 }
