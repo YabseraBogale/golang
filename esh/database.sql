@@ -32,7 +32,7 @@ create table if not exists Employee(
     job_id int references Job
 );
 
-create table if not exists item(
+create table if not exists Item(
     employee_id int references Employee,
     item_id varchar(30) not null primary key,
     item_name varchar(30) not null,
