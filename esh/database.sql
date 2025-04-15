@@ -6,20 +6,20 @@ create table if not exists Job(
 
 create table if not exists Emergency_Contact(
     emergency_contact_id int not null primary key,
-    firstname varchar(30) not null,
-    middlename varchar(30) not null,
-    lastname varchar(30) not null,
-    phonenumber varchar(30) not null,
-    email varchar(30) not null,
+    firstname text not null,
+    middlename text not null,
+    lastname text not null,
+    phonenumber text not null,
+    email text not null,
     fyda_id text not null
 
 );
 
 create table if not exists Employee(
     employee_id int not null primary key,
-    firstname varchar(30) not null,
-    middlename varchar(30) not null,
-    lastname varchar(30) not null,
+    firstname text not null,
+    middlename text not null,
+    lastname text not null,
     phonenumber int not null,
     fyda_id text not null,
     email text not null,
@@ -30,9 +30,9 @@ create table if not exists Employee(
 
 create table if not exists Candate(
     candate_id int not null,
-    firstname varchar(30) not null,
-    middlename varchar(30) not null,
-    lastname varchar(30) not null,
+    firstname text not null,
+    middlename text not null,
+    lastname text not null,
     phonenumber int not null,
     fyda_id text not null,
     email text not null,
@@ -43,10 +43,10 @@ create table if not exists Candate(
 
 create table if not exists Item(
     employee_id int references Employee,
-    item_id varchar(30) not null primary key,
-    item_name varchar(30) not null,
+    item_id text not null primary key,
+    item_name text not null,
     item_description text not null,
     item_quantity int not null,
-    item_status varchar(30) not null,
+    item_status text not null,
     item_date date not null
 )
