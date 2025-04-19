@@ -106,3 +106,18 @@ type Item struct {
 	ItemStatus      string
 	ItemDate        time.Time
 }
+
+func InsertItem(
+	employeeid int, itemid int, itemname string,
+	itemdescription string, itemquanitiy int,
+	itemstatus string, itemdate time.Time) Item {
+	return Item{
+		EmployeeId:      employeeid,
+		ItemId:          itemid,
+		ItemName:        itemname,
+		ItemDescription: itemdescription,
+		ItemQuantity:    itemquanitiy,
+		ItemStatus:      itemstatus,
+		ItemDate:        itemdate,
+	}
+}
