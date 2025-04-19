@@ -20,7 +20,7 @@ create table if not exists Employee(
     firstname text not null,
     middlename text not null,
     lastname text not null,
-    phonenumber int not null,
+    phonenumber text not null,
     fyda_id text not null,
     email text not null,
     hire_date date not null,
