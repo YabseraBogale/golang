@@ -33,6 +33,7 @@ func main() {
 	http.Handle("/js/", http.StripPrefix("/js/", js))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+
 		err = templates.ExecuteTemplate(w, "index.html", nil)
 		if err != nil {
 			log.Fatalln(err)
