@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"text/template"
 )
 
 func main() {
@@ -15,7 +16,14 @@ func main() {
 	log.SetOutput(logFile)
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-
+		temp, err := template.ParseFiles("public/index.html")
+		if err != nil {
+			log.Fatalln(err)
+		}
+		err = temp.Execute(w, nil)
+		if err != nil {
+			log.Fatalln(err)
+		}
 	})
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
 
