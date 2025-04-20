@@ -4,16 +4,6 @@ create table if not exists Job(
     job_description text not null
 );
 
-create table if not exists Emergency_Contact(
-    emergency_contact_id int not null primary key,
-    firstname text not null,
-    middlename text not null,
-    lastname text not null,
-    phonenumber text not null,
-    email text not null,
-    fyda_id text not null
-
-);
 
 create table if not exists Employee(
     employee_id int not null primary key,
@@ -24,7 +14,12 @@ create table if not exists Employee(
     fyda_id text not null,
     email text not null,
     hire_date date not null,
-    emergency_contact_id int references Emergency_Contact,
+    emergency_firstname text not null,
+    emergency_middlename text not null,
+    emergency_lastname text not null,
+    emergency_phonenumber text not null,
+    emergency_email text not null,
+    emergency_fyda_id text not null,
     job_id int references Job
 );
 
