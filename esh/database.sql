@@ -20,7 +20,7 @@ create table if not exists Employee(
     emergency_phonenumber text not null,
     emergency_email text not null,
     emergency_fyda_id text not null,
-    job_id int references Job
+    job_title text references Job
 );
 
 create table if not exists Candate(
