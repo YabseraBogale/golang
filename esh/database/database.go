@@ -48,13 +48,13 @@ type Candate struct {
 	Email       string
 	HireDate    time.Time
 	Cv          string
-	JobId       int
+	JobTitle    string
 }
 
 func InsertCandate(
 	firstname string, middlename string, lastname string,
 	phonenumber string, email string,
-	fydaid string, cv string, hiredate time.Time, jobid int) Candate {
+	fydaid string, cv string, hiredate time.Time, jobtitle string) Candate {
 	return Candate{
 		FirstName:   firstname,
 		MiddleName:  middlename,
@@ -64,7 +64,7 @@ func InsertCandate(
 		FydaId:      fydaid,
 		HireDate:    hiredate,
 		Cv:          cv,
-		JobId:       jobid,
+		JobTitle:    jobtitle,
 	}
 }
 
@@ -78,13 +78,13 @@ type Employee struct {
 	Email              string
 	HireDate           time.Time
 	EmergencyContactId int
-	JobId              int
+	JobTitle           string
 }
 
 func InsertEmployee(
 	firstname string, middlename string, lastname string,
 	phonenumber string, email string,
-	fydaid string, hiredate time.Time, jobid int) Employee {
+	fydaid string, hiredate time.Time, jobtitle string) Employee {
 	return Employee{
 		FirstName:   firstname,
 		MiddleName:  middlename,
@@ -93,7 +93,7 @@ func InsertEmployee(
 		Email:       email,
 		FydaId:      fydaid,
 		HireDate:    hiredate,
-		JobId:       jobid,
+		JobTitle:    jobtitle,
 	}
 }
 
