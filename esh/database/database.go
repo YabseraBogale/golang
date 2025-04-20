@@ -17,27 +17,6 @@ func InsertJob(jobtitle string, jobdescription string) Job {
 	}
 }
 
-type EmergencyContact struct {
-	EmergencyContactId int
-	FirstName          string
-	MiddleName         string
-	LastName           string
-	Phonenumber        string
-	Email              string
-	FydaId             string
-}
-
-func InsertEmergencyContact(firstname, middlename, lastname, phonenumber, email, fydaid string) EmergencyContact {
-	return EmergencyContact{
-		FirstName:   firstname,
-		MiddleName:  middlename,
-		LastName:    lastname,
-		Phonenumber: phonenumber,
-		Email:       email,
-		FydaId:      fydaid,
-	}
-}
-
 type Candate struct {
 	CandateId   int
 	FirstName   string
@@ -69,31 +48,45 @@ func InsertCandate(
 }
 
 type Employee struct {
-	EmployeeId         int
-	FirstName          string
-	MiddleName         string
-	LastName           string
-	Phonenumber        string
-	FydaId             string
-	Email              string
-	HireDate           time.Time
-	EmergencyContactId int
-	JobTitle           string
+	EmployeeId           int
+	FirstName            string
+	MiddleName           string
+	LastName             string
+	Phonenumber          string
+	FydaId               string
+	Email                string
+	HireDate             time.Time
+	EmergencyFirstName   string
+	EmergencyMiddleName  string
+	EmergencyLastName    string
+	EmergencyPhonenumber string
+	EmergencyEmail       string
+	EmergencyFydaId      string
+	JobTitle             string
 }
 
 func InsertEmployee(
 	firstname string, middlename string, lastname string,
 	phonenumber string, email string,
-	fydaid string, hiredate time.Time, jobtitle string) Employee {
+	fydaid string, hiredate time.Time,
+	emergencyfirstname string, emergencymiddlename string, emergencylastname string,
+	emergencyphonenumber string, emergencyemail string,
+	emergencyfydaid string, jobtitle string) Employee {
 	return Employee{
-		FirstName:   firstname,
-		MiddleName:  middlename,
-		LastName:    lastname,
-		Phonenumber: phonenumber,
-		Email:       email,
-		FydaId:      fydaid,
-		HireDate:    hiredate,
-		JobTitle:    jobtitle,
+		FirstName:            firstname,
+		MiddleName:           middlename,
+		LastName:             lastname,
+		Phonenumber:          phonenumber,
+		Email:                email,
+		FydaId:               fydaid,
+		HireDate:             hiredate,
+		EmergencyFirstName:   emergencyfirstname,
+		EmergencyMiddleName:  emergencymiddlename,
+		EmergencyLastName:    emergencylastname,
+		EmergencyPhonenumber: emergencyphonenumber,
+		EmergencyEmail:       emergencyemail,
+		EmergencyFydaId:      emergencyfydaid,
+		JobTitle:             jobtitle,
 	}
 }
 
