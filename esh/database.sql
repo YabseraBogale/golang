@@ -1,12 +1,12 @@
 create table if not exists Job(
-    job_id int not null primary key,
+    job_id int GENERATED ALWAYS AS IDENTITY,
     job_title text not null,
     job_description text not null
 );
 
 
 create table if not exists Employee(
-    employee_id int not null primary key,
+    employee_id text not null primary key,
     firstname text not null,
     middlename text not null,
     lastname text not null,
@@ -24,7 +24,7 @@ create table if not exists Employee(
 );
 
 create table if not exists Candate(
-    candate_id int not null,
+    candate_id text not null PRIMARY KEY,
     firstname text not null,
     middlename text not null,
     lastname text not null,
