@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -40,6 +41,10 @@ func main() {
 		}
 	})
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
+		job_title := r.PostFormValue("job_title")
+		job_description := r.PostFormValue("job_description")
+		// don't forget to delete the fmt line below
+		fmt.Println(job_title, job_description)
 		err = templates.ExecuteTemplate(w, "add_job.html", nil)
 		if err != nil {
 			log.Fatalln(err)
@@ -52,6 +57,15 @@ func main() {
 		}
 	})
 	http.HandleFunc("/add_item", func(w http.ResponseWriter, r *http.Request) {
+		employee_id := r.PostFormValue("employee_id")
+		item_id := r.PostFormValue("item_id")
+		item_name := r.PostFormValue("item_name")
+		item_description := r.PostFormValue("item_description")
+		quantity := r.PostFormValue("quantity")
+		item_status := r.PostFormValue("item_status")
+		item_date := r.PostFormValue("item_date")
+		fmt.Println(item_date, employee_id, item_id, item_description, item_name, quantity, item_status)
+		// don't forget to delete the fmt line below
 		err = templates.ExecuteTemplate(w, "add_item.html", nil)
 		if err != nil {
 			log.Fatalln(err)
