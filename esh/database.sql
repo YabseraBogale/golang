@@ -37,7 +37,7 @@ create table if not exists Candate(
 );
 create table if not exists Item(
     item_id text not null primary key,
-	employee_id int references Employee,
+	employee_id text references Employee,
     item_name text not null,
     item_description text not null,
     item_quantity int not null,
