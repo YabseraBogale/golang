@@ -1,6 +1,7 @@
 create table if not exists Job(
     job_id int GENERATED ALWAYS AS IDENTITY,
     job_title text not null,
+    Department text not null,
     job_description text not null
 );
 
@@ -20,6 +21,7 @@ create table if not exists Employee(
     emergency_phonenumber text not null,
     emergency_email text not null,
     emergency_fyda_id text not null,
+    Department text not null,
     job_title text not null
 );
 
@@ -35,6 +37,7 @@ create table if not exists Candate(
     cv text null,
     job_title text not null                        
 );
+
 create table if not exists Item(
     item_id text not null primary key,
 	employee_id text references Employee,

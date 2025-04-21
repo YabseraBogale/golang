@@ -42,9 +42,10 @@ func main() {
 	})
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
 		job_title := r.PostFormValue("job_title")
+		department := r.PostFormValue("department")
 		job_description := r.PostFormValue("job_description")
 		// don't forget to delete the fmt line below
-		fmt.Println(job_title, job_description)
+		fmt.Println(job_title, department, job_description)
 		err = templates.ExecuteTemplate(w, "add_job.html", nil)
 		if err != nil {
 			log.Fatalln(err)
@@ -57,6 +58,7 @@ func main() {
 		phonenumber := r.PostFormValue("phonenumber")
 		fyda_id := r.PostFormValue("fyda_id")
 		email := r.PostFormValue("email")
+		department := r.PostFormValue("department")
 		job_title := r.PostFormValue("job_title")
 		hire_date := r.PostFormValue("hire_date")
 		emergency_firstname := r.PostFormValue("emergency_firstname")
@@ -66,7 +68,7 @@ func main() {
 		emergency_email := r.PostFormValue("emergency_email")
 		emergency_fyda_id := r.PostFormValue("emergency_fyda_id")
 		// don't forget to delete the fmt line below
-		fmt.Println(firstname, middlename, lastname, phonenumber, fyda_id, email, job_title, hire_date, emergency_firstname,
+		fmt.Println(firstname, middlename, lastname, phonenumber, fyda_id, email, department, job_title, hire_date, emergency_firstname,
 			emergency_middlename, emergency_lastname, emergency_phonenumber, emergency_email, emergency_fyda_id)
 		err = templates.ExecuteTemplate(w, "add_employee.html", nil)
 		if err != nil {
