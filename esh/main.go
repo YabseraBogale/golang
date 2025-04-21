@@ -77,12 +77,7 @@ func main() {
 			log.Fatalln(err)
 		}
 	})
-	http.HandleFunc("/add_emergency_contact", func(w http.ResponseWriter, r *http.Request) {
-		err = templates.ExecuteTemplate(w, "add_emergency_contact.html", nil)
-		if err != nil {
-			log.Fatalln(err)
-		}
-	})
+
 	err = http.ListenAndServe("127.0.0.1:8080", nil)
 	if err != nil {
 		log.Fatalln(err)
