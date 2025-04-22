@@ -33,7 +33,8 @@ create table if not exists Candate(
     phonenumber int not null,
     fyda_id text not null,
     email text not null,
-    hire_date date not null,
+    Department text not null,
+    summited_date date not null,
     cv text null,
     job_title text not null                        
 );
