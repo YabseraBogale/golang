@@ -1,12 +1,15 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"text/template"
+
+	"github.com/jackc/pgx/v5"
 )
 
 var templates *template.Template
@@ -20,12 +23,23 @@ func init() {
 	}
 }
 func main() {
+
 	logFile, err := os.OpenFile("app.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatalf("Error opening log file: %v", err)
 	}
 	defer logFile.Close()
 	log.SetOutput(logFile)
+
+	config, err := pgx.ParseConfig(os.Getenv("postgres"))
+	if err != nil {
+		log.Fatalln(err)
+	}
+	conn, err := pgx.ConnectConfig(context.Background(), config)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer conn.Close(context.Background())
 
 	css := http.FileServer(http.Dir("./public/style"))
 	js := http.FileServer(http.Dir("./public/js"))
