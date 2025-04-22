@@ -7,7 +7,7 @@ create table if not exists Job(
 
 
 create table if not exists Employee(
-    employee_id text not null primary key,
+    employee_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     firstname text not null,
     middlename text not null,
     lastname text not null,
@@ -26,7 +26,7 @@ create table if not exists Employee(
 );
 
 create table if not exists Candate(
-    candate_id text not null PRIMARY KEY,
+    candate_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     firstname text not null,
     middlename text not null,
     lastname text not null,
@@ -40,8 +40,8 @@ create table if not exists Candate(
 );
 
 create table if not exists Item(
-    item_id text not null primary key,
-	employee_id text references Employee,
+    item_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+	employee_id uuid references Employee,
     item_name text not null,
     item_description text not null,
     item_quantity int not null,
