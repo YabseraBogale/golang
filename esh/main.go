@@ -59,8 +59,12 @@ func main() {
 		job_title := r.PostFormValue("job_title")
 		department := r.PostFormValue("department")
 		job_description := r.PostFormValue("job_description")
-		// don't forget to delete the fmt line below
-		fmt.Println(job_title, department, job_description)
+		// don't forget to check for sql injection
+		_, err := conn.Exec(context.Background(), `Insert into Job(job_titl,Department,job_description) values('$1','$2','$3')`, job_title, department, job_description)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
 		err = templates.ExecuteTemplate(w, "add_job.html", nil)
 		if err != nil {
 			log.Fatalln(err)
