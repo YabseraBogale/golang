@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -72,6 +73,20 @@ func main() {
 			return
 
 		}
+		dst, err := os.Create("./uploads/" + header.Filename)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		defer dst.Close()
+
+		_, err = io.Copy(dst, file)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		fmt.Fprintf(w, "Successfully uploaded file: %s\n", header.Filename)
 	})
 
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
