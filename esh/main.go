@@ -54,6 +54,15 @@ func main() {
 			log.Fatalln(err)
 		}
 	})
+	http.HandleFunc("/add_job_file", func(w http.ResponseWriter, r *http.Request) {
+		err := r.ParseMultipartForm(10 << 20)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+
+	})
+
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
 		job_title := r.PostFormValue("job_title")
 		department := r.PostFormValue("department")
@@ -65,6 +74,7 @@ func main() {
 			log.Fatalln(err)
 		}
 	})
+
 	http.HandleFunc("/add_employee", func(w http.ResponseWriter, r *http.Request) {
 		firstname := r.PostFormValue("firstname")
 		middlename := r.PostFormValue("middlename")
@@ -89,6 +99,7 @@ func main() {
 			log.Fatalln(err)
 		}
 	})
+
 	http.HandleFunc("/add_item", func(w http.ResponseWriter, r *http.Request) {
 		employee_id := r.PostFormValue("employee_id")
 		item_id := r.PostFormValue("item_id")
@@ -104,6 +115,7 @@ func main() {
 			log.Fatalln(err)
 		}
 	})
+
 	http.HandleFunc("/add_candate", func(w http.ResponseWriter, r *http.Request) {
 		err = templates.ExecuteTemplate(w, "add_candate.html", nil)
 		if err != nil {
