@@ -3,12 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
-	"strings"
 	"text/template"
 
 	"github.com/jackc/pgx/v5"
@@ -55,38 +53,6 @@ func main() {
 		if err != nil {
 			log.Fatalln(err)
 		}
-	})
-	http.HandleFunc("/add_job_file", func(w http.ResponseWriter, r *http.Request) {
-		err := r.ParseMultipartForm(10 << 20)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusBadRequest)
-			return
-		}
-		file, header, err := r.FormFile("add_job")
-		if err != nil {
-			log.Fatalln(err)
-		}
-		defer file.Close()
-		xlsx := strings.ToLower(filepath.Ext(header.Filename))
-		if xlsx != ".xlsx" {
-			http.Error(w, "Invalid file extension. Only .bex files are allowed.", http.StatusBadRequest)
-			return
-
-		}
-		dst, err := os.Create("./uploads/" + header.Filename)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		defer dst.Close()
-
-		_, err = io.Copy(dst, file)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		fmt.Fprintf(w, "Successfully uploaded file: %s\n", header.Filename)
 	})
 
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
