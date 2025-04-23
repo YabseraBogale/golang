@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"text/template"
 
 	"github.com/jackc/pgx/v5"
@@ -60,7 +61,17 @@ func main() {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
+		file, header, err := r.FormFile("add_job")
+		if err != nil {
+			log.Fatalln(err)
+		}
+		defer file.Close()
+		xlsx := strings.ToLower(filepath.Ext(header.Filename))
+		if xlsx != ".xlsx" {
+			http.Error(w, "Invalid file extension. Only .bex files are allowed.", http.StatusBadRequest)
+			return
 
+		}
 	})
 
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
