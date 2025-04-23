@@ -1,1 +1,3 @@
 2025/04/23 19:21:41 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
+2025/04/23 20:05:00 ERROR: column "job_titl" of relation "job" does not exist (SQLSTATE 42703)
+2025/04/23 20:05:29 mismatched param and argument count

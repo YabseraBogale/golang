@@ -60,7 +60,7 @@ func main() {
 		department := r.PostFormValue("department")
 		job_description := r.PostFormValue("job_description")
 		// don't forget to check for sql injection
-		_, err := conn.Exec(context.Background(), `Insert into Job(job_titl,Department,job_description) values('$1','$2','$3')`, job_title, department, job_description)
+		_, err := conn.Exec(context.Background(), `Insert into Job(job_title,Department,job_description) values('$1','$2','$3')`, job_title, department, job_description)
 		if err != nil {
 			log.Fatalln(err)
 		}
