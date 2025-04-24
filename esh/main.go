@@ -59,7 +59,6 @@ func main() {
 		job_title := r.PostFormValue("job_title")
 		department := r.PostFormValue("department")
 		job_description := r.PostFormValue("job_description")
-		// don't forget to check for sql injection
 		_, err := conn.Exec(context.Background(), `Insert into Job(job_title,Department,job_description) values($1,$2,$3)`, job_title, department, job_description)
 		if err != nil {
 			log.Fatalln(err)
@@ -88,8 +87,17 @@ func main() {
 		emergency_email := r.PostFormValue("emergency_email")
 		emergency_fyda_id := r.PostFormValue("emergency_fyda_id")
 		// don't forget to delete the fmt line below
-		fmt.Println(firstname, middlename, lastname, phonenumber, fyda_id, email, department, job_title, hire_date, emergency_firstname,
-			emergency_middlename, emergency_lastname, emergency_phonenumber, emergency_email, emergency_fyda_id)
+		_, err := conn.Exec(context.Background(), `Insert into Employee(firstname, middlename, lastname, phonenumber, fyda_id, email, 
+											department, job_title, hire_date, emergency_firstname,
+											emergency_middlename, emergency_lastname, emergency_phonenumber,
+											emergency_email, emergency_fyda_id) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15)`,
+			firstname, middlename, lastname, phonenumber, fyda_id, email,
+			department, job_title, hire_date, emergency_firstname,
+			emergency_middlename, emergency_lastname, emergency_phonenumber,
+			emergency_email, emergency_fyda_id)
+		if err != nil {
+			log.Fatalln(err)
+		}
 		err = templates.ExecuteTemplate(w, "add_employee.html", nil)
 		if err != nil {
 			log.Fatalln(err)
