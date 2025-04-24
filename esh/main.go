@@ -2,12 +2,13 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"encoding/json"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"text/template"
+	"time"
 
 	"github.com/jackc/pgx/v5"
 )
@@ -56,12 +57,14 @@ func main() {
 	})
 
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
-		job_title := r.PostFormValue("job_title")
-		department := r.PostFormValue("department")
-		job_description := r.PostFormValue("job_description")
-		_, err := conn.Exec(context.Background(), `Insert into Job(job_title,Department,job_description) values($1,$2,$3)`, job_title, department, job_description)
-		if err != nil {
-			log.Fatalln(err)
+		if r.Method == "POST" {
+			job_title := r.PostFormValue("job_title")
+			department := r.PostFormValue("department")
+			job_description := r.PostFormValue("job_description")
+			_, err := conn.Exec(context.Background(), `Insert into Job(job_title,Department,job_description) values($1,$2,$3)`, job_title, department, job_description)
+			if err != nil {
+				log.Fatalln(err)
+			}
 		}
 
 		err = templates.ExecuteTemplate(w, "add_job.html", nil)
@@ -70,50 +73,99 @@ func main() {
 		}
 	})
 
-	http.HandleFunc("/add_employee", func(w http.ResponseWriter, r *http.Request) {
-		firstname := r.PostFormValue("firstname")
-		middlename := r.PostFormValue("middlename")
-		lastname := r.PostFormValue("lastname")
-		phonenumber := r.PostFormValue("phonenumber")
-		fyda_id := r.PostFormValue("fyda_id")
-		email := r.PostFormValue("email")
-		department := r.PostFormValue("department")
-		job_title := r.PostFormValue("job_title")
-		hire_date := r.PostFormValue("hire_date")
-		emergency_firstname := r.PostFormValue("emergency_firstname")
-		emergency_middlename := r.PostFormValue("emergency_middlename")
-		emergency_lastname := r.PostFormValue("emergency_lastname")
-		emergency_phonenumber := r.PostFormValue("emergency_phonenumber")
-		emergency_email := r.PostFormValue("emergency_email")
-		emergency_fyda_id := r.PostFormValue("emergency_fyda_id")
-		// don't forget to delete the fmt line below
-		_, err := conn.Exec(context.Background(), `Insert into Employee(firstname, middlename, lastname, phonenumber, fyda_id, email, 
-											department, job_title, hire_date, emergency_firstname,
-											emergency_middlename, emergency_lastname, emergency_phonenumber,
-											emergency_email, emergency_fyda_id) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15)`,
-			firstname, middlename, lastname, phonenumber, fyda_id, email,
-			department, job_title, hire_date, emergency_firstname,
-			emergency_middlename, emergency_lastname, emergency_phonenumber,
-			emergency_email, emergency_fyda_id)
+	http.HandleFunc("/department", func(w http.ResponseWriter, r *http.Request) {
+		row, err := conn.Query(context.Background(), "Select department from job")
 		if err != nil {
 			log.Fatalln(err)
+		}
+		defer row.Close()
+		departments := []string{}
+		for row.Next() {
+			var department string
+			if err := row.Scan(&department); err != nil {
+				log.Fatalln(err)
+				http.Error(w, "Internal server error", http.StatusInternalServerError)
+				return
+			}
+			departments = append(departments, department)
+
+		}
+		if err := row.Err(); err != nil {
+			log.Printf("Error during row iteration: %v", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		if err := json.NewEncoder(w).Encode(departments); err != nil {
+			log.Printf("Error during row iteration: %v", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+	})
+
+	http.HandleFunc("/add_employee", func(w http.ResponseWriter, r *http.Request) {
+
+		if r.Method == "POST" {
+			firstname := r.PostFormValue("firstname")
+			middlename := r.PostFormValue("middlename")
+			lastname := r.PostFormValue("lastname")
+			phonenumber := r.PostFormValue("phonenumber")
+			fyda_id := r.PostFormValue("fyda_id")
+			email := r.PostFormValue("email")
+			department := r.PostFormValue("department")
+			job_title := r.PostFormValue("job_title")
+			hire_date, err := time.Parse("2006-01-02", r.PostFormValue("hire_date"))
+			if err != nil {
+				log.Fatalln(err)
+			}
+			emergency_firstname := r.PostFormValue("emergency_firstname")
+			emergency_middlename := r.PostFormValue("emergency_middlename")
+			emergency_lastname := r.PostFormValue("emergency_lastname")
+			emergency_phonenumber := r.PostFormValue("emergency_phonenumber")
+			emergency_email := r.PostFormValue("emergency_email")
+			emergency_fyda_id := r.PostFormValue("emergency_fyda_id")
+			// don't forget to delete the fmt line below
+			_, err = conn.Exec(context.Background(), `Insert into Employee(firstname, middlename, lastname, phonenumber, fyda_id, email, 
+					department, job_title, hire_date, emergency_firstname,
+					emergency_middlename, emergency_lastname, emergency_phonenumber,
+					emergency_email, emergency_fyda_id) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15)`,
+				firstname, middlename, lastname, phonenumber, fyda_id, email,
+				department, job_title, hire_date, emergency_firstname,
+				emergency_middlename, emergency_lastname, emergency_phonenumber,
+				emergency_email, emergency_fyda_id)
+			if err != nil {
+				log.Fatalln(err)
+			}
 		}
 		err = templates.ExecuteTemplate(w, "add_employee.html", nil)
 		if err != nil {
 			log.Fatalln(err)
 		}
+
 	})
 
 	http.HandleFunc("/add_item", func(w http.ResponseWriter, r *http.Request) {
-		employee_id := r.PostFormValue("employee_id")
-		item_id := r.PostFormValue("item_id")
-		item_name := r.PostFormValue("item_name")
-		item_description := r.PostFormValue("item_description")
-		quantity := r.PostFormValue("quantity")
-		item_status := r.PostFormValue("item_status")
-		item_date := r.PostFormValue("item_date")
-		fmt.Println(item_date, employee_id, item_id, item_description, item_name, quantity, item_status)
-		// don't forget to delete the fmt line below
+
+		if r.Method == "POST" {
+
+			employee_id := r.PostFormValue("employee_id")
+			item_id := r.PostFormValue("item_id")
+			item_name := r.PostFormValue("item_name")
+			item_description := r.PostFormValue("item_description")
+			quantity := r.PostFormValue("quantity")
+			item_status := r.PostFormValue("item_status")
+			item_date, err := time.Parse("2006-01-02", r.PostFormValue("item_date"))
+			if err != nil {
+				log.Fatalln(err)
+			}
+			_, err = conn.Exec(context.Background(), `Insert into item(item_id, employee_id, item_name, item_description,
+								quantity, item_status, item_date) values($1,$2,$3,$4,$5,$6,$7)`,
+				item_id, employee_id, item_name, item_description, quantity, item_status, item_date)
+			if err != nil {
+				log.Fatalln(err)
+			}
+		}
+
 		err = templates.ExecuteTemplate(w, "add_item.html", nil)
 		if err != nil {
 			log.Fatalln(err)

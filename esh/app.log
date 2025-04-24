@@ -5,3 +5,12 @@
 2025/04/24 18:50:32 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
 2025/04/24 18:53:02 ERROR: invalid input syntax for type date: "" (SQLSTATE 22007)
 2025/04/24 18:53:53 ERROR: invalid input syntax for type date: "" (SQLSTATE 22007)
+2025/04/24 18:55:17 ERROR: invalid input syntax for type date: "" (SQLSTATE 22007)
+2025/04/24 18:59:45 ERROR: invalid input syntax for type date: "" (SQLSTATE 22007)
+2025/04/24 19:19:17 parsing time "" as "2-29-2023": cannot parse "" as "2"
+2025/04/24 19:20:01 parsing time "" as "2-29-2023": cannot parse "" as "2"
+2025/04/24 19:27:31 parsing time "2025-04-24" as "2-29-2023": cannot parse "25-04-24" as "-"
+2025/04/24 19:28:51 parsing time "2025-04-24": month out of range
+2025/04/24 19:29:38 parsing time "2025-04-24": month out of range
+2025/04/24 19:31:05 parsing time "2025-04-24": month out of range
+2025/04/24 19:34:53 parsing time "" as "2006-01-02": cannot parse "" as "2006"
