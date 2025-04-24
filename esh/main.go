@@ -149,7 +149,7 @@ func main() {
 		if r.Method == "POST" {
 
 			employee_id := r.PostFormValue("employee_id")
-			item_id := r.PostFormValue("item_id")
+
 			item_name := r.PostFormValue("item_name")
 			item_description := r.PostFormValue("item_description")
 			quantity := r.PostFormValue("quantity")
@@ -158,9 +158,9 @@ func main() {
 			if err != nil {
 				log.Fatalln(err)
 			}
-			_, err = conn.Exec(context.Background(), `Insert into item(item_id, employee_id, item_name, item_description,
-								quantity, item_status, item_date) values($1,$2,$3,$4,$5,$6,$7)`,
-				item_id, employee_id, item_name, item_description, quantity, item_status, item_date)
+			_, err = conn.Exec(context.Background(), `Insert into item(employee_id, item_name, item_description,
+								quantity, item_status, item_date) values($1,$2,$3,$4,$5,$6)`,
+				employee_id, item_name, item_description, quantity, item_status, item_date)
 			if err != nil {
 				log.Fatalln(err)
 			}
