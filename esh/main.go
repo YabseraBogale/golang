@@ -95,8 +95,9 @@ func main() {
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
 			return
 		}
+
 		w.Header().Set("Content-Type", "application/json")
-		w.Header().Set("Access-Control-Allow-Origin", "https://127.0.0.1:8080/add_employee")
+
 		if err := json.NewEncoder(w).Encode(departments); err != nil {
 			log.Printf("Error during row iteration: %v", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
