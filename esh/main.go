@@ -124,7 +124,6 @@ func main() {
 			emergency_phonenumber := r.PostFormValue("emergency_phonenumber")
 			emergency_email := r.PostFormValue("emergency_email")
 			emergency_fyda_id := r.PostFormValue("emergency_fyda_id")
-			// don't forget to delete the fmt line below
 			_, err = conn.Exec(context.Background(), `Insert into Employee(firstname, middlename, lastname, phonenumber, fyda_id, email, 
 					department, job_title, hire_date, emergency_firstname,
 					emergency_middlename, emergency_lastname, emergency_phonenumber,
