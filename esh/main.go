@@ -73,6 +73,30 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/job_title", func(w http.ResponseWriter, r *http.Request) {
+		row, err := conn.Query(context.Background(), "Select job_title from job")
+		if err != nil {
+			log.Fatalln(err)
+		}
+		defer row.Close()
+		job_title := []string{}
+		for row.Next() {
+			var title string
+			if err := row.Scan(&title); err != nil {
+				log.Fatalln(err)
+				http.Error(w, "Internal server error", http.StatusInternalServerError)
+				return
+			}
+			job_title = append(job_title, title)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		if err := json.NewEncoder(w).Encode(job_title); err != nil {
+			log.Printf("Error during row iteration: %v", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+	})
+
 	http.HandleFunc("/department", func(w http.ResponseWriter, r *http.Request) {
 		row, err := conn.Query(context.Background(), "Select department from job")
 		if err != nil {
