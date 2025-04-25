@@ -17,6 +17,7 @@ fetch("http://127.0.0.1:8080/department").then((response)=>{
 fetch("http://127.0.0.1:8080/job_title").then((response)=>{
         return response.json()
     }).then(data =>{
+       console.log(data);
        
        
         const job_title=document.getElementById("job_title")
