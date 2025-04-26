@@ -16,7 +16,7 @@ import (
 var templates *template.Template
 
 func init() {
-	// Parse all HTML files in the "templates" directory
+
 	var err error
 	templates, err = template.ParseGlob(filepath.Join("public", "*.html"))
 	if err != nil {
@@ -174,7 +174,6 @@ func main() {
 		if r.Method == "POST" {
 
 			employee_id := r.PostFormValue("employee_id")
-
 			item_name := r.PostFormValue("item_name")
 			item_description := r.PostFormValue("item_description")
 			quantity := r.PostFormValue("quantity")
