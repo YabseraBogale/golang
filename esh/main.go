@@ -196,6 +196,10 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/purchase_request", func(w http.ResponseWriter, r *http.Request) {
+
+	})
+
 	http.HandleFunc("/add_candate", func(w http.ResponseWriter, r *http.Request) {
 		err = templates.ExecuteTemplate(w, "add_candate.html", nil)
 		if err != nil {
