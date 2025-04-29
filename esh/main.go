@@ -197,7 +197,28 @@ func main() {
 	})
 
 	http.HandleFunc("/purchase_request", func(w http.ResponseWriter, r *http.Request) {
-
+		if r.Method == "POST" {
+			employee_id := r.PostFormValue("employee_id")
+			item_name := r.PostFormValue("item_name")
+			item_description := r.PostFormValue("item_description")
+			quantity := r.PostFormValue("quantity")
+			item_status := r.PostFormValue("item_status")
+			item_purchase_request := "To be Approved"
+			item_date, err := time.Parse("2006-01-02", r.PostFormValue("item_date"))
+			if err != nil {
+				log.Fatalln(err)
+			}
+			_, err = conn.Exec(context.Background(), `Insert into item(employee_id, item_name, item_description,
+								quantity, item_status, item_purchase_request,item_date) values($1,$2,$3,$4,$5,$6,$7)`,
+				employee_id, item_name, item_description, quantity, item_status, item_purchase_request, item_date)
+			if err != nil {
+				log.Fatalln(err)
+			}
+		}
+		err := templates.ExecuteTemplate(w, "purchase_request.html", nil)
+		if err != nil {
+			log.Fatalln(err)
+		}
 	})
 
 	http.HandleFunc("/add_candate", func(w http.ResponseWriter, r *http.Request) {
