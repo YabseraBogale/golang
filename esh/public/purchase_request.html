@@ -7,6 +7,67 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="/purchase_request" method="post">
+        <table>
+            <tr>
+                <td>
+                    employee id
+                </td>
+                <td>
+                    <input type="number" name="employee_id" id="" required>
+                </td>
+            </tr>
+            </tr>
+            <tr>
+                <td>
+                    item name 
+                </td>
+                <td>
+                    <input type="text" name="item_name" id="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    item description 
+                </td>
+                <td>
+                    <input type="text" name="item_description" id="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    item quantity 
+                </td>
+                <td>
+                    <input type="number" name="quantity" id="" min="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    item status 
+                </td>
+                <td>
+                    <textarea name="item_status" id="" required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    item date 
+                </td>
+                <td>
+                    <input type="date" name="item_date" id="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Enter">
+                </td>
+                <td>
+                    <input type="reset" value="Cancel">
+                </td>
+            </tr>
+        </table>    
+    </form>
     <script src="js/purchase_request.js"></script>
 </body>
 </html>
