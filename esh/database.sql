@@ -48,3 +48,14 @@ create table if not exists Item(
     item_status text not null,
     item_date date not null
 );
+
+create table purchase_request(
+    item_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+	employee_id uuid references Employee,
+    item_name text not null,
+    item_description text not null,
+    item_quantity int not null,
+    item_status text not null,
+    item_purchase_request text not null,
+    item_date date not null
+)
