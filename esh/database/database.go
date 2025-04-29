@@ -91,8 +91,8 @@ func InsertEmployee(
 }
 
 type Item struct {
-	EmployeeId      int
-	ItemId          int
+	EmployeeId      string
+	ItemId          string
 	ItemName        string
 	ItemDescription string
 	ItemQuantity    int
@@ -101,7 +101,7 @@ type Item struct {
 }
 
 func InsertItem(
-	employeeid int, itemid int, itemname string,
+	employeeid string, itemid string, itemname string,
 	itemdescription string, itemquanitiy int,
 	itemstatus string, itemdate time.Time) Item {
 	return Item{
@@ -117,11 +117,26 @@ func InsertItem(
 
 type PurchaseRequest struct {
 	ItemId              string
-	EmployeeiId         string
+	EmployeeId          string
 	ItemName            string
 	ItemDescription     string
 	ItemQuantity        int
 	ItemStatus          string
 	ItemPurchaseRequest string
 	ItemDate            time.Time
+}
+
+func InsertPurchaseRequest(
+	employeeid string, itemid string, itemname string,
+	itemdescription string, itemquanitiy int,
+	itemstatus string, itempurchaserequest string, itemdate time.Time) PurchaseRequest {
+	return PurchaseRequest{
+		ItemId:          itemid,
+		EmployeeId:      employeeid,
+		ItemName:        itemname,
+		ItemDescription: itemdescription,
+		ItemQuantity:    itemquanitiy,
+		ItemStatus:      itemstatus,
+		ItemDate:        itemdate,
+	}
 }
