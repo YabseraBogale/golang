@@ -114,3 +114,14 @@ func InsertItem(
 		ItemDate:        itemdate,
 	}
 }
+
+type PurchaseRequest struct {
+	ItemId              string
+	EmployeeiId         string
+	ItemName            string
+	ItemDescription     string
+	ItemQuantity        int
+	ItemStatus          string
+	ItemPurchaseRequest string
+	ItemDate            time.Time
+}
