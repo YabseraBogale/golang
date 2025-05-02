@@ -10,6 +10,7 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/YabseraBogale/golang/esh/database"
 	"github.com/jackc/pgx/v5"
 )
 
@@ -34,11 +35,11 @@ func main() {
 
 	config, err := pgx.ParseConfig(os.Getenv("postgres"))
 	if err != nil {
-		log.Fatalln(err)
+		log.Println(err)
 	}
 	conn, err := pgx.ConnectConfig(context.Background(), config)
 	if err != nil {
-		log.Fatalln(err)
+		log.Println(err)
 	}
 	defer conn.Close(context.Background())
 
@@ -52,7 +53,7 @@ func main() {
 
 		err = templates.ExecuteTemplate(w, "index.html", nil)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 	})
 
@@ -63,27 +64,27 @@ func main() {
 			job_description := r.PostFormValue("job_description")
 			_, err := conn.Exec(context.Background(), `Insert into Job(job_title,Department,job_description) values($1,$2,$3)`, job_title, department, job_description)
 			if err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 			}
 		}
 
 		err = templates.ExecuteTemplate(w, "add_job.html", nil)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 	})
 
 	http.HandleFunc("/job_title", func(w http.ResponseWriter, r *http.Request) {
 		row, err := conn.Query(context.Background(), "Select job_title from job")
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 		defer row.Close()
 		job_title := []string{}
 		for row.Next() {
 			var title string
 			if err := row.Scan(&title); err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 				http.Error(w, "Internal server error", http.StatusInternalServerError)
 				return
 			}
@@ -100,14 +101,14 @@ func main() {
 	http.HandleFunc("/department", func(w http.ResponseWriter, r *http.Request) {
 		row, err := conn.Query(context.Background(), "Select department from job")
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 		defer row.Close()
 		departments := []string{}
 		for row.Next() {
 			var department string
 			if err := row.Scan(&department); err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 				http.Error(w, "Internal server error", http.StatusInternalServerError)
 				return
 			}
@@ -142,7 +143,7 @@ func main() {
 			job_title := r.PostFormValue("job_title")
 			hire_date, err := time.Parse("2006-01-02", r.PostFormValue("hire_date"))
 			if err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 			}
 			emergency_firstname := r.PostFormValue("emergency_firstname")
 			emergency_middlename := r.PostFormValue("emergency_middlename")
@@ -159,12 +160,12 @@ func main() {
 				emergency_middlename, emergency_lastname, emergency_phonenumber,
 				emergency_email, emergency_fyda_id)
 			if err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 			}
 		}
 		err = templates.ExecuteTemplate(w, "add_employee.html", nil)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 
 	})
@@ -180,28 +181,55 @@ func main() {
 			item_status := r.PostFormValue("item_status")
 			item_date, err := time.Parse("2006-01-02", r.PostFormValue("item_date"))
 			if err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 			}
 			_, err = conn.Exec(context.Background(), `Insert into item(employee_id, item_name, item_description,
 								quantity, item_status, item_date) values($1,$2,$3,$4,$5,$6)`,
 				employee_id, item_name, item_description, quantity, item_status, item_date)
 			if err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 			}
 		}
 
 		err = templates.ExecuteTemplate(w, "add_item.html", nil)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 	})
 
 	http.HandleFunc("/purchase_request/manager", func(w http.ResponseWriter, r *http.Request) {
+		purchase_request_list := []database.PurchaseRequest{}
 		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='To be Approved'`)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
+		}
+		defer row.Close()
+		for row.Next() {
+			var employeeid string
+			var itemid string
+			var itemname string
+			var itemdescription string
+			var itemquanitiy int
+			var itemstatus string
+			var itempurchaserequest string
+			var itemdate string
+			err = row.Scan(&employeeid, &itemid, &itemname, &itemdescription, &itemquanitiy, &itemstatus, &itempurchaserequest, &itemdate)
+			if err != nil {
+				log.Println(err)
+			}
+			date, err := time.Parse("2006-01-02", itemdate)
+			if err != nil {
+				log.Println(err)
+			}
+			purchase_request_list = append(purchase_request_list, database.InsertPurchaseRequest(employeeid, itemid, itemname, itemdescription,
+				itemquanitiy, itemstatus, itempurchaserequest, date))
+
 		}
 
+		err = templates.ExecuteTemplate(w, "purchase_request_manager.html", purchase_request_list)
+		if err != nil {
+			log.Println(err)
+		}
 	})
 
 	http.HandleFunc("/purchase_request", func(w http.ResponseWriter, r *http.Request) {
@@ -214,31 +242,31 @@ func main() {
 			item_purchase_request := "To be Approved"
 			item_date, err := time.Parse("2006-01-02", r.PostFormValue("item_date"))
 			if err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 			}
 			_, err = conn.Exec(context.Background(), `Insert into purchase_request(employee_id, item_name, item_description,
 								quantity, item_status, item_purchase_request,item_date) values($1,$2,$3,$4,$5,$6,$7)`,
 				employee_id, item_name, item_description, quantity, item_status, item_purchase_request, item_date)
 			if err != nil {
-				log.Fatalln(err)
+				log.Println(err)
 			}
 		}
 		err := templates.ExecuteTemplate(w, "purchase_request.html", nil)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 	})
 
 	http.HandleFunc("/add_candate", func(w http.ResponseWriter, r *http.Request) {
 		err = templates.ExecuteTemplate(w, "add_candate.html", nil)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
 		}
 	})
 
 	err = http.ListenAndServe("127.0.0.1:8080", nil)
 	if err != nil {
-		log.Fatalln(err)
+		log.Println(err)
 	}
 
 }
