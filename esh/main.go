@@ -196,6 +196,14 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/purchase_request/manager", func(w http.ResponseWriter, r *http.Request) {
+		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='To be Approved'`)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+	})
+
 	http.HandleFunc("/purchase_request", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
 			employee_id := r.PostFormValue("employee_id")
@@ -208,7 +216,7 @@ func main() {
 			if err != nil {
 				log.Fatalln(err)
 			}
-			_, err = conn.Exec(context.Background(), `Insert into item(employee_id, item_name, item_description,
+			_, err = conn.Exec(context.Background(), `Insert into purchase_request(employee_id, item_name, item_description,
 								quantity, item_status, item_purchase_request,item_date) values($1,$2,$3,$4,$5,$6,$7)`,
 				employee_id, item_name, item_description, quantity, item_status, item_purchase_request, item_date)
 			if err != nil {
