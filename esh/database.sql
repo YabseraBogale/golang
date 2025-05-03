@@ -15,6 +15,7 @@ create table if not exists Employee(
     fyda_id text not null,
     email text not null,
     hire_date date not null,
+    salary float not null,
     emergency_firstname text not null,
     emergency_middlename text not null,
     emergency_lastname text not null,
