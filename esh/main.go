@@ -30,7 +30,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error opening log file: %v", err)
 	}
-	defer logFile.Close()
+	defer logFile.Close() // Close the log file after use.
 	log.SetOutput(logFile)
 
 	config, err := pgx.ParseConfig(os.Getenv("postgres"))
@@ -41,7 +41,11 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	defer conn.Close(context.Background())
+	defer conn.Close(context.Background()) // Close the database after use.
+
+	// --- Static File Handling ---
+	// Serve CSS and JavaScript files.
+	// `http.FileServer` creates a handler that serves files from the given directory.
 
 	css := http.FileServer(http.Dir("./public/style"))
 	js := http.FileServer(http.Dir("./public/js"))
@@ -74,13 +78,15 @@ func main() {
 		}
 	})
 
+	// API Endpoint to get Job Titles
 	http.HandleFunc("/job_title", func(w http.ResponseWriter, r *http.Request) {
+		// Query the database to get all job titles.
 		row, err := conn.Query(context.Background(), "Select job_title from job")
 		if err != nil {
 			log.Println(err)
 		}
-		defer row.Close()
-		job_title := []string{}
+		defer row.Close()       // Close the rows after use.
+		job_title := []string{} // Set the Content-Type header to indicate JSON
 		for row.Next() {
 			var title string
 			if err := row.Scan(&title); err != nil {
@@ -90,7 +96,10 @@ func main() {
 			}
 			job_title = append(job_title, title)
 		}
+
+		// Set the Content-Type header to indicate JSON
 		w.Header().Set("Content-Type", "application/json")
+		// Encode the job titles as JSON and send the response.
 		if err := json.NewEncoder(w).Encode(job_title); err != nil {
 			log.Printf("Error during row iteration: %v", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
@@ -98,12 +107,14 @@ func main() {
 		}
 	})
 
+	// API Endpoint to get Departments
 	http.HandleFunc("/department", func(w http.ResponseWriter, r *http.Request) {
+		// Query the database to get all departments.
 		row, err := conn.Query(context.Background(), "Select department from job")
 		if err != nil {
 			log.Println(err)
 		}
-		defer row.Close()
+		defer row.Close() // Close the rows after use.
 		departments := []string{}
 		for row.Next() {
 			var department string
@@ -130,6 +141,7 @@ func main() {
 		}
 	})
 
+	// Display the "add_employee.html" form.
 	http.HandleFunc("/add_employee", func(w http.ResponseWriter, r *http.Request) {
 
 		if r.Method == "POST" {
@@ -164,6 +176,8 @@ func main() {
 				log.Println(err)
 			}
 		}
+
+		// Display the "add_employee.html" form.
 		err = templates.ExecuteTemplate(w, "add_employee.html", nil)
 		if err != nil {
 			log.Println(err)
@@ -171,6 +185,7 @@ func main() {
 
 	})
 
+	// Add Item Page and API
 	http.HandleFunc("/add_item", func(w http.ResponseWriter, r *http.Request) {
 
 		if r.Method == "POST" {
@@ -200,12 +215,14 @@ func main() {
 
 	// API for purchase team to see approved item to be bought and then they will add it the store
 	http.HandleFunc("/purchase_request/purchase_team", func(w http.ResponseWriter, r *http.Request) {
-		purchase_request_list := []database.PurchaseRequest{}
+		// Query the database to get approved purchase requests.
+
+		purchase_request_list := []database.PurchaseRequest{} // Slice to store purchase requests.
 		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='Approved'`)
 		if err != nil {
 			log.Println(err)
 		}
-		defer row.Close()
+		defer row.Close() // Close the rows after use.
 		for row.Next() {
 			var employeeid string
 			var itemid string
@@ -228,6 +245,7 @@ func main() {
 
 		}
 		// go to frontend to list purchase request list
+		// Display the "purchase_request_manager.html" template with the list of requests.
 		err = templates.ExecuteTemplate(w, "purchase_request_manager.html", purchase_request_list)
 		if err != nil {
 			log.Println(err)
@@ -236,12 +254,13 @@ func main() {
 
 	// API for Managers to see purchase request to be approved
 	http.HandleFunc("/purchase_request/manager", func(w http.ResponseWriter, r *http.Request) {
-		purchase_request_list := []database.PurchaseRequest{}
+		// Query the database to get purchase requests that are "To be Approved".
+		purchase_request_list := []database.PurchaseRequest{} // Slice to store purchase requests.
 		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='To be Approved'`)
 		if err != nil {
 			log.Println(err)
 		}
-		defer row.Close()
+		defer row.Close() // Close the rows after use.
 		for row.Next() {
 			var employeeid string
 			var itemid string
@@ -270,8 +289,10 @@ func main() {
 		}
 	})
 
+	// Purchase Request -  Create a New Request
 	http.HandleFunc("/purchase_request", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
+			// Process form submission to create a new purchase request.
 			employee_id := r.PostFormValue("employee_id")
 			item_name := r.PostFormValue("item_name")
 			item_description := r.PostFormValue("item_description")
@@ -289,6 +310,8 @@ func main() {
 				log.Println(err)
 			}
 		}
+
+		// Display the "purchase_request.html" form.
 		err := templates.ExecuteTemplate(w, "purchase_request.html", nil)
 		if err != nil {
 			log.Println(err)
@@ -302,6 +325,8 @@ func main() {
 		}
 	})
 
+	// --- Start the HTTP Server ---
+	// Start the web server and listen for incoming requests on port 8080.
 	err = http.ListenAndServe("127.0.0.1:8080", nil)
 	if err != nil {
 		log.Println(err)
