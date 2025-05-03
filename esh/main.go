@@ -197,6 +197,7 @@ func main() {
 		}
 	})
 
+	// API for purchase team to see approved item to be bought and then they will add it the store
 	http.HandleFunc("/purchase_request/purchase_team", func(w http.ResponseWriter, r *http.Request) {
 		purchase_request_list := []database.PurchaseRequest{}
 		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='Approved'`)
@@ -232,7 +233,7 @@ func main() {
 		}
 	})
 
-	// API for Managers to see purchase_request
+	// API for Managers to see purchase request to be approved
 	http.HandleFunc("/purchase_request/manager", func(w http.ResponseWriter, r *http.Request) {
 		purchase_request_list := []database.PurchaseRequest{}
 		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='To be Approved'`)
