@@ -56,6 +56,7 @@ type Employee struct {
 	FydaId               string
 	Email                string
 	HireDate             time.Time
+	Salary               int
 	EmergencyFirstName   string
 	EmergencyMiddleName  string
 	EmergencyLastName    string
@@ -68,7 +69,7 @@ type Employee struct {
 func InsertEmployee(
 	firstname string, middlename string, lastname string,
 	phonenumber string, email string,
-	fydaid string, hiredate time.Time,
+	fydaid string, hiredate time.Time, salary int,
 	emergencyfirstname string, emergencymiddlename string, emergencylastname string,
 	emergencyphonenumber string, emergencyemail string,
 	emergencyfydaid string, jobtitle string) Employee {
@@ -80,6 +81,7 @@ func InsertEmployee(
 		Email:                email,
 		FydaId:               fydaid,
 		HireDate:             hiredate,
+		Salary:               salary,
 		EmergencyFirstName:   emergencyfirstname,
 		EmergencyMiddleName:  emergencymiddlename,
 		EmergencyLastName:    emergencylastname,
