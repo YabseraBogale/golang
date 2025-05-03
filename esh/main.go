@@ -184,8 +184,43 @@ func main() {
 		}
 
 	})
-	http.HandleFunc("/item_track", func(w http.ResponseWriter, r *http.Request) {
 
+	// API for item tracking system
+	http.HandleFunc("/item_track", func(w http.ResponseWriter, r *http.Request) {
+		var item_list []database.Item
+		row, err := conn.Query(context.Background(), `Select itemid,itemname,itemdescription,itemquanitiy,itemstatus,itemdate from item limit 20`)
+		if err != nil {
+			log.Println(err)
+		}
+		for row.Next() {
+
+			var itemid string
+			var itemname string
+			var itemdescription string
+			var itemquanitiy float32
+			var itemstatus string
+			var itemdate string
+			err = row.Scan(&itemid, &itemname, &itemdescription, &itemquanitiy, &itemstatus, &itemdate)
+			if err != nil {
+				log.Println(err)
+			}
+			date, err := time.Parse("2006-01-02", itemdate)
+			if err != nil {
+				log.Println(err)
+			}
+			item_list = append(item_list, database.Item{
+				ItemId:          itemid,
+				ItemName:        itemname,
+				ItemDescription: itemdescription,
+				ItemStatus:      itemstatus,
+				ItemDate:        date,
+			})
+
+		}
+		err = templates.ExecuteTemplate(w, "item_track.html", item_list)
+		if err != nil {
+			log.Println(err)
+		}
 	})
 
 	// Add Item Page and API

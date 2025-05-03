@@ -97,14 +97,14 @@ type Item struct {
 	ItemId          string
 	ItemName        string
 	ItemDescription string
-	ItemQuantity    int
+	ItemQuantity    float32
 	ItemStatus      string
 	ItemDate        time.Time
 }
 
 func InsertItem(
 	employeeid string, itemid string, itemname string,
-	itemdescription string, itemquanitiy int,
+	itemdescription string, itemquanitiy float32,
 	itemstatus string, itemdate time.Time) Item {
 	return Item{
 		EmployeeId:      employeeid,
