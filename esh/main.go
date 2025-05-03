@@ -197,6 +197,42 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/purchase_request/purchase_team", func(w http.ResponseWriter, r *http.Request) {
+		purchase_request_list := []database.PurchaseRequest{}
+		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='Approved'`)
+		if err != nil {
+			log.Println(err)
+		}
+		defer row.Close()
+		for row.Next() {
+			var employeeid string
+			var itemid string
+			var itemname string
+			var itemdescription string
+			var itemquanitiy int
+			var itemstatus string
+			var itempurchaserequest string
+			var itemdate string
+			err = row.Scan(&employeeid, &itemid, &itemname, &itemdescription, &itemquanitiy, &itemstatus, &itempurchaserequest, &itemdate)
+			if err != nil {
+				log.Println(err)
+			}
+			date, err := time.Parse("2006-01-02", itemdate)
+			if err != nil {
+				log.Println(err)
+			}
+			purchase_request_list = append(purchase_request_list, database.InsertPurchaseRequest(employeeid, itemid, itemname, itemdescription,
+				itemquanitiy, itemstatus, itempurchaserequest, date))
+
+		}
+		// go to frontend to list purchase request list
+		err = templates.ExecuteTemplate(w, "purchase_request_manager.html", purchase_request_list)
+		if err != nil {
+			log.Println(err)
+		}
+	})
+
+	// API for Managers to see purchase_request
 	http.HandleFunc("/purchase_request/manager", func(w http.ResponseWriter, r *http.Request) {
 		purchase_request_list := []database.PurchaseRequest{}
 		row, err := conn.Query(context.Background(), `Select * from purchase_request where item_purchase_request='To be Approved'`)
