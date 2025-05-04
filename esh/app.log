@@ -1,3 +1,7 @@
 2025/04/30 19:35:22 conn busy
 2025/05/01 09:48:10 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
 2025/05/04 16:54:06 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
+2025/05/04 16:55:26 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
+2025/05/04 16:56:47 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
+2025/05/04 16:56:48 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
+2025/05/04 16:56:49 failed to connect to `user=yabsera database=`: /var/run/postgresql/.s.PGSQL.5432 (/var/run/postgresql): server error: FATAL: role "yabsera" does not exist (SQLSTATE 28000)
