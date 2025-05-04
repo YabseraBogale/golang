@@ -158,6 +158,7 @@ func main() {
 				log.Println(err)
 			}
 			salary := r.PostFormValue("salary")
+			year_experince := r.PostFormValue("year_experince")
 			emergency_firstname := r.PostFormValue("emergency_firstname")
 			emergency_middlename := r.PostFormValue("emergency_middlename")
 			emergency_lastname := r.PostFormValue("emergency_lastname")
@@ -165,11 +166,11 @@ func main() {
 			emergency_email := r.PostFormValue("emergency_email")
 			emergency_fyda_id := r.PostFormValue("emergency_fyda_id")
 			_, err = conn.Exec(context.Background(), `Insert into Employee(firstname, middlename, lastname, phonenumber, fyda_id, email, 
-					department, job_title, hire_date,salary, emergency_firstname,
+					department, job_title, hire_date,salary, year_experince,emergency_firstname,
 					emergency_middlename, emergency_lastname, emergency_phonenumber,
 					emergency_email, emergency_fyda_id) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)`,
 				firstname, middlename, lastname, phonenumber, fyda_id, email,
-				department, job_title, hire_date, salary, emergency_firstname,
+				department, job_title, hire_date, salary, year_experince, emergency_firstname,
 				emergency_middlename, emergency_lastname, emergency_phonenumber,
 				emergency_email, emergency_fyda_id)
 			if err != nil {
