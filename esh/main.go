@@ -224,6 +224,10 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/item_track", func(w http.ResponseWriter, r *http.Request) {
+
+	})
+
 	// Add Item Page and API
 	http.HandleFunc("/add_item", func(w http.ResponseWriter, r *http.Request) {
 
