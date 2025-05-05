@@ -224,22 +224,6 @@ func main() {
 		}
 	})
 
-	// Api for item track
-	http.HandleFunc("/item_track", func(w http.ResponseWriter, r *http.Request) {
-		row, err := conn.Query(context.Background(), "select * from item limit 10")
-		if err != nil {
-			log.Println(err)
-		}
-		defer row.Close()
-		for row.Next() {
-
-		}
-		err = templates.ExecuteTemplate(w, "item_track.html", nil)
-		if err != nil {
-			log.Println(err)
-		}
-	})
-
 	// Add Item Page and API
 	http.HandleFunc("/add_item", func(w http.ResponseWriter, r *http.Request) {
 
