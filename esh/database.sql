@@ -5,7 +5,6 @@ create table if not exists Job(
     job_description text not null
 );
 
-
 create table if not exists Employee(
     employee_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     firstname text not null,

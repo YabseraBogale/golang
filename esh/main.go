@@ -60,6 +60,7 @@ func main() {
 			log.Println(err)
 		}
 	})
+
 	// API for human resources to add job
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
