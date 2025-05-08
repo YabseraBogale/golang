@@ -26,8 +26,6 @@ create table if not exists Employee(
     job_title text not null
 );
 
-
-
 create table if not exists Item(
     item_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
 	employee_id uuid references Employee,

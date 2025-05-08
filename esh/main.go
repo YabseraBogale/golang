@@ -358,13 +358,6 @@ func main() {
 		}
 	})
 
-	http.HandleFunc("/add_candate", func(w http.ResponseWriter, r *http.Request) {
-		err = templates.ExecuteTemplate(w, "add_candate.html", nil)
-		if err != nil {
-			log.Println(err)
-		}
-	})
-
 	// --- Start the HTTP Server ---
 	// Start the web server and listen for incoming requests on port 8080.
 	err = http.ListenAndServe("127.0.0.1:8080", nil)
