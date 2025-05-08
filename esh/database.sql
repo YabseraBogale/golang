@@ -26,19 +26,7 @@ create table if not exists Employee(
     job_title text not null
 );
 
-create table if not exists Candate(
-    candate_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-    firstname text not null,
-    middlename text not null,
-    lastname text not null,
-    phonenumber int not null,
-    fyda_id text not null,
-    email text not null,
-    Department text not null,
-    summited_date date not null,
-    cv text null,
-    job_title text not null                        
-);
+
 
 create table if not exists Item(
     item_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
