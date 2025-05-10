@@ -33,6 +33,7 @@ func main() {
 	defer logFile.Close() // Close the log file after use.
 	log.SetOutput(logFile)
 
+	// connection string for postgres export postgres="host=localhost port=5432 dbname=dbname user=postgres password=password sslmode=disable"
 	config, err := pgx.ParseConfig(os.Getenv("postgres"))
 	if err != nil {
 		log.Println(err)
