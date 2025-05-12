@@ -1,6 +1,7 @@
 create table if not exists Job(
     job_id int GENERATED ALWAYS AS IDENTITY,
     job_title text not null,
+    office text not null,
     Department text not null,
     job_description text not null
 );
@@ -16,6 +17,7 @@ create table if not exists Employee(
     hire_date date not null,
     salary float not null,
     year_experince int not null,
+    office text not null,
     emergency_firstname text not null,
     emergency_middlename text not null,
     emergency_lastname text not null,

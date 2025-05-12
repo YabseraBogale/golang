@@ -7,43 +7,17 @@ import (
 type Job struct {
 	JobId          int
 	JobTitle       string
+	Office         string
+	Department     string
 	JobDescription string
 }
 
-func InsertJob(jobtitle string, jobdescription string) Job {
+func InsertJob(jobtitle string, office string, department string, jobdescription string) Job {
 	return Job{
 		JobTitle:       jobtitle,
+		Office:         office,
+		Department:     department,
 		JobDescription: jobdescription,
-	}
-}
-
-type Candate struct {
-	CandateId   int
-	FirstName   string
-	MiddleName  string
-	LastName    string
-	Phonenumber string
-	FydaId      string
-	Email       string
-	HireDate    time.Time
-	Cv          string
-	JobTitle    string
-}
-
-func InsertCandate(
-	firstname string, middlename string, lastname string,
-	phonenumber string, email string,
-	fydaid string, cv string, hiredate time.Time, jobtitle string) Candate {
-	return Candate{
-		FirstName:   firstname,
-		MiddleName:  middlename,
-		LastName:    lastname,
-		Phonenumber: phonenumber,
-		Email:       email,
-		FydaId:      fydaid,
-		HireDate:    hiredate,
-		Cv:          cv,
-		JobTitle:    jobtitle,
 	}
 }
 
@@ -64,6 +38,7 @@ type Employee struct {
 	EmergencyPhonenumber string
 	EmergencyEmail       string
 	EmergencyFydaId      string
+	Department           string
 	JobTitle             string
 }
 
@@ -73,7 +48,7 @@ func InsertEmployee(
 	fydaid string, hiredate time.Time, salary int, year_experince int,
 	emergencyfirstname string, emergencymiddlename string, emergencylastname string,
 	emergencyphonenumber string, emergencyemail string,
-	emergencyfydaid string, jobtitle string) Employee {
+	emergencyfydaid string, department string, jobtitle string) Employee {
 	return Employee{
 		FirstName:            firstname,
 		MiddleName:           middlename,
@@ -90,6 +65,7 @@ func InsertEmployee(
 		EmergencyPhonenumber: emergencyphonenumber,
 		EmergencyEmail:       emergencyemail,
 		EmergencyFydaId:      emergencyfydaid,
+		Department:           department,
 		JobTitle:             jobtitle,
 	}
 }
