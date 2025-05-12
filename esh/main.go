@@ -66,9 +66,10 @@ func main() {
 	http.HandleFunc("/add_job", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
 			job_title := r.PostFormValue("job_title")
+			office := r.PostFormValue("office")
 			department := r.PostFormValue("department")
 			job_description := r.PostFormValue("job_description")
-			_, err := conn.Exec(context.Background(), `Insert into Job(job_title,Department,job_description) values($1,$2,$3)`, job_title, department, job_description)
+			_, err := conn.Exec(context.Background(), `Insert into Job(job_title,office,Department,job_description) values($1,$2,$3,$4)`, job_title, office, department, job_description)
 			if err != nil {
 				log.Println(err)
 			}
@@ -155,6 +156,7 @@ func main() {
 			email := r.PostFormValue("email")
 			department := r.PostFormValue("department")
 			job_title := r.PostFormValue("job_title")
+			office := r.PostFormValue("office")
 			hire_date, err := time.Parse("2006-01-02", r.PostFormValue("hire_date"))
 			if err != nil {
 				log.Println(err)
@@ -167,14 +169,17 @@ func main() {
 			emergency_phonenumber := r.PostFormValue("emergency_phonenumber")
 			emergency_email := r.PostFormValue("emergency_email")
 			emergency_fyda_id := r.PostFormValue("emergency_fyda_id")
-			_, err = conn.Exec(context.Background(), `Insert into Employee(firstname, middlename, lastname, phonenumber, fyda_id, email, 
-					department, job_title, hire_date,salary, year_experince,emergency_firstname,
-					emergency_middlename, emergency_lastname, emergency_phonenumber,
-					emergency_email, emergency_fyda_id) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)`,
-				firstname, middlename, lastname, phonenumber, fyda_id, email,
-				department, job_title, hire_date, salary, year_experince, emergency_firstname,
-				emergency_middlename, emergency_lastname, emergency_phonenumber,
-				emergency_email, emergency_fyda_id)
+			_, err = conn.Exec(context.Background(), `Insert into Employee(firstname, middlename , lastname ,
+							phonenumber , email ,fydaid , hiredate , salary , year_experince ,
+							emergencyfirstname , emergencymiddlename , emergencylastname ,
+							emergencyphonenumber , emergencyemail ,emergencyfydaid , department , office , jobtitle )
+							 values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)`,
+				firstname, middlename, lastname,
+				phonenumber, email,
+				fyda_id, hire_date, salary, year_experince,
+				emergency_firstname, emergency_middlename, emergency_lastname,
+				emergency_phonenumber, emergency_email,
+				emergency_fyda_id, department, office, job_title)
 			if err != nil {
 				log.Println(err)
 			}
