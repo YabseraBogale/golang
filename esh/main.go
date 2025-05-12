@@ -81,52 +81,25 @@ func main() {
 		}
 	})
 
-	// API Endpoint to get Job Titles
-	http.HandleFunc("/job_title", func(w http.ResponseWriter, r *http.Request) {
-		// Query the database to get all job titles.
-		row, err := conn.Query(context.Background(), "Select job_title from job")
-		if err != nil {
-			log.Println(err)
-		}
-		defer row.Close()       // Close the rows after use.
-		job_title := []string{} // Set the Content-Type header to indicate JSON
-		for row.Next() {
-			var title string
-			if err := row.Scan(&title); err != nil {
-				log.Println(err)
-				http.Error(w, "Internal server error", http.StatusInternalServerError)
-				return
-			}
-			job_title = append(job_title, title)
-		}
-
-		// Set the Content-Type header to indicate JSON
-		w.Header().Set("Content-Type", "application/json")
-		// Encode the job titles as JSON and send the response.
-		if err := json.NewEncoder(w).Encode(job_title); err != nil {
-			log.Printf("Error during row iteration: %v", err)
-			http.Error(w, "Internal server error", http.StatusInternalServerError)
-			return
-		}
-	})
-
-	// API Endpoint to get Departments
-	http.HandleFunc("/department", func(w http.ResponseWriter, r *http.Request) {
+	// API Endpoint to get office Departments job title
+	http.HandleFunc("/office_department_job_title", func(w http.ResponseWriter, r *http.Request) {
 		// Query the database to get all departments.
-		row, err := conn.Query(context.Background(), "Select department from job")
+		row, err := conn.Query(context.Background(), "Select office,department,job_title from job")
 		if err != nil {
 			log.Println(err)
 		}
 		defer row.Close() // Close the rows after use.
-		departments := []string{}
+		office_department_job_title := [][]string{}
 		for row.Next() {
 			var department string
-			if err := row.Scan(&department); err != nil {
+			var office string
+			var job_title string
+			if err := row.Scan(&office, &department, &job_title); err != nil {
 				log.Println(err)
 				http.Error(w, "Internal server error", http.StatusInternalServerError)
 				return
 			}
-			departments = append(departments, department)
+			office_department_job_title = append(office_department_job_title, []string{office, department, job_title})
 
 		}
 		if err := row.Err(); err != nil {
@@ -137,7 +110,7 @@ func main() {
 
 		w.Header().Set("Content-Type", "application/json")
 
-		if err := json.NewEncoder(w).Encode(departments); err != nil {
+		if err := json.NewEncoder(w).Encode(office_department_job_title); err != nil {
 			log.Printf("Error during row iteration: %v", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
 			return
