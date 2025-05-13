@@ -203,7 +203,9 @@ func main() {
 			log.Println(err)
 		}
 	})
+	http.HandleFunc("/item_taken", func(w http.ResponseWriter, r *http.Request) {
 
+	})
 	// Add Item Page and API
 	http.HandleFunc("/add_item", func(w http.ResponseWriter, r *http.Request) {
 
