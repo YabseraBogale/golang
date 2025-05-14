@@ -48,3 +48,8 @@ create table purchase_request(
     item_purchase_request text not null,
     item_date date not null
 )
+
+create table Inventory(
+    
+
+)
