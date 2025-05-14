@@ -50,6 +50,10 @@ create table purchase_request(
 )
 
 create table Inventory(
+    InventoryID INTEGER PRIMARY KEY AUTOINCREMENT,
     
+    Quantity INTEGER NOT NULL DEFAULT 0,
+    LastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   
 
 )
