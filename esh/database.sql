@@ -52,8 +52,7 @@ create table purchase_request(
 create table Inventory(
     inventory_iD INTEGER PRIMARY KEY AUTOINCREMENT,
     item_id uuid references Item,
+    employee_id uuid references Employee
     Quantity INTEGER NOT NULL DEFAULT 0,
     LastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-   
-
 )
