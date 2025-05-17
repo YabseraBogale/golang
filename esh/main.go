@@ -116,7 +116,6 @@ func main() {
 			return
 		}
 	})
-
 	// Display the "add_employee.html" form.
 	http.HandleFunc("/add_employee", func(w http.ResponseWriter, r *http.Request) {
 
