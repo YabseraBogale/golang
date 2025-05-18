@@ -1,3 +1,4 @@
+-- go to port to sqlite3 ?
 create table if not exists Job(
     job_id int GENERATED ALWAYS AS IDENTITY,
     job_title text not null,
