@@ -49,7 +49,7 @@ create table not exists purchase_request(
     item_date date not null
 )
 
-create table Inventory(
+create table not exists Inventory(
     inventory_iD INTEGER PRIMARY KEY AUTOINCREMENT,
     item_id uuid references Item,
     employee_id uuid references Employee
