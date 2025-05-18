@@ -38,7 +38,7 @@ create table if not exists Item(
     item_date date not null
 );
 
-create table purchase_request(
+create table not exists purchase_request(
     item_id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
 	employee_id uuid references Employee,
     item_name text not null,
