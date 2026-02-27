@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	url := "https://wakatime.com/@"
+	url := "https://wakatime.com/@hello"
+
 	res, err := http.Get(url)
 	if err != nil {
 		log.Println(err)
