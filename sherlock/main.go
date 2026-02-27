@@ -1,19 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"net/http"
-)
+const data = "https://raw.githubusercontent.com/sherlock-project/sherlock/master/sherlock_project/resources/data.json"
 
 func main() {
-	url := "https://wakatime.com/@hello"
 
-	res, err := http.Get(url)
-	if err != nil {
-		log.Println(err)
-	}
-	defer res.Body.Close()
-
-	fmt.Println(res.StatusCode)
 }
