@@ -7,18 +7,9 @@ import (
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/YabseraBogale/golang/sherlock/site"
 )
-
-const data = "https://raw.githubusercontent.com/sherlock-project/sherlock/master/sherlock_project/resources/data.json"
-
-type SteData struct {
-	ErrorMsg        interface{} `json:"errorMsg,omitempty"`
-	ErrorType       string      `json:"errorType"`
-	IsNSFW          bool        `json:"isNSFW,omitempty"`
-	URL             string      `json:"url"`
-	URLMain         string      `json:"urlMain"`
-	UsernameClaimed string      `json:"username_claimed"`
-}
 
 func main() {
 
@@ -26,7 +17,7 @@ func main() {
 		Timeout: 10 * time.Second,
 	}
 
-	resp, err := client.Get(data)
+	resp, err := client.Get(site.Data)
 
 	if err != nil {
 		log.Println(err)
@@ -55,7 +46,7 @@ func main() {
 			continue
 		}
 
-		var site SteData
+		var site site.SiteData
 
 		if err := json.Unmarshal(value, &site); err != nil {
 			fmt.Println(err)
