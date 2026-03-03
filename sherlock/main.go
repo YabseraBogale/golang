@@ -14,7 +14,10 @@ import (
 
 func main() {
 
-	fmt.Println(os.Args)
+	if len(os.Args) < 2 {
+		fmt.Println("no username provided")
+		return
+	}
 	client := &http.Client{
 		Timeout: 10 * time.Second,
 	}
