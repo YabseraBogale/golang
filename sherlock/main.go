@@ -18,6 +18,9 @@ func main() {
 		fmt.Println("no username provided")
 		return
 	}
+	for i := 2; i < len(os.Args); i++ {
+		fmt.Println(os.Args[i])
+	}
 	client := &http.Client{
 		Timeout: 10 * time.Second,
 	}
