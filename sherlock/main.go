@@ -18,18 +18,15 @@ func main() {
 		fmt.Println("no username provided")
 		return
 	}
-	for i := 2; i < len(os.Args); i++ {
-		fmt.Println(os.Args[i])
-	}
 	client := &http.Client{
 		Timeout: 10 * time.Second,
 	}
-
 	resp, err := client.Get(site.Data)
 
 	if err != nil {
 		log.Println(err)
 	}
+
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
@@ -41,6 +38,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+
 	var full_map map[string]json.RawMessage
 	err = json.Unmarshal(body_byte, &full_map)
 
@@ -48,20 +46,22 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	for key, value := range full_map {
+	for i := 1; i < len(os.Args); i++ {
+		for key, value := range full_map {
 
-		if key == "$schema" {
-			continue
+			if key == "$schema" {
+				continue
+			}
+
+			var site site.SiteData
+
+			if err := json.Unmarshal(value, &site); err != nil {
+				fmt.Println(err)
+				continue
+			}
+			fmt.Println(site.URL)
+
 		}
-
-		var site site.SiteData
-
-		if err := json.Unmarshal(value, &site); err != nil {
-			fmt.Println(err)
-			continue
-		}
-		fmt.Println(site.URL)
-
 	}
 
 }
