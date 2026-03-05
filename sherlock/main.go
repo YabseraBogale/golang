@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/YabseraBogale/golang/sherlock/site"
@@ -59,8 +60,8 @@ func main() {
 				fmt.Println(err)
 				continue
 			}
-			fmt.Println(site.URL)
-
+			username_url := strings.Replace("{}", site.URL, os.Args[i], -1)
+			fmt.Println(username_url)
 		}
 	}
 
