@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"strings"
@@ -62,10 +63,10 @@ func main() {
 			}
 			username_url := strings.Replace(site.URL, "{}", os.Args[i], -1)
 			c, err := client.Get(username_url)
-			if err != nil {
-				log.Println(err)
+			if err, ok := err.(net.Error); ok && err.Timeout() {
+				fmt.Println("This was a timeout error. Retrying...")
+				continue
 			}
-			defer c.Body.Close()
 			if c.StatusCode == 200 {
 				fmt.Println(username_url)
 			}
