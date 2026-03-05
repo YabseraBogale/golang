@@ -61,7 +61,14 @@ func main() {
 				continue
 			}
 			username_url := strings.Replace(site.URL, "{}", os.Args[i], -1)
-			fmt.Println(site.URL, " ", username_url)
+			c, err := http.Get(username_url)
+			if err != nil {
+				log.Println(err)
+			}
+			defer c.Body.Close()
+			if c.StatusCode == 200 {
+				fmt.Println(username_url)
+			}
 		}
 	}
 
