@@ -60,8 +60,8 @@ func main() {
 				fmt.Println(err)
 				continue
 			}
-			username_url := strings.Replace("{}", site.URL, os.Args[i], -1)
-			fmt.Println(username_url)
+			username_url := strings.Replace(site.URL, "{}", os.Args[i], -1)
+			fmt.Println(site.URL, " ", username_url)
 		}
 	}
 
