@@ -61,7 +61,7 @@ func main() {
 				continue
 			}
 			username_url := strings.Replace(site.URL, "{}", os.Args[i], -1)
-			c, err := http.Get(username_url)
+			c, err := client.Get(username_url)
 			if err != nil {
 				log.Println(err)
 			}
