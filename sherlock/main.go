@@ -69,16 +69,17 @@ func main() {
 				}
 				continue // Move to the next site since 'c' is nil
 			}
-			defer c.Body.Close()
 			if c.StatusCode == 200 {
 				data, err := io.ReadAll(c.Body)
 				if err != nil {
 					fmt.Println(err)
 				}
-				if strings.Count(string(data), os.Args[i]) >= 1 {
-					fmt.Println(username_url)
+				if strings.Contains(string(data), os.Args[i]) {
+
+					fmt.Println(username_url, os.Args[i])
 				}
 			}
+			c.Body.Close()
 		}
 	}
 
