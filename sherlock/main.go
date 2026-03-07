@@ -63,10 +63,15 @@ func main() {
 			}
 			username_url := strings.Replace(site.URL, "{}", os.Args[i], -1)
 			c, err := client.Get(username_url)
-			if err, ok := err.(net.Error); ok && err.Timeout() {
-				fmt.Println("This was a timeout error. Retrying...")
-				continue
+			if err != nil {
+				if netErr, ok := err.(net.Error); ok && netErr.Timeout() {
+					fmt.Printf("Timeout for %s. Retrying...\n", username_url)
+				} else {
+					fmt.Printf("Request failed for %s\n", username_url)
+				}
+				continue // Move to the next site since 'c' is nil
 			}
+			defer c.Body.Close()
 			if c.StatusCode == 200 {
 				fmt.Println(username_url)
 			}
