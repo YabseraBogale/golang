@@ -65,15 +65,19 @@ func main() {
 			c, err := client.Get(username_url)
 			if err != nil {
 				if netErr, ok := err.(net.Error); ok && netErr.Timeout() {
-					fmt.Printf("Timeout for %s. Retrying...\n", username_url)
-				} else {
-					fmt.Printf("Request failed for %s\n", username_url)
+					continue
 				}
 				continue // Move to the next site since 'c' is nil
 			}
 			defer c.Body.Close()
 			if c.StatusCode == 200 {
-				fmt.Println(username_url)
+				data, err := io.ReadAll(c.Body)
+				if err != nil {
+					fmt.Println(err)
+				}
+				if strings.Count(string(data), os.Args[i]) >= 1 {
+					fmt.Println(username_url)
+				}
 			}
 		}
 	}
