@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/YabseraBogale/golang/sherlock/site"
@@ -48,9 +49,13 @@ func main() {
 		log.Fatalln(err)
 	}
 
+	var wg sync.WaitGroup
 	for i := 1; i < len(os.Args); i++ {
-		for key, value := range full_map {
-
+		wg.Add(1)
+		go func ()  {
+			defer wg.Done()
+			for key, value := range full_map {
+			
 			if key == "$schema" {
 				continue
 			}
@@ -80,7 +85,10 @@ func main() {
 				}
 			}
 			c.Body.Close()
-		}
+		};
 	}
-
+	wg.Wait()
+	
 }
+
+
