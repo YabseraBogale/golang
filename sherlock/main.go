@@ -79,12 +79,13 @@ func main() {
 						fmt.Println(err)
 					}
 					if strings.Contains(string(data), os.Args[i]) {
-
-						fmt.Println(username_url, os.Args[i])
+						fmt.Println(key, ":", os.Args[i])
 					}
 				}
 				c.Body.Close()
+
 			}
 		}(os.Args[i])
 	}
+	wg.Wait()
 }
