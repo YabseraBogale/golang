@@ -48,47 +48,43 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
 	var wg sync.WaitGroup
 	for i := 1; i < len(os.Args); i++ {
 		wg.Add(1)
-		go func ()  {
+		go func(username string) {
 			defer wg.Done()
 			for key, value := range full_map {
-			
-			if key == "$schema" {
-				continue
-			}
 
-			var site site.SiteData
-
-			if err := json.Unmarshal(value, &site); err != nil {
-				fmt.Println(err)
-				continue
-			}
-			username_url := strings.Replace(site.URL, "{}", os.Args[i], -1)
-			c, err := client.Get(username_url)
-			if err != nil {
-				if netErr, ok := err.(net.Error); ok && netErr.Timeout() {
+				if key == "$schema" {
 					continue
 				}
-				continue // Move to the next site since 'c' is nil
-			}
-			if c.StatusCode == 200 {
-				data, err := io.ReadAll(c.Body)
-				if err != nil {
+
+				var site site.SiteData
+
+				if err := json.Unmarshal(value, &site); err != nil {
 					fmt.Println(err)
+					continue
 				}
-				if strings.Contains(string(data), os.Args[i]) {
+				username_url := strings.Replace(site.URL, "{}", os.Args[i], -1)
+				c, err := client.Get(username_url)
+				if err != nil {
+					if netErr, ok := err.(net.Error); ok && netErr.Timeout() {
+						continue
+					}
+					continue // Move to the next site since 'c' is nil
+				}
+				if c.StatusCode == 200 {
+					data, err := io.ReadAll(c.Body)
+					if err != nil {
+						fmt.Println(err)
+					}
+					if strings.Contains(string(data), os.Args[i]) {
 
-					fmt.Println(username_url, os.Args[i])
+						fmt.Println(username_url, os.Args[i])
+					}
 				}
+				c.Body.Close()
 			}
-			c.Body.Close()
-		};
+		}(os.Args[i])
 	}
-	wg.Wait()
-	
 }
-
-
