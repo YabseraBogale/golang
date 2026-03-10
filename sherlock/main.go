@@ -79,7 +79,7 @@ func main() {
 						fmt.Println(err)
 					}
 					if strings.Contains(string(data), os.Args[i]) {
-						fmt.Println(key, ":", os.Args[i])
+						fmt.Println(key, os.Args[i])
 					}
 				}
 				c.Body.Close()
