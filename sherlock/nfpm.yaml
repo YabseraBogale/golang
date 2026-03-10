@@ -1,0 +1,7 @@
+name: "sherlock"
+arch: "amd64"
+platform: "linux"
+version: "1.0.0"
+contents:
+  - src: ./sherlock  # Your compiled binary
+    dst: /usr/bin/sherlock
