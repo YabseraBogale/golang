@@ -31,7 +31,12 @@ func MustLodImage(name string) *ebiten.Image {
 var player = MustLodImage("assets/RedDinosaur1.png")
 
 func (g *Game) Draw(screen *ebiten.Image) {
-	screen.DrawImage(player, nil)
+
+	op := &ebiten.DrawImageOptions{}
+	op.GeoM.Scale(2, 2)
+	op.GeoM.Translate(150, 200)
+
+	screen.DrawImage(player, op)
 }
 
 func (g *Game) Layout(out_width, out_height int) (width, height int) {
