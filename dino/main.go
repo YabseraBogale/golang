@@ -1,9 +1,10 @@
 package main
 
 import (
-	"embed"
 	"image"
+	_ "image/png"
 	"log"
+	"os"
 
 	"github.com/hajimehoshi/ebiten/v2"
 )
@@ -11,11 +12,8 @@ import (
 type Game struct {
 }
 
-var assests embed.FS
-var player = must_load_image("RedDino/RedDinosaur1.png")
-
-func must_load_image(name string) *ebiten.Image {
-	img, err := assests.Open(name)
+func MustLodImage(name string) *ebiten.Image {
+	img, err := os.Open(name)
 
 	if err != nil {
 		panic(err)
@@ -29,6 +27,8 @@ func must_load_image(name string) *ebiten.Image {
 	}
 	return ebiten.NewImageFromImage(i)
 }
+
+var player = MustLodImage("assets/RedDinosaur1.png")
 
 func (g *Game) Draw(screen *ebiten.Image) {
 	screen.DrawImage(player, nil)
