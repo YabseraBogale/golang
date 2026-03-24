@@ -4,6 +4,7 @@ import (
 	"image"
 	_ "image/png"
 	"log"
+	"math"
 	"os"
 
 	"github.com/hajimehoshi/ebiten/v2"
@@ -14,6 +15,7 @@ type Game struct {
 	playerY       float64
 	frame         int
 	tick          int
+	cameraX       float64
 	player_sprite []*ebiten.Image
 }
 
@@ -50,17 +52,37 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		hill_layer_04,
 		hill_layer_05,
 	}
-	for _, layer := range layers {
-		lw, lh := layer.Bounds().Dx(), layer.Bounds().Dy()
+	for i, layer := range layers {
+		bw, bl := layer.Bounds().Dx(), layer.Bounds().Dy()
 
-		scaleX, scaleY := float64(sw)/float64(lw), float64(sh)/float64(lh)
-		op := &ebiten.DrawImageOptions{}
-		op.GeoM.Scale(scaleX, scaleY)
-		screen.DrawImage(layer, op)
+		scaleX := float64(sw) / float64(bw)
+		scaleY := float64(sh) / float64(bl)
+
+		speed := float64(i+1) * 0.5
+
+		scale_width := float64(bw) * scaleX
+
+		offset := fmod(-g.cameraX*speed, scale_width)
+
+		opition_before := &ebiten.DrawImageOptions{}
+
+		opition_before.GeoM.Scale(scaleX, scaleY)
+		opition_before.GeoM.Translate(offset, 0)
+
+		screen.DrawImage(layer, opition_before)
+
+		opition_after := &ebiten.DrawImageOptions{}
+
+		opition_after.GeoM.Scale(scaleX, scaleY)
+
+		opition_after.GeoM.Translate(offset+scale_width, 0)
+
+		screen.DrawImage(layer, opition_after)
+
 	}
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
-	player_opition.GeoM.Translate(g.playerX, g.playerY)
+	player_opition.GeoM.Translate(g.playerX-g.cameraX, g.playerY)
 
 	current_sprite := g.player_sprite[g.frame]
 	screen.DrawImage(current_sprite, player_opition)
@@ -68,10 +90,13 @@ func (g *Game) Draw(screen *ebiten.Image) {
 }
 
 func (g *Game) Layout(out_width, out_height int) (width, height int) {
-	return out_width, out_height
+	return 640, 320
 }
 
 func (g *Game) Update() error {
+	if ebiten.IsKeyPressed(ebiten.KeyF11) {
+		ebiten.SetFullscreen(!ebiten.IsFullscreen())
+	}
 	if ebiten.IsKeyPressed(ebiten.KeyRight) {
 		g.playerX += 2
 		g.tick++
@@ -79,10 +104,19 @@ func (g *Game) Update() error {
 			g.frame++
 		}
 	}
-	if g.frame > len(g.player_sprite) {
+	if g.frame >= len(g.player_sprite) {
 		g.frame = 0
 	}
+	g.cameraX = g.playerX - 320
 	return nil
+}
+
+func fmod(x, y float64) float64 {
+	res := math.Mod(x, y)
+	if res > 0 {
+		res -= y
+	}
+	return res
 }
 
 func main() {
@@ -91,13 +125,6 @@ func main() {
 		playerY: 250,
 		player_sprite: []*ebiten.Image{
 			MustLodImage("assets/player/RedDinosaur1.png"),
-			MustLodImage("assets/player/RedDinosaur2.png"),
-			MustLodImage("assets/player/RedDinosaur3.png"),
-			MustLodImage("assets/player/RedDinosaur4.png"),
-			MustLodImage("assets/player/RedDinosaur5.png"),
-			MustLodImage("assets/player/RedDinosaur6.png"),
-			MustLodImage("assets/player/RedDinosaur7.png"),
-			MustLodImage("assets/player/RedDinosaur8.png"),
 			MustLodImage("assets/player/RedDinosaur9.png"),
 			MustLodImage("assets/player/RedDinosaur10.png"),
 			MustLodImage("assets/player/RedDinosaur11.png"),
@@ -106,12 +133,11 @@ func main() {
 			MustLodImage("assets/player/RedDinosaur14.png"),
 			MustLodImage("assets/player/RedDinosaur15.png"),
 			MustLodImage("assets/player/RedDinosaur16.png"),
-			MustLodImage("assets/player/RedDinosaur17.png"),
-			MustLodImage("assets/player/RedDinosaur18.png"),
 		},
 	}
 	ebiten.SetWindowSize(640, 320)
 	ebiten.SetWindowTitle("Dino")
+	ebiten.SetFullscreen(true)
 
 	if err := ebiten.RunGame(game); err != nil {
 		log.Fatalln(err)
