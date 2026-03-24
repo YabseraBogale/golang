@@ -28,10 +28,12 @@ func MustLodImage(name string) *ebiten.Image {
 	return ebiten.NewImageFromImage(i)
 }
 
-var player = MustLodImage("assets/RedDinosaur1.png")
+var player = MustLodImage("assets/player/RedDinosaur1.png")
+var hill_layer_01 = MustLodImage("assets/background/Hills Layer 01.png")
 
 func (g *Game) Draw(screen *ebiten.Image) {
 
+	screen.DrawImage(hill_layer_01, nil)
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(2, 2)
 	op.GeoM.Translate(150, 200)
