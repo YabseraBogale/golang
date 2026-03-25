@@ -137,7 +137,6 @@ func main() {
 	}
 	ebiten.SetWindowSize(640, 320)
 	ebiten.SetWindowTitle("Dino")
-	ebiten.SetFullscreen(true)
 
 	if err := ebiten.RunGame(game); err != nil {
 		log.Fatalln(err)
