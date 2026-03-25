@@ -5,16 +5,26 @@ import (
 	_ "image/png"
 	"log"
 	"math"
+	"math/rand"
 	"os"
 
 	"github.com/hajimehoshi/ebiten/v2"
 )
 
+type Apple struct {
+	x, y          float64
+	width, height float64
+	image         *ebiten.Image
+}
+
 type Game struct {
+	apple         []*Apple
 	playerX       float64
 	playerY       float64
 	frame         int
 	tick          int
+	drop_timer    int
+	next_drop_in  int
 	cameraX       float64
 	player_sprite []*ebiten.Image
 }
@@ -52,6 +62,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		hill_layer_04,
 		hill_layer_05,
 	}
+
 	for i, layer := range layers {
 		bw, bl := layer.Bounds().Dx(), layer.Bounds().Dy()
 
@@ -80,6 +91,13 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		screen.DrawImage(layer, opition_after)
 
 	}
+
+	for _, apple := range g.apple {
+		op := &ebiten.DrawImageOptions{}
+		op.GeoM.Translate(apple.x, apple.y)
+		screen.DrawImage(apple.image, op)
+	}
+
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
 	player_opition.GeoM.Translate(g.playerX-g.cameraX, g.playerY)
@@ -94,9 +112,33 @@ func (g *Game) Layout(out_width, out_height int) (width, height int) {
 }
 
 func (g *Game) Update() error {
+
 	if ebiten.IsKeyPressed(ebiten.KeyF11) {
 		ebiten.SetFullscreen(!ebiten.IsFullscreen())
 	}
+
+	g.drop_timer++
+
+	if g.drop_timer > g.next_drop_in {
+		new_apple := &Apple{
+			x:      640,
+			y:      200,
+			width:  20,
+			height: 20,
+			image:  MustLodImage("assets/apple/apple_regular_30_30px.png"),
+		}
+		g.apple = append(g.apple, new_apple)
+		g.drop_timer = 0
+		g.next_drop_in = rand.Intn(120) + 60
+	}
+	for i := len(g.apple) - 1; i >= 0; i-- {
+		g.apple[i].x -= 4
+		if g.apple[i].x < -50 {
+			g.apple = append(g.apple[:i], g.apple[i+1:]...)
+		}
+
+	}
+
 	if ebiten.IsKeyPressed(ebiten.KeyRight) {
 		g.playerX += 2
 		g.tick++
