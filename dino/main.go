@@ -14,6 +14,7 @@ import (
 type Apple struct {
 	x, y          float64
 	width, height float64
+	apple_health  string
 	image         *ebiten.Image
 }
 
@@ -50,6 +51,14 @@ var hill_layer_02 = MustLodImage("assets/background/Hills Layer 02.png")
 var hill_layer_03 = MustLodImage("assets/background/Hills Layer 03.png")
 var hill_layer_04 = MustLodImage("assets/background/Hills Layer 04.png")
 var hill_layer_05 = MustLodImage("assets/background/Hills Layer 05.png")
+var apples = []*ebiten.Image{MustLodImage("assets/apple/apple_regular_30_30px.png"), MustLodImage("assets/apple/apple_golden_30_30px.png"), MustLodImage("assets/apple/apple_rotten_30_30px.png")}
+
+func Collision(x1, y1, w1, h1, x2, y2, w2, h2 float64) bool {
+	return x1 < x2+w2 &&
+		x1+w1 > x2 &&
+		y1 < y2+h2 &&
+		y1+h1 > y2
+}
 
 func (g *Game) Draw(screen *ebiten.Image) {
 
@@ -94,7 +103,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 
 	for _, apple := range g.apple {
 		op := &ebiten.DrawImageOptions{}
-		op.GeoM.Translate(apple.x, apple.y)
+		op.GeoM.Translate(apple.x-g.cameraX, apple.y)
 		screen.DrawImage(apple.image, op)
 	}
 
@@ -118,25 +127,42 @@ func (g *Game) Update() error {
 	}
 
 	g.drop_timer++
-
+	pW, pH := 32.0, 32.0
 	if g.drop_timer > g.next_drop_in {
+		index := rand.Intn(3)
+		var health string
+		if index == 0 {
+			health = "Normal"
+		} else if index == 1 {
+			health = "Cured"
+		} else {
+			health = "Sick"
+		}
 		new_apple := &Apple{
-			x:      640,
-			y:      200,
-			width:  20,
-			height: 20,
-			image:  MustLodImage("assets/apple/apple_regular_30_30px.png"),
+			x:            g.cameraX + 640,
+			y:            280,
+			width:        20,
+			height:       20,
+			image:        apples[index],
+			apple_health: health,
 		}
 		g.apple = append(g.apple, new_apple)
 		g.drop_timer = 0
 		g.next_drop_in = rand.Intn(120) + 60
 	}
 	for i := len(g.apple) - 1; i >= 0; i-- {
-		g.apple[i].x -= 4
-		if g.apple[i].x < -50 {
+
+		apple := g.apple[i]
+
+		apple_width, apple_height := 20.0, 20.0
+
+		if g.apple[i].x < g.cameraX-50 {
 			g.apple = append(g.apple[:i], g.apple[i+1:]...)
 		}
 
+		if Collision(g.playerX, g.playerY, pW, pH, apple.x, apple.y, apple_width, apple_height) {
+
+		}
 	}
 
 	if ebiten.IsKeyPressed(ebiten.KeyRight) {
@@ -146,6 +172,7 @@ func (g *Game) Update() error {
 			g.frame++
 		}
 	}
+
 	if g.frame >= len(g.player_sprite) {
 		g.frame = 0
 	}
