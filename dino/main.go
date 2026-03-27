@@ -22,6 +22,8 @@ type Game struct {
 	apple         []*Apple
 	playerX       float64
 	playerY       float64
+	velocity_Y    float64
+	is_jumping    bool
 	frame         int
 	tick          int
 	drop_timer    int
@@ -121,6 +123,23 @@ func (g *Game) Layout(out_width, out_height int) (width, height int) {
 }
 
 func (g *Game) Update() error {
+	const gravity = 0.6
+	const jump_strength = -12.0
+	const ground_y = 200.0
+
+	if ebiten.IsKeyPressed(ebiten.KeySpace) && !g.is_jumping {
+		g.velocity_Y = jump_strength
+		g.is_jumping = true
+	}
+
+	g.playerY += g.velocity_Y
+	g.velocity_Y += gravity
+
+	if g.playerY >= ground_y {
+		g.playerY = ground_y
+		g.velocity_Y = 0
+		g.is_jumping = false
+	}
 
 	if ebiten.IsKeyPressed(ebiten.KeyF11) {
 		ebiten.SetFullscreen(!ebiten.IsFullscreen())
