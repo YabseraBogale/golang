@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"image"
+	"image/color"
 	_ "image/png"
 	"log"
 	"math"
@@ -10,6 +11,7 @@ import (
 	"os"
 
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/vector"
 )
 
 type Apple struct {
@@ -109,6 +111,9 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		op.GeoM.Translate(apple.x-g.cameraX, apple.y)
 		screen.DrawImage(apple.image, op)
 	}
+
+	// Draw background of the bar (Gray)
+	vector.FillRect(screen, 10, 30, 100, 10, color.RGBA{100, 100, 100, 255}, true)
 
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
