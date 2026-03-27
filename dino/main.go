@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	_ "image/png"
 	"log"
@@ -180,7 +181,9 @@ func (g *Game) Update() error {
 		}
 
 		if Collision(g.playerX, g.playerY, pW, pH, apple.x, apple.y, apple_width, apple_height) {
-
+			if g.apple[i].apple_health == "Sick" {
+				fmt.Println("Sick")
+			}
 		}
 	}
 
