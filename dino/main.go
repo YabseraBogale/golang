@@ -125,7 +125,7 @@ func (g *Game) Layout(out_width, out_height int) (width, height int) {
 func (g *Game) Update() error {
 	const gravity = 0.6
 	const jump_strength = -12.0
-	const ground_y = 200.0
+	const ground_y = 250
 
 	if ebiten.IsKeyPressed(ebiten.KeySpace) && !g.is_jumping {
 		g.velocity_Y = jump_strength
