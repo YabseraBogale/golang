@@ -26,6 +26,7 @@ type Game struct {
 	playerX       float64
 	playerY       float64
 	velocity_Y    float64
+	heath         int
 	is_jumping    bool
 	frame         int
 	tick          int
@@ -113,7 +114,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 	}
 
 	// Draw background of the bar (Gray)
-	vector.FillRect(screen, 10, 30, 100, 10, color.RGBA{100, 100, 100, 255}, true)
+	vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{100, 100, 100, 255}, true)
 
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
@@ -230,6 +231,7 @@ func main() {
 			MustLodImage("assets/player/RedDinosaur15.png"),
 			MustLodImage("assets/player/RedDinosaur16.png"),
 		},
+		heath: 100,
 	}
 	ebiten.SetWindowSize(640, 320)
 	ebiten.SetWindowTitle("Dino")
