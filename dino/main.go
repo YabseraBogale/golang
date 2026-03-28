@@ -113,8 +113,11 @@ func (g *Game) Draw(screen *ebiten.Image) {
 	}
 
 	// Draw background of the bar (Gray)
-	vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{100, 100, 100, 255}, true)
+	vector.FillRect(screen, 10, 30, 100, 10, color.RGBA{100, 100, 100, 255}, true)
 
+	if g.heath > 0 {
+		vector.FillRect(screen, 110, 30, float32(g.heath), 10, color.RGBA{100, 100, 100, 255}, true)
+	}
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
 	player_opition.GeoM.Translate(g.playerX-g.cameraX, g.playerY)
