@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	_ "image/png"
@@ -196,7 +197,7 @@ func (g *Game) Update() error {
 			}
 		}
 	}
-
+	fmt.Println(g.heath)
 	if ebiten.IsKeyPressed(ebiten.KeyRight) {
 		g.playerX += 2
 		g.tick++
