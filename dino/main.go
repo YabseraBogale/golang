@@ -113,10 +113,13 @@ func (g *Game) Draw(screen *ebiten.Image) {
 	}
 
 	// Draw background of the bar (Gray)
-	vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{100, 100, 100, 255}, true)
 
-	if g.heath > 0 {
-		vector.FillRect(screen, 110, 30, float32(g.heath), 10, color.RGBA{100, 100, 100, 255}, true)
+	if g.heath > 30 && g.heath <= 100 {
+		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{255, 0, 0, 255}, true)
+	} else if g.heath > 0 && g.heath <= 30 {
+		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{255, 105, 180, 255}, true)
+	} else if g.heath > 100 && g.heath <= 200 {
+		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{0, 255, 0, 255}, true)
 	}
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
@@ -196,12 +199,10 @@ func (g *Game) Update() error {
 			}
 		}
 	}
-	if ebiten.IsKeyPressed(ebiten.KeyRight) {
-		g.playerX += 2
-		g.tick++
-		if g.tick%8 == 0 {
-			g.frame++
-		}
+	g.playerX += 2
+	g.tick++
+	if g.tick%8 == 0 {
+		g.frame++
 	}
 
 	if g.frame >= len(g.player_sprite) {
