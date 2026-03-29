@@ -212,6 +212,10 @@ func (g *Game) Update() error {
 	return nil
 }
 
+func (g *Game) Restart() {
+
+}
+
 func fmod(x, y float64) float64 {
 	res := math.Mod(x, y)
 	if res > 0 {
