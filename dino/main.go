@@ -213,7 +213,10 @@ func (g *Game) Update() error {
 }
 
 func (g *Game) Restart() {
-
+	g.heath = 100
+	g.playerX = 30
+	g.playerY = 250
+	g.apple = nil
 }
 
 func fmod(x, y float64) float64 {
