@@ -109,6 +109,13 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		screen.DrawImage(layer, opition_after)
 
 	}
+	if g.is_paused {
+		overlay := color.RGBA{0, 0, 0, 150}
+		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
+		ebitenutil.DebugPrintAt(screen, "Paused", 300, 150)
+		ebitenutil.DebugPrintAt(screen, "Press  'P' to Resume", 300, 150)
+
+	}
 
 	for _, apple := range g.apple {
 		op := &ebiten.DrawImageOptions{}
@@ -125,13 +132,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 	} else if g.heath > 100 && g.heath <= 200 {
 		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{0, 255, 0, 255}, true)
 	}
-	if g.is_paused {
-		overlay := color.RGBA{0, 0, 0, 150}
-		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
-		ebitenutil.DebugPrintAt(screen, "Paused", 300, 150)
-		ebitenutil.DebugPrintAt(screen, "Press 'P' to Resume", 300, 150)
 
-	}
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
 	player_opition.GeoM.Translate(g.playerX-g.cameraX, g.playerY)
