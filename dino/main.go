@@ -10,6 +10,7 @@ import (
 	"os"
 
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 	"github.com/hajimehoshi/ebiten/v2/vector"
 )
 
@@ -21,6 +22,9 @@ type Apple struct {
 }
 
 type Game struct {
+	game_over     bool
+	is_paused     bool
+	key_pressed   bool
 	apple         []*Apple
 	playerX       float64
 	playerY       float64
@@ -121,6 +125,13 @@ func (g *Game) Draw(screen *ebiten.Image) {
 	} else if g.heath > 100 && g.heath <= 200 {
 		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{0, 255, 0, 255}, true)
 	}
+	if g.is_paused {
+		overlay := color.RGBA{0, 0, 0, 150}
+		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
+		ebitenutil.DebugPrintAt(screen, "Paused", 300, 150)
+		ebitenutil.DebugPrintAt(screen, "Press 'P' to Resume", 300, 150)
+
+	}
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
 	player_opition.GeoM.Translate(g.playerX-g.cameraX, g.playerY)
@@ -139,6 +150,17 @@ func (g *Game) Update() error {
 	const jump_strength = -12.0
 	const ground_y = 250
 
+	if ebiten.IsKeyPressed(ebiten.KeyP) {
+		if !g.key_pressed {
+			g.is_paused = !g.is_paused
+			g.key_pressed = true
+		} else {
+			g.key_pressed = false
+		}
+	}
+	if g.is_paused {
+		return nil
+	}
 	if ebiten.IsKeyPressed(ebiten.KeySpace) && !g.is_jumping {
 		g.velocity_Y = jump_strength
 		g.is_jumping = true
