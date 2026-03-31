@@ -113,7 +113,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		overlay := color.RGBA{0, 0, 0, 150}
 		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
 		ebitenutil.DebugPrintAt(screen, "Paused", 300, 150)
-		ebitenutil.DebugPrintAt(screen, "Press P to Resume", 300, 150)
+		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
 
 	}
 
@@ -160,6 +160,7 @@ func (g *Game) Update() error {
 		g.key_pressed = false
 	}
 	if g.is_paused {
+
 		return nil
 	}
 	if ebiten.IsKeyPressed(ebiten.KeySpace) && !g.is_jumping {
