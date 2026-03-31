@@ -151,7 +151,7 @@ func (g *Game) Update() error {
 	const jump_strength = -12.0
 	const ground_y = 250
 
-	if ebiten.IsKeyPressed(ebiten.KeyP) {
+	if ebiten.IsKeyPressed(ebiten.KeyEscape) {
 		if !g.key_pressed {
 			g.is_paused = !g.is_paused
 			g.key_pressed = true
