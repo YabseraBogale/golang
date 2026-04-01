@@ -116,6 +116,13 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
 
 	}
+	if g.heath < 0 && g.is_paused == true {
+		overlay := color.RGBA{0, 0, 0, 150}
+		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
+		ebitenutil.DebugPrintAt(screen, "Game over", 300, 150)
+		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
+
+	}
 
 	for _, apple := range g.apple {
 		op := &ebiten.DrawImageOptions{}
@@ -162,6 +169,9 @@ func (g *Game) Update() error {
 	if g.is_paused {
 
 		return nil
+	}
+	if g.heath < 0 {
+		g.is_paused = true
 	}
 	if ebiten.IsKeyPressed(ebiten.KeySpace) && !g.is_jumping {
 		g.velocity_Y = jump_strength
@@ -233,6 +243,7 @@ func (g *Game) Update() error {
 		g.frame = 0
 	}
 	g.cameraX = g.playerX - 320
+
 	return nil
 }
 
