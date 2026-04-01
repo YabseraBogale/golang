@@ -169,7 +169,7 @@ func (g *Game) Update() error {
 
 		return nil
 	}
-	if g.heath < 0 {
+	if g.heath < 0 && g.is_paused == false {
 		g.is_paused = true
 		if ebiten.IsKeyPressed(ebiten.KeyR) {
 			g.Restart()
