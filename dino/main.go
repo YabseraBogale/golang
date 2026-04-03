@@ -165,13 +165,8 @@ func (g *Game) Update() error {
 	} else {
 		g.key_pressed = false
 	}
-	if g.is_paused && g.heath > 0 {
+	if g.is_paused {
 		return nil
-	} else if g.heath < 0 && g.is_paused == false {
-		g.is_paused = true
-		if ebiten.IsKeyPressed(ebiten.KeyR) {
-			g.Restart()
-		}
 	}
 	if ebiten.IsKeyPressed(ebiten.KeySpace) && !g.is_jumping {
 		g.velocity_Y = jump_strength
