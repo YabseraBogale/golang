@@ -110,10 +110,6 @@ func (g *Game) Draw(screen *ebiten.Image) {
 
 	}
 	if g.is_paused {
-		overlay := color.RGBA{0, 0, 0, 150}
-		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
-		ebitenutil.DebugPrintAt(screen, "Paused", 300, 150)
-		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
 
 	}
 
@@ -131,6 +127,14 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{255, 105, 180, 255}, true)
 	} else if g.heath > 100 && g.heath <= 200 {
 		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{0, 255, 0, 255}, true)
+	} else if g.heath < 0 || g.heath < 201 && g.is_paused {
+		overlay := color.RGBA{0, 0, 0, 150}
+		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
+		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
+	} else if g.heath > 0 || g.heath < 201 && g.is_paused {
+		overlay := color.RGBA{0, 0, 0, 150}
+		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
+		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
 	}
 	player_opition := &ebiten.DrawImageOptions{}
 	player_opition.GeoM.Scale(2, 2)
@@ -166,6 +170,9 @@ func (g *Game) Update() error {
 		g.is_jumping = true
 	}
 
+	if g.heath < 0 || g.heath > 100 {
+		g.is_paused = true
+	}
 	g.playerY += g.velocity_Y
 	g.velocity_Y += gravity
 
