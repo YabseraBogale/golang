@@ -109,9 +109,6 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		screen.DrawImage(layer, opition_after)
 
 	}
-	if g.is_paused {
-
-	}
 
 	for _, apple := range g.apple {
 		op := &ebiten.DrawImageOptions{}
@@ -172,6 +169,9 @@ func (g *Game) Update() error {
 
 	if g.heath < 0 || g.heath > 100 {
 		g.is_paused = true
+		if ebiten.IsKeyPressed(ebiten.KeyR) {
+			g.Restart()
+		}
 	}
 	g.playerY += g.velocity_Y
 	g.velocity_Y += gravity
