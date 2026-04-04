@@ -124,7 +124,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{255, 105, 180, 255}, true)
 	} else if g.heath > 100 && g.heath <= 200 {
 		vector.FillRect(screen, 10, 30, float32(g.heath), 10, color.RGBA{0, 255, 0, 255}, true)
-	} else if g.heath < 0 || g.heath < 201 && g.is_paused {
+	} else if g.heath < 0 || g.heath > 201 && g.is_paused {
 		overlay := color.RGBA{0, 0, 0, 150}
 		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
 		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
