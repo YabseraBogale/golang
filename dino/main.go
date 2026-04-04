@@ -152,7 +152,13 @@ func (g *Game) Update() error {
 	const gravity = 0.6
 	const jump_strength = -12.0
 	const ground_y = 250
-
+	if g.heath < 0 || g.heath > 201 && !g.is_paused {
+		g.is_paused = true
+		if ebiten.IsKeyPressed(ebiten.KeyR) {
+			g.Restart()
+			return nil
+		}
+	}
 	if ebiten.IsKeyPressed(ebiten.KeyEscape) {
 		if !g.key_pressed {
 			g.is_paused = !g.is_paused
@@ -169,12 +175,6 @@ func (g *Game) Update() error {
 		g.is_jumping = true
 	}
 
-	if g.heath < 0 || g.heath > 100 {
-		g.is_paused = true
-		if ebiten.IsKeyPressed(ebiten.KeyR) {
-			g.Restart()
-		}
-	}
 	g.playerY += g.velocity_Y
 	g.velocity_Y += gravity
 
