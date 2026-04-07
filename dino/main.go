@@ -132,7 +132,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 	} else if g.heath > 0 || g.heath < 201 && g.is_paused {
 		overlay := color.RGBA{0, 0, 0, 150}
 		vector.FillRect(screen, 0, 0, 640, 320, overlay, true)
-		ebitenutil.DebugPrintAt(screen, "Game Paused", 300, 150)
+		ebitenutil.DebugPrintAt(screen, "Game Paused", 300, 170)
 		ebitenutil.DebugPrintAt(screen, "Enter R to Reset", 260, 170)
 	}
 	player_opition := &ebiten.DrawImageOptions{}
